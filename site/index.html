@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QNX Crate Atlas</title>
+<meta name="description" content="Which of the 500 most downloaded Rust crates build for QNX 8.0, the first error for every one that does not, and the fixes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M8 10h16M8 16h10M8 22h13' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <div class="brand"><span class="logo" aria-hidden="true"></span>QNX Crate Atlas</div>
+  <nav><a href="#breaks">What breaks</a><a href="#fixes">Fixes</a><a href="#ontarget">On QNX</a><a href="#matrix">All crates</a><a href="codelab/">Codelab</a><a href="https://youtu.be/KDCN-wQVtu4">Video</a><a href="https://github.com/Mattbusel/qnx-crate-atlas">Code</a></nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Which Rust crates build for QNX&nbsp;8.0?</h1>
+    <p class="lede">We cross-compiled the <b id="n-crates">500</b> most downloaded crates on crates.io for both QNX&nbsp;8.0 targets with the Rust toolchain QNX ships, linked each one into a real QNX binary with <code>qcc</code>, and recorded the first error for every crate that failed. Then we fixed the biggest causes and ran crate test suites on a QNX&nbsp;8.0 kernel.</p>
+    <p class="meta" id="meta"></p>
+  </section>
+
+  <section class="tiles" id="tiles" aria-label="Headline results"></section>
+  <p class="sub caveat">A pass means the crate compiles for the target and links into a QNX executable that depends on it but does not call it. In one known case real use goes further: on aarch64, <code>rustls</code>, <code>tokio-rustls</code>, <code>hyper-rustls</code> and <code>reqwest</code> pass, but a program that actually uses rustls fails to link there. Counting those 4 as failures, aarch64 with our patches is 467 of 498 (93.8%).</p>
+
+  <section id="breaks">
+    <h2>What breaks</h2>
+    <p class="sub">First error of every failed build, before any fix. One crate can fail on both targets; counts are per target.</p>
+    <div class="seg" role="tablist" id="class-target"></div>
+    <div id="classes" class="hbars"></div>
+    <details class="note"><summary>What the classes mean</summary><dl id="class-defs"></dl></details>
+  </section>
+
+  <section>
+    <h2>Fix one crate, unblock many</h2>
+    <p class="sub">Where builds still stop after all our fixes, ranked by how many top crates each one blocks.</p>
+    <div id="blockers" class="table-wrap"></div>
+  </section>
+
+  <section id="fixes">
+    <h2>The fixes</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>libc: the target rename</h3>
+        <p>libc 0.2.189 and newer only recognise QNX&nbsp;8.0 as <code>target_os = "qnx"</code>, the name upstream Rust gave the renamed targets. The toolchain QNX ships (rustc 1.85.1) still says <code>target_os = "nto"</code>, <code>target_env = "nto80"</code>, so libc compiles none of its QNX&nbsp;8 code.</p>
+        <p><b>Workaround today:</b> <code>cargo update -p libc --precise 0.2.186</code>. <b>Better:</b> our compatibility patch for current libc (<a href="https://github.com/Mattbusel/qnx-crate-atlas/tree/main/patches">patches/</a>) maps the old spelling onto the new one, which also brings the QNX&nbsp;8 socket constants that <code>socket2</code>, <code>tokio</code> networking and <code>reqwest</code> need. Proof: <code>tokio</code> with every feature on (<code>net</code> included) builds for both targets with it and accepts a TCP connection on QNX&nbsp;8.0 (<a href="https://github.com/Mattbusel/qnx-crate-atlas/tree/main/examples/tokio-net">examples/tokio-net</a>).</p>
+      </article>
+      <article class="card">
+        <h3>Upstream fixes</h3>
+        <p><b>Merged Nov 11 2026:</b> aws-lc-rs#1292. It reaches users in the next aws-lc-sys release. <b>Open:</b> aws-lc#3780 and target-lexicon#138.</p>
+        <p><b>aws-lc-rs</b>, the default <code>rustls</code> crypto provider: <code>qcc</code> rejects <code>--include=</code>, and QNX headers hide <code>PTHREAD_RWLOCK_INITIALIZER</code> without <code>_QNX_SOURCE</code>. <a href="https://github.com/aws/aws-lc-rs/pull/1292">aws/aws-lc-rs#1292</a>. With it a rustls binary builds and runs on QNX&nbsp;8.0 x86_64. On aarch64 a program that uses rustls still fails to link (<code>OPENSSL_cpuid_setup</code>: aws-lc's aarch64 CPU detection had no QNX variant). <a href="https://github.com/aws/aws-lc/pull/3780">aws/aws-lc#3780</a> (open) reads the CPU features from the QNX system page; with it the binary links for aarch64.</p>
+        <p><b>target-lexicon</b> could not parse any QNX triple, so build scripts that read <code>TARGET</code> with it panicked, which blocked <code>pyo3</code>. <a href="https://github.com/bytecodealliance/target-lexicon/pull/138">bytecodealliance/target-lexicon#138</a> adds the QNX operating systems and environments.</p>
+      </article>
+      <article class="card">
+        <h3>Do it yourself</h3>
+        <p>The codelab <a href="codelab/">Rust on QNX&nbsp;8.0 from a Windows host</a> goes from a fresh Windows machine to a Rust binary running on a QNX&nbsp;8.0 VM, including each trap above. Its environment, build and libc commands are run by <code>codelab/verify.bat</code> in a fresh folder.</p>
+        <p>Check your own crate: <code>atlas probe &lt;crate&gt; --target aarch64-unknown-nto-qnx800</code>. Fix your own project: <code>atlas fix &lt;dir&gt;</code> (<a href="#fix">below</a>).</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="fix">
+    <h2>Fix your project: <code>atlas fix</code></h2>
+    <p class="sub">One command applies the atlas's fixes to your own Cargo project, prints every change, and verifies the build for both QNX&nbsp;8.0 targets.</p>
+    <pre class="cmd">python patches/prepare.py
+atlas fix path/to/your-project --before</pre>
+    <p>Only crates in your lockfile are touched: <code>[patch.crates-io]</code> entries for libc&nbsp;0.2.189+, aws-lc-sys (qcc fix plus the aarch64 CPU detection fix) and target-lexicon; <code>.cargo/config.toml</code> settings for rustc&nbsp;1.85 resolution and, on Windows hosts, the <code>qcc</code> command-line limit; then <code>cargo build</code> for <code>x86_64-pc-nto-qnx800</code> and <code>aarch64-unknown-nto-qnx800</code>. <code>--dry-run</code> prints the plan only.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Real project</th><th>Before</th><th>After <code>atlas fix</code></th></tr></thead>
+      <tbody>
+        <tr><td>axum 0.8 + tokio (full) HTTP API</td><td>fails both targets (libc cfg)</td><td>builds both targets</td></tr>
+        <tr><td>reqwest 0.13 (rustls, aws-lc-rs) client</td><td>fails both targets (needs rustc 1.88)</td><td>builds both targets</td></tr>
+        <tr><td>clap + tracing + socket2 keepalive CLI</td><td>fails both targets (libc cfg)</td><td>builds both targets</td></tr>
+      </tbody>
+    </table></div>
+    <p class="sub">Built, not run on the VM. Crates with no known fix (for example <code>nix</code>) stay failing and are reported. Outputs: <a href="https://github.com/Mattbusel/qnx-crate-atlas/tree/main/examples/fix-demos">examples/fix-demos</a>.</p>
+  </section>
+
+  <section id="ontarget">
+    <h2>Ran on QNX 8.0</h2>
+    <p class="sub" id="ot-sub">Unit tests of crates that build, compiled with the QNX toolchain and executed on a QNX&nbsp;8.0 x86_64 kernel (QEMU with KVM in WSL2).</p>
+    <div id="ontarget-table" class="table-wrap"></div>
+  </section>
+
+  <section id="matrix">
+    <h2>All crates</h2>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Search crates, errors, blockers" aria-label="Search">
+      <select id="f" aria-label="Filter">
+        <option value="">All results</option>
+        <option value="pass">Builds out of the box</option>
+        <option value="pin">Needs a libc fix</option>
+        <option value="fail">Still fails</option>
+      </select>
+      <a class="dl" href="data/atlas.json" download>Download atlas.json</a>
+    </div>
+    <div class="table-wrap"><table class="grid" id="grid"><thead><tr><th class="num">#</th><th>Crate</th><th>x86_64</th><th>aarch64</th><th>First error / blocker</th></tr></thead><tbody></tbody></table></div>
+    <p class="sub" id="grid-count"></p>
+  </section>
+
+  <section>
+    <h2>Method</h2>
+    <ol class="method">
+      <li><b>List:</b> the top crates by all-time downloads from the crates.io API.</li>
+      <li><b>Probe:</b> for each crate, a throwaway binary package depends on it (default features) and is built with <code>cargo build --target &lt;qnx target&gt;</code>, so the crate is compiled, its build scripts run, and the result is linked by <code>qcc</code>. The probe does not call the crate, so a pass is compile and link, not real use (see the aarch64 rustls note under the headline numbers). Versions are the newest that declare support for rustc 1.85 (cargo's MSRV-aware resolver).</li>
+      <li><b>Pass 1</b> builds the graph as resolved. If it fails with libc 0.2.189+ in the graph, <b>pass 2</b> pins libc 0.2.186. <b>Pass 3</b> swaps in our patched copies (libc compatibility, aws-lc-sys, target-lexicon) with <code>[patch.crates-io]</code>.</li>
+      <li><b>Classify:</b> the first error is read from cargo's JSON diagnostics and build-script output and sorted into classes that each have a different fix.</li>
+      <li><b>On target:</b> unit tests of the top passing crates are built with <code>cargo test --no-run</code> and run over ssh on a QNX&nbsp;8.0 VM built with <code>mkqnximage</code>.</li>
+    </ol>
+    <pre class="cmd">atlas doctor
+atlas top --count 500
+atlas run --jobs 2 --keep-logs
+python patches/prepare.py
+atlas compat --libc work/libc-qnx8 --patch aws-lc-sys=work/aws-lc-sys-qnx --patch target-lexicon=work/target-lexicon-qnx
+atlas ontarget --limit 40
+atlas report</pre>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Built by Matthew Busel for the QNX Global Hackathon 2026. Code and data MIT licensed. QNX is a trademark of BlackBerry Limited; this project is not affiliated with or endorsed by BlackBerry or QNX.</p>
+</footer>
+<div id="tip" role="tooltip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

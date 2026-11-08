@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>terminal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/css/xterm.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=block" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0910; display: grid; place-items: center; }
+  .win { width: 1180px; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.7); background: #000; }
+  .bar { height: 34px; background: #1c1a20; display: flex; align-items: center; gap: 8px; padding: 0 14px; font: 14px system-ui, sans-serif; color: #aaa; }
+  .bar i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  #t { padding: 10px 12px; }
+</style>
+</head>
+<body>
+<div class="win"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span id="title" style="margin-left:10px">bash</span></div><div id="t"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.js"></script>
+<script>
+  const term = new Terminal({ cols: 100, rows: 31, fontSize: 17, convertEol: true, scrollback: 2000, fontFamily: "Consolas, 'Noto Sans Symbols 2', monospace", theme: { background: "#000000" }, allowProposedApi: true });
+  term.open(document.getElementById("t"));
+  // Live terminal: the recorder types the command, then streams the real process output into w() as it arrives.
+  window.begin = async (title) => {
+    await document.fonts.load("19px 'Noto Sans Symbols 2'", String.fromCodePoint(0x1fb00)).catch(() => {});
+    document.getElementById("title").textContent = title || "bash";
+    term.reset();
+    return true;
+  };
+  window.cmd = async (prompt, c) => {
+    term.write(prompt);
+    for (const ch of c) { term.write(ch); await new Promise(r => setTimeout(r, 22)); }
+    term.write("\n");
+    return true;
+  };
+  window.w = (data) => new Promise(r => term.write(data, () => r(true)));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2026-11-07T19:22:26-05:00",
+  "id": "rust-on-qnx-windows",
+  "duration": 57,
+  "title": "Rust on QNX 8.0 from a Windows Host",
+  "authors": "Matthew Busel",
+  "summary": "Cross-compile Rust for QNX 8.0 on Windows with the QNX Rust toolchain, avoid the libc trap, and run the result on a QNX 8.0 VM.",
+  "source": "/mnt/c/Users/Matthew/hackathons/qnx-2026/codelab/rust-on-qnx-windows/rust-on-qnx-windows.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "qnx",
+    "rust",
+    "windows"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "feedback": "https://github.com/Mattbusel/qnx-crate-atlas/issues",
+  "url": "rust-on-qnx-windows"
+}

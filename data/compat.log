@@ -1,0 +1,154 @@
+[1/154] #3 getrandom aarch64-unknown-nto-qnx800 compat pass 
+[2/154] #3 getrandom x86_64-pc-nto-qnx800 compat pass 
+[3/154] #6 rand aarch64-unknown-nto-qnx800 compat pass 
+[4/154] #6 rand x86_64-pc-nto-qnx800 compat pass 
+[5/154] #7 libc aarch64-unknown-nto-qnx800 compat pass 
+[6/154] #7 libc x86_64-pc-nto-qnx800 compat pass 
+[7/154] #31 socket2 aarch64-unknown-nto-qnx800 compat pass 
+[8/154] #31 socket2 x86_64-pc-nto-qnx800 compat pass 
+[9/154] #33 rustix aarch64-unknown-nto-qnx800 compat pass 
+[10/154] #33 rustix x86_64-pc-nto-qnx800 compat pass 
+[11/154] #41 parking_lot_core aarch64-unknown-nto-qnx800 compat pass 
+[12/154] #41 parking_lot_core x86_64-pc-nto-qnx800 compat pass 
+[13/154] #43 parking_lot aarch64-unknown-nto-qnx800 compat pass 
+[14/154] #43 parking_lot x86_64-pc-nto-qnx800 compat pass 
+[15/154] #47 mio aarch64-unknown-nto-qnx800 compat pass 
+[16/154] #47 mio x86_64-pc-nto-qnx800 compat pass 
+[17/154] #77 rustls aarch64-unknown-nto-qnx800 compat pass 
+[18/154] #77 rustls x86_64-pc-nto-qnx800 compat pass 
+[19/154] #94 errno aarch64-unknown-nto-qnx800 compat pass 
+[20/154] #94 errno x86_64-pc-nto-qnx800 compat pass 
+[21/154] #100 tempfile aarch64-unknown-nto-qnx800 compat pass 
+[22/154] #100 tempfile x86_64-pc-nto-qnx800 compat pass 
+[23/154] #104 h2 aarch64-unknown-nto-qnx800 compat pass 
+[24/154] #104 h2 x86_64-pc-nto-qnx800 compat pass 
+[25/154] #105 nix aarch64-unknown-nto-qnx800 compat fail no-qnx-cfg-arm
+[26/154] #105 nix x86_64-pc-nto-qnx800 compat fail no-qnx-cfg-arm
+[27/154] #116 tokio-rustls aarch64-unknown-nto-qnx800 compat pass 
+[28/154] #116 tokio-rustls x86_64-pc-nto-qnx800 compat pass 
+[29/154] #125 ahash aarch64-unknown-nto-qnx800 compat pass 
+[30/154] #125 ahash x86_64-pc-nto-qnx800 compat pass 
+[31/154] #127 reqwest aarch64-unknown-nto-qnx800 compat pass 
+[32/154] #127 reqwest x86_64-pc-nto-qnx800 compat pass 
+[33/154] #130 ring aarch64-unknown-nto-qnx800 compat pass 
+[34/154] #130 ring x86_64-pc-nto-qnx800 compat pass 
+[35/154] #131 signal-hook-registry aarch64-unknown-nto-qnx800 compat pass 
+[36/154] #131 signal-hook-registry x86_64-pc-nto-qnx800 compat pass 
+[37/154] #151 iana-time-zone aarch64-unknown-nto-qnx800 compat fail explicitly-unsupported
+[38/154] #151 iana-time-zone x86_64-pc-nto-qnx800 compat fail explicitly-unsupported
+[39/154] #158 hyper-rustls aarch64-unknown-nto-qnx800 compat pass 
+[40/154] #158 hyper-rustls x86_64-pc-nto-qnx800 compat pass 
+[41/154] #202 object aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[42/154] #202 object x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[43/154] #217 jobserver aarch64-unknown-nto-qnx800 compat pass 
+[44/154] #217 jobserver x86_64-pc-nto-qnx800 compat pass 
+[45/154] #221 num_cpus aarch64-unknown-nto-qnx800 compat pass 
+[46/154] #221 num_cpus x86_64-pc-nto-qnx800 compat pass 
+[47/154] #267 addr2line aarch64-unknown-nto-qnx800 compat fail missing-libc-binding
+[48/154] #267 addr2line x86_64-pc-nto-qnx800 compat fail missing-libc-binding
+[49/154] #268 axum aarch64-unknown-nto-qnx800 compat pass 
+[50/154] #268 axum x86_64-pc-nto-qnx800 compat pass 
+[51/154] #286 backtrace aarch64-unknown-nto-qnx800 compat pass 
+[52/154] #286 backtrace x86_64-pc-nto-qnx800 compat pass 
+[53/154] #287 core-foundation aarch64-unknown-nto-qnx800 compat pass 
+[54/154] #287 core-foundation x86_64-pc-nto-qnx800 compat pass 
+[55/154] #296 openssl-sys aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[56/154] #296 openssl-sys x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[57/154] #310 which aarch64-unknown-nto-qnx800 compat pass 
+[58/154] #310 which x86_64-pc-nto-qnx800 compat pass 
+[59/154] #316 tonic aarch64-unknown-nto-qnx800 compat pass 
+[60/154] #316 tonic x86_64-pc-nto-qnx800 compat pass 
+[61/154] #323 bindgen aarch64-unknown-nto-qnx800 compat pass 
+[62/154] #323 bindgen x86_64-pc-nto-qnx800 compat pass 
+[63/154] #324 openssl aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[64/154] #324 openssl x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[65/154] #327 filetime aarch64-unknown-nto-qnx800 compat pass 
+[66/154] #327 filetime x86_64-pc-nto-qnx800 compat pass 
+[67/154] #329 target-lexicon aarch64-unknown-nto-qnx800 compat pass 
+[68/154] #329 target-lexicon x86_64-pc-nto-qnx800 compat pass 
+[69/154] #330 dashmap aarch64-unknown-nto-qnx800 compat pass 
+[70/154] #330 dashmap x86_64-pc-nto-qnx800 compat pass 
+[71/154] #332 security-framework aarch64-unknown-nto-qnx800 compat pass 
+[72/154] #332 security-framework x86_64-pc-nto-qnx800 compat pass 
+[73/154] #339 prost-build aarch64-unknown-nto-qnx800 compat pass 
+[74/154] #339 prost-build x86_64-pc-nto-qnx800 compat pass 
+[75/154] #342 memmap2 aarch64-unknown-nto-qnx800 compat fail missing-libc-binding
+[76/154] #342 memmap2 x86_64-pc-nto-qnx800 compat fail missing-libc-binding
+[77/154] #343 quinn-proto aarch64-unknown-nto-qnx800 compat fail other
+[78/154] #343 quinn-proto x86_64-pc-nto-qnx800 compat fail other
+[79/154] #346 console aarch64-unknown-nto-qnx800 compat pass 
+[80/154] #346 console x86_64-pc-nto-qnx800 compat pass 
+[81/154] #347 dirs-sys aarch64-unknown-nto-qnx800 compat pass 
+[82/154] #347 dirs-sys x86_64-pc-nto-qnx800 compat pass 
+[83/154] #348 quinn-udp aarch64-unknown-nto-qnx800 compat pass 
+[84/154] #348 quinn-udp x86_64-pc-nto-qnx800 compat pass 
+[85/154] #349 quinn aarch64-unknown-nto-qnx800 compat fail other
+[86/154] #349 quinn x86_64-pc-nto-qnx800 compat fail other
+[87/154] #351 dirs aarch64-unknown-nto-qnx800 compat pass 
+[88/154] #351 dirs x86_64-pc-nto-qnx800 compat pass 
+[89/154] #354 windows aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[90/154] #354 windows x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[91/154] #361 tungstenite aarch64-unknown-nto-qnx800 compat pass 
+[92/154] #361 tungstenite x86_64-pc-nto-qnx800 compat pass 
+[93/154] #362 hyper-timeout aarch64-unknown-nto-qnx800 compat pass 
+[94/154] #362 hyper-timeout x86_64-pc-nto-qnx800 compat pass 
+[95/154] #364 hyper-tls aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[96/154] #364 hyper-tls x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[97/154] #366 is-terminal aarch64-unknown-nto-qnx800 compat pass 
+[98/154] #366 is-terminal x86_64-pc-nto-qnx800 compat pass 
+[99/154] #368 native-tls aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[100/154] #368 native-tls x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[101/154] #376 bincode aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[102/154] #376 bincode x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[103/154] #377 atty aarch64-unknown-nto-qnx800 compat pass 
+[104/154] #377 atty x86_64-pc-nto-qnx800 compat pass 
+[105/154] #382 security-framework-sys aarch64-unknown-nto-qnx800 compat pass 
+[106/154] #382 security-framework-sys x86_64-pc-nto-qnx800 compat pass 
+[107/154] #383 android_system_properties aarch64-unknown-nto-qnx800 compat pass 
+[108/154] #383 android_system_properties x86_64-pc-nto-qnx800 compat pass 
+[109/154] #388 clang-sys aarch64-unknown-nto-qnx800 compat fail build-script
+[110/154] #388 clang-sys x86_64-pc-nto-qnx800 compat fail build-script
+[111/154] #391 sct aarch64-unknown-nto-qnx800 compat pass 
+[112/154] #391 sct x86_64-pc-nto-qnx800 compat pass 
+[113/154] #394 tokio-tungstenite aarch64-unknown-nto-qnx800 compat pass 
+[114/154] #394 tokio-tungstenite x86_64-pc-nto-qnx800 compat pass 
+[115/154] #409 pest_derive aarch64-unknown-nto-qnx800 compat fail rustc-too-old
+[116/154] #409 pest_derive x86_64-pc-nto-qnx800 compat fail rustc-too-old
+[117/154] #410 crypto-bigint aarch64-unknown-nto-qnx800 compat pass 
+[118/154] #410 crypto-bigint x86_64-pc-nto-qnx800 compat pass 
+[119/154] #412 zip aarch64-unknown-nto-qnx800 compat fail rustc-too-old
+[120/154] #412 zip x86_64-pc-nto-qnx800 compat fail rustc-too-old
+[121/154] #416 wit-bindgen aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[122/154] #416 wit-bindgen x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[123/154] #425 tokio-native-tls aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[124/154] #425 tokio-native-tls x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[125/154] #445 pyo3-build-config aarch64-unknown-nto-qnx800 compat pass 
+[126/154] #445 pyo3-build-config x86_64-pc-nto-qnx800 compat pass 
+[127/154] #448 aws-lc-sys aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[128/154] #448 aws-lc-sys x86_64-pc-nto-qnx800 compat fail build-script-system-lib
+[129/154] #450 aws-lc-rs aarch64-unknown-nto-qnx800 compat fail link
+[130/154] #450 aws-lc-rs x86_64-pc-nto-qnx800 compat pass 
+[131/154] #453 pyo3 aarch64-unknown-nto-qnx800 compat fail build-script
+[132/154] #453 pyo3 x86_64-pc-nto-qnx800 compat fail build-script
+[133/154] #461 twox-hash aarch64-unknown-nto-qnx800 compat pass 
+[134/154] #461 twox-hash x86_64-pc-nto-qnx800 compat pass 
+[135/154] #469 signal-hook aarch64-unknown-nto-qnx800 compat pass 
+[136/154] #469 signal-hook x86_64-pc-nto-qnx800 compat pass 
+[137/154] #474 elliptic-curve aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[138/154] #474 elliptic-curve x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[139/154] #480 polling aarch64-unknown-nto-qnx800 compat pass 
+[140/154] #480 polling x86_64-pc-nto-qnx800 compat pass 
+[141/154] #481 pyo3-ffi aarch64-unknown-nto-qnx800 compat fail build-script
+[142/154] #481 pyo3-ffi x86_64-pc-nto-qnx800 compat fail build-script
+[143/154] #484 ecdsa aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[144/154] #484 ecdsa x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[145/154] #485 tar aarch64-unknown-nto-qnx800 compat pass 
+[146/154] #485 tar x86_64-pc-nto-qnx800 compat pass 
+[147/154] #493 rfc6979 aarch64-unknown-nto-qnx800 compat: no patched crate in the graph
+[148/154] #493 rfc6979 x86_64-pc-nto-qnx800 compat: no patched crate in the graph
+[149/154] #494 opentelemetry_sdk aarch64-unknown-nto-qnx800 compat pass 
+[150/154] #494 opentelemetry_sdk x86_64-pc-nto-qnx800 compat pass 
+[151/154] #497 wait-timeout aarch64-unknown-nto-qnx800 compat fail missing-libc-binding
+[152/154] #497 wait-timeout x86_64-pc-nto-qnx800 compat fail missing-libc-binding
+[153/154] #499 plotters aarch64-unknown-nto-qnx800 compat fail build-script-system-lib
+[154/154] #499 plotters x86_64-pc-nto-qnx800 compat fail build-script-system-lib

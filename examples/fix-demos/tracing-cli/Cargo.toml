@@ -1,0 +1,13 @@
+[package]
+name = "tracing-cli"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+socket2 = "0.6"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[workspace]

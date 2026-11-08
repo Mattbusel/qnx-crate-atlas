@@ -1,0 +1,267 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Rust on QNX 8.0 from a Windows Host</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../js/codelab-elements.css">
+
+  
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+
+     
+    google-codelab #done {
+      display: none !important;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="rust-on-qnx-windows"
+                  title="Rust on QNX 8.0 from a Windows Host"
+                  environment="web"
+                  feedback-link="https://github.com/Mattbusel/qnx-crate-atlas/issues">
+    
+      <google-codelab-step label="Introduction" duration="2">
+        <h2 is-upgraded>Overview</h2>
+<p>QNX ships a Rust compiler for QNX 8.0 in the QNX Software Center. This codelab takes a Windows 11 PC from nothing to a Rust program that is cross-compiled on Windows for both QNX 8.0 targets and then runs on a real QNX 8.0 kernel in a virtual machine.</p>
+<p>Along the way you will hit the two problems that stop most people, and fix them:</p>
+<ul>
+<li>the QNX Rust package contains <code>rustc</code> but no <code>cargo</code>, and</li>
+<li>the newest <code>libc</code> crate no longer compiles with the QNX toolchain, which breaks every crate that depends on it.</li>
+</ul>
+<h2 is-upgraded>What you will build</h2>
+<p>A small Rust program that prints the OS and CPU it runs on and starts a thread, built for <code>x86_64-pc-nto-qnx800</code> and <code>aarch64-unknown-nto-qnx800</code>, then a second version that calls into <code>libc</code>.</p>
+<h2 is-upgraded>What you need</h2>
+<ul>
+<li>Windows 11 x86_64 with about 10 GB free disk space.</li>
+<li>A myQNX account with a QNX SDP 8.0 non-commercial license. See the codelab <a href="https://qnx.github.io/codelabs/get-non-commercial-qnx-license/index.html" target="_blank">Get a Non-Commercial QNX License</a>.</li>
+<li><a href="https://rustup.rs" target="_blank">rustup</a> for Windows with the Microsoft C++ build tools (the rustup installer offers to install them). Build scripts and procedural macros still run on Windows.</li>
+<li>For the last step only: WSL 2 with Ubuntu 24.04.</li>
+</ul>
+<p>The environment, build and libc commands in this codelab are checked by a script, <a href="https://github.com/Mattbusel/qnx-crate-atlas/blob/main/codelab/verify.bat" target="_blank"><code>codelab/verify.bat</code></a>, which runs them in a fresh folder.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install QNX SDP 8.0 and the QNX Rust toolchain" duration="15">
+        <ol type="1">
+<li>Download <strong>QNX Software Center 2.0.4 for Windows</strong> from the <a href="https://www.qnx.com/download/group.html?programid=29178" target="_blank">QNX download page</a> and install it. A per-user install is enough; no administrator rights are needed.</li>
+<li>Start QNX Software Center, sign in with your myQNX account, and choose <strong>Add Installation</strong>. Pick <strong>QNX Software Development Platform 8.0</strong> and install it to <code>C:\Users\<you>\qnx\qnx800</code>. The download is several gigabytes.</li>
+<li>In the new installation choose <strong>Manage Installation</strong>, open the <strong>Available</strong> tab, search for <code>rust</code>, and install <strong>QNX Rust toolchain for Windows host</strong> (package id <code>com.qnx.qnx800.host.win.x86_64.rust</code>).</li>
+</ol>
+<p>Prefer the command line? The Software Center has one:</p>
+<pre>&#34;C:\Users\&lt;you&gt;\qnx\QNX Software Center\qnxsoftwarecenter_clt.bat&#34; -myqnx.user=&#34;&lt;email&gt;&#34; -myqnx.password=&#34;&lt;password&gt;&#34; -destination C:\Users\&lt;you&gt;\qnx\qnx800 -installPackage com.qnx.qnx800.host.win.x86_64.rust
+</pre>
+<p>When it finishes you have a QNX-built <code>rustc.exe</code> here:</p>
+<pre>C:\Users\&lt;you&gt;\qnx\qnx800\host\win64\x86_64\usr\bin\rustc.exe
+</pre>
+<p>It ships the Rust standard library for exactly three targets: <code>x86_64-pc-nto-qnx800</code>, <code>aarch64-unknown-nto-qnx800</code>, and the Windows host (needed for build scripts and procedural macros).</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Get a matching cargo" duration="3">
+        <p>The QNX package has <code>rustc</code> 1.85.1 but no <code>cargo</code>. Install the cargo that matches it, from Rust 1.85.0, with rustup:</p>
+<pre>rustup toolchain install 1.85.0 --profile minimal
+</pre>
+<p>You will run <code>cargo +1.85.0</code> and point it at the QNX compiler with the <code>RUSTC</code> environment variable. Cargo 1.85 and rustc 1.85.1 are the same release line, so their flags and lockfile formats agree.</p>
+<p>Negative : Do not use your everyday stable cargo with the QNX <code>rustc</code>. A newer cargo can pass flags the older compiler does not understand, and its lockfiles may need a newer cargo to read.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Set up the environment" duration="3">
+        <p>Open a <strong>Command Prompt</strong> (cmd.exe, not PowerShell) and run the SDP environment script, then select the QNX compiler:</p>
+<pre>call C:\Users\&lt;you&gt;\qnx\qnx800\qnxsdp-env.bat
+set RUSTC=%QNX_HOST%\usr\bin\rustc.exe
+</pre>
+<p><code>qnxsdp-env.bat</code> sets <code>QNX_HOST</code> and <code>QNX_TARGET</code> and puts <code>qcc</code>, the QNX compiler driver, on <code>PATH</code>. The QNX Rust targets link with <code>qcc</code>, so no linker configuration is needed.</p>
+<p>Check what you have:</p>
+<pre>rustc -vV
+rustc --print cfg --target x86_64-pc-nto-qnx800 | findstr &#34;target_os target_env&#34;
+cargo +1.85.0 -V
+</pre>
+<p>You should see:</p>
+<pre>rustc 1.85.1-dev
+host: x86_64-pc-windows-msvc
+target_env=&#34;nto80&#34;
+target_os=&#34;nto&#34;
+cargo 1.85.0 (d73d2caf9 2024-12-31)
+</pre>
+<p>Remember <code>target_os="nto"</code> and <code>target_env="nto80"</code>. They are the reason for the trap two steps from now.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Build hello world for QNX" duration="5">
+        <ol type="1">
+<li>Create a project:<pre>cargo +1.85.0 new hello-qnx
+cd hello-qnx
+</pre>
+</li>
+<li>Replace <code>src\main.rs</code> with:<pre><code language="language-rust" class="language-rust">fn main() {
+    println!(&#34;hello from Rust on QNX ({} / {})&#34;, std::env::consts::OS, std::env::consts::ARCH);
+    let t = std::thread::spawn(|| 6 * 7);
+    println!(&#34;thread says {}&#34;, t.join().unwrap());
+}
+</code></pre>
+</li>
+<li>Build for both QNX 8.0 targets:<pre>cargo +1.85.0 build --release --target x86_64-pc-nto-qnx800
+cargo +1.85.0 build --release --target aarch64-unknown-nto-qnx800
+</pre>
+</li>
+</ol>
+<p>The binaries are <code>target\x86_64-pc-nto-qnx800\release\hello-qnx</code> and <code>target\aarch64-unknown-nto-qnx800\release\hello-qnx</code>. They are ELF files for QNX, so they will not run on Windows:</p>
+<pre>ntox86_64-readelf -h target\x86_64-pc-nto-qnx800\release\hello-qnx | findstr &#34;Machine&#34;
+  Machine:                           Advanced Micro Devices X86-64
+</pre>
+<p>Positive : If you set <code>CARGO_TARGET_DIR</code> globally (some setups do), the binaries land under that folder instead of <code>target\</code>.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="The libc trap" duration="5">
+        <p>Almost every crate that talks to the operating system depends on <code>libc</code>. Add it:</p>
+<pre>cargo +1.85.0 add libc@0.2
+cargo +1.85.0 build --release --target x86_64-pc-nto-qnx800
+</pre>
+<p>The build fails inside <code>libc</code> itself, with dozens of errors like:</p>
+<pre>error[E0412]: cannot find type `in_addr` in this scope
+   --&gt; ...\libc-0.2.191\src\unix\nto\mod.rs:129:28
+error: non-item macro in item position: panic
+    --&gt; ...\libc-0.2.191\src\unix\nto\mod.rs:3096:9
+     |
+3096 |         panic!(&#34;Unsupported arch&#34;);
+</pre>
+<h2 is-upgraded>Why</h2>
+<p>Upstream Rust renamed the QNX 8.0 targets to <code>x86_64-pc-qnx</code> and <code>aarch64-unknown-qnx</code>, which report <code>target_os = "qnx"</code>. <code>libc</code> 0.2.189 and newer follow the new name and only compile their QNX 8.0 code when <code>target_os = "qnx"</code>. The compiler QNX ships still reports <code>target_os = "nto"</code>, <code>target_env = "nto80"</code>, so none of that code is selected.</p>
+<h2 is-upgraded>Fix: pin libc 0.2.186</h2>
+<p><code>libc</code> 0.2.186 is the last release that still recognises <code>target_env = "nto80"</code>:</p>
+<pre>cargo +1.85.0 update -p libc --precise 0.2.186
+cargo +1.85.0 build --release --target x86_64-pc-nto-qnx800
+cargo +1.85.0 build --release --target aarch64-unknown-nto-qnx800
+</pre>
+<p>Both builds now succeed.</p>
+<p>Negative : <code>cargo add libc</code> (without <code>@0.2</code>) writes <code>libc = "0.2.191"</code> into <code>Cargo.toml</code>, and then the pin is refused with &#34;failed to select a version for the requirement&#34;. Keep the requirement at <code>"0.2"</code> so cargo is allowed to choose 0.2.186.</p>
+<h2 is-upgraded>When the pin is not enough</h2>
+<p><code>libc</code> 0.2.186 predates some QNX 8.0 definitions that later releases added. The most visible gap is the TCP keepalive constants: <code>socket2</code>, and with it <code>tokio</code> networking, <code>hyper</code> clients and <code>reqwest</code>, fail with:</p>
+<pre>error[E0432]: unresolved import `libc::TCP_KEEPIDLE`
+</pre>
+<p>The <a href="https://github.com/Mattbusel/qnx-crate-atlas" target="_blank">QNX Crate Atlas</a> ships a script that makes a QNX 8.0 compatible copy of current <code>libc</code> by mapping the old spelling onto the new one. Use it with a <code>[patch]</code> section:</p>
+<pre>python patches\make_libc_compat.py %CARGO_HOME%\registry\src\&lt;index&gt;\libc-0.2.191 C:\src\libc-qnx8
+</pre>
+<pre><code language="language-toml" class="language-toml">[patch.crates-io]
+libc = { path = &#34;C:/src/libc-qnx8&#34; }
+</code></pre>
+<p>With that patch, <code>socket2</code> builds for both targets, and a program that turns on TCP keepalive runs correctly on QNX 8.0.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Run it on QNX 8.0 under QEMU" duration="20">
+        <p>You need a QNX 8.0 target. The quickest one on a Windows PC is an x86_64 QEMU virtual machine inside WSL 2, which runs with KVM acceleration. The official codelab <a href="https://qnx.github.io/codelabs/qsti-qemu-on-wsl/index.html" target="_blank">Run the QSTI on QEMU using WSL</a> covers the Quick Start Target Image; the steps below use <code>mkqnximage</code> from the SDP instead, which lets you add your SSH key.</p>
+<ol type="1">
+<li>In PowerShell, add Ubuntu 24.04 and open a root shell in it:<pre>wsl --install -d Ubuntu-24.04
+wsl -d Ubuntu-24.04 -u root
+</pre>
+</li>
+<li>Inside Ubuntu, install QEMU and the networking tools:<pre>apt update &amp;&amp; apt install -y qemu-system-x86 qemu-utils bridge-utils net-tools iproute2 dnsmasq-base
+</pre>
+</li>
+<li>Install the Linux host version of QNX SDP 8.0 to <code>/root/qnx800</code> with the Linux QNX Software Center (same account, same license), then:<pre>source /root/qnx800/qnxsdp-env.sh
+ssh-keygen -t ed25519 -N &#34;&#34; -f /root/.ssh/id_ed25519
+mkdir /root/qnx-vm &amp;&amp; cd /root/qnx-vm
+mkqnximage --type=qemu --arch=x86_64 --ssh-ident=/root/.ssh/id_ed25519.pub --noprompt
+</pre>
+</li>
+<li>Start the network bridge and a DHCP server. The <code>net.sh</code> helper&#39;s own <code>dnsmasq</code> call clashes with WSL&#39;s DNS on port 53, so run DHCP only:<pre>bash $QNX_BASE/host/common/mkqnximage/qemu/net.sh /usr/lib/qemu/qemu-bridge-helper /etc/qemu/bridge.conf nat
+dnsmasq --interface=br0 --bind-interfaces --except-interface=lo --listen-address=172.31.1.1 --port=0 --dhcp-range=172.31.1.2,172.31.1.254
+</pre>
+</li>
+<li>Boot the VM headless and copy your binary over (WSL sees your C: drive under <code>/mnt/c</code>):<pre>mkqnximage --run=-h &amp;
+IP=$(grep -Eo &#39;172\.31\.1\.[0-9]+&#39; /var/lib/misc/dnsmasq.leases | head -1)
+scp /mnt/c/Users/&lt;you&gt;/hello-qnx/target/x86_64-pc-nto-qnx800/release/hello-qnx root@$IP:/tmp/
+ssh root@$IP /tmp/hello-qnx
+</pre>
+</li>
+</ol>
+<p>You should see:</p>
+<pre>hello from Rust on QNX (nto / x86_64)
+thread says 42
+</pre>
+<p>Negative : If SSH to the VM is refused, check the boot log in <code>output/qemu.out</code> for <code>/usr/libexec/sshd-auth does not exist</code>. Some SDP package combinations ship an OpenSSH that needs <code>sshd-auth</code> while <code>mkqnximage</code> does not put it in the image. Adding <code>bin/sshd-auth=usr/libexec/sshd-auth</code> to the image build file and <code>SshdAuthPath /system/bin/sshd-auth</code> to the sshd configuration in <code>$QNX_BASE/host/common/mkqnximage/inputs/system.build</code>, then rebuilding the image, fixes it.</p>
+<p>Positive : WSL stops background processes when the <code>wsl</code> call that started them ends. If you script this from Windows, boot, test and shut down the VM inside one <code>wsl</code> call.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Check a crate before you depend on it" duration="3">
+        <p>The <a href="https://github.com/Mattbusel/qnx-crate-atlas" target="_blank">QNX Crate Atlas</a> has already built the 500 most downloaded crates for both QNX 8.0 targets with this exact toolchain, recorded the first error for each failure, and run unit tests of the top crates on QNX 8.0. Search it before you add a dependency.</p>
+<p>To test any crate yourself, build the Atlas CLI with your normal Rust toolchain and probe it:</p>
+<pre>git clone https://github.com/Mattbusel/qnx-crate-atlas
+cd qnx-crate-atlas
+cargo build --release
+target\release\atlas doctor
+target\release\atlas probe tokio --target aarch64-unknown-nto-qnx800
+</pre>
+<p><code>atlas probe</code> builds the crate inside a throwaway QNX binary, retries with <code>libc</code> pinned when needed, and prints the first error and its class.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Summary" duration="1">
+        <p>You now have:</p>
+<ul>
+<li>the QNX Rust toolchain on Windows, driven by cargo 1.85.0,</li>
+<li>Rust binaries for <code>x86_64-pc-nto-qnx800</code> and <code>aarch64-unknown-nto-qnx800</code>,</li>
+<li>the libc fix: <code>cargo update -p libc --precise 0.2.186</code>, or the compatibility patch when you need newer QNX 8.0 definitions,</li>
+<li>a QNX 8.0 VM in WSL 2 to run and test what you build.</li>
+</ul>
+<h2 is-upgraded>Learn more</h2>
+<ul>
+<li><a href="https://github.com/Mattbusel/qnx-crate-atlas" target="_blank">QNX Crate Atlas</a>: which crates build for QNX 8.0, and why the others do not.</li>
+<li><a href="https://www.qnx.com/developers/docs/8.0/com.qnx.doc.qnxsdp.nav/topic/bookset.html" target="_blank">QNX SDP 8.0 documentation</a></li>
+<li><a href="https://github.com/rust-lang/libc/issues/5341" target="_blank">libc issue about the QNX target rename</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="../js/native-shim.js"></script>
+  <script src="../js/custom-elements.min.js"></script>
+  <script src="../js/prettify.js"></script>
+  <script src="../js/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+  <script>
+    
+    navigation.addEventListener("navigate", (event) => {
+    const url = new URL(event.destination.url);
+
+    if (url.pathname == "/") {
+      window.location.href = "https://qnx.github.io/codelabs/";
+    }
+  });
+  </script>
+
+</body>
+</html>

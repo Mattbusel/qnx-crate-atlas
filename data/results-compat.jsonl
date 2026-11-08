@@ -1,0 +1,140 @@
+{"class":null,"crate_name":"getrandom","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"getrandom","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"rand","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"rand","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"libc","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"libc","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"socket2","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"socket2","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"rustix","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"rustix","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"parking_lot_core","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"parking_lot_core","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"parking_lot","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"parking_lot","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"mio","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"mio","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"rustls","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"rustls","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"errno","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"errno","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tempfile","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tempfile","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"h2","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"h2","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"no-qnx-cfg-arm","crate_name":"nix","first_error":{"code":"E0432","file":"src/errno.rs","kind":"lib","message":"unresolved import `self::consts`","package":"nix","version":"0.31.3"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"no-qnx-cfg-arm","crate_name":"nix","first_error":{"code":"E0432","file":"src/errno.rs","kind":"lib","message":"unresolved import `self::consts`","package":"nix","version":"0.31.3"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tokio-rustls","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tokio-rustls","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"ahash","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"ahash","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"reqwest","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"reqwest","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"ring","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"ring","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"signal-hook-registry","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"signal-hook-registry","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"explicitly-unsupported","crate_name":"iana-time-zone","first_error":{"code":null,"file":"src/platform.rs","kind":"lib","message":"iana-time-zone is currently implemented for Linux, Window, MacOS, FreeBSD, NetBSD, OpenBSD, Dragonfly, WebAssembly (browser), wasip, emscripten, iOS, Illumos, Android, AIX, Solaris and Haiku.","package":"iana-time-zone","version":"0.1.65"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"explicitly-unsupported","crate_name":"iana-time-zone","first_error":{"code":null,"file":"src/platform.rs","kind":"lib","message":"iana-time-zone is currently implemented for Linux, Window, MacOS, FreeBSD, NetBSD, OpenBSD, Dragonfly, WebAssembly (browser), wasip, emscripten, iOS, Illumos, Android, AIX, Solaris and Haiku.","package":"iana-time-zone","version":"0.1.65"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"hyper-rustls","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"hyper-rustls","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"jobserver","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"jobserver","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"num_cpus","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"num_cpus","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"addr2line","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find function `madvise` in crate `libc`","package":"memmap2","version":"0.9.12"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"addr2line","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find function `madvise` in crate `libc`","package":"memmap2","version":"0.9.12"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"axum","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"axum","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"backtrace","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"backtrace","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"core-foundation","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"core-foundation","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"openssl-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"openssl-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"which","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"which","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tonic","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tonic","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"bindgen","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"bindgen","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"openssl","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"openssl","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"filetime","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"filetime","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"target-lexicon","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"target-lexicon","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"dashmap","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"dashmap","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"security-framework","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"security-framework","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"prost-build","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"prost-build","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"memmap2","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find function `madvise` in crate `libc`","package":"memmap2","version":"0.9.12"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"memmap2","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find function `madvise` in crate `libc`","package":"memmap2","version":"0.9.12"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":"other","crate_name":"quinn-proto","first_error":{"code":"E0277","file":"src/crypto/ring/sign.rs","kind":"lib","message":"the trait bound `SystemRandom: ring::rand::SecureRandom` is not satisfied","package":"rustls","version":"0.23.46"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"other","crate_name":"quinn-proto","first_error":{"code":"E0277","file":"src/crypto/ring/sign.rs","kind":"lib","message":"the trait bound `SystemRandom: ring::rand::SecureRandom` is not satisfied","package":"rustls","version":"0.23.46"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"console","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"console","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"dirs-sys","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"dirs-sys","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"quinn-udp","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"quinn-udp","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"other","crate_name":"quinn","first_error":{"code":"E0277","file":"src/crypto/ring/sign.rs","kind":"lib","message":"the trait bound `SystemRandom: ring::rand::SecureRandom` is not satisfied","package":"rustls","version":"0.23.46"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"other","crate_name":"quinn","first_error":{"code":"E0277","file":"src/crypto/ring/sign.rs","kind":"lib","message":"the trait bound `SystemRandom: ring::rand::SecureRandom` is not satisfied","package":"rustls","version":"0.23.46"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"dirs","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"dirs","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tungstenite","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tungstenite","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"hyper-timeout","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"hyper-timeout","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"hyper-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"hyper-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"is-terminal","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"is-terminal","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"native-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"native-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"atty","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"atty","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"security-framework-sys","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"security-framework-sys","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"android_system_properties","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"android_system_properties","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script","crate_name":"clang-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"called `Result::unwrap()` on an `Err` value: \"couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])\"","package":"clang-sys","version":"1.9.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script","crate_name":"clang-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"called `Result::unwrap()` on an `Err` value: \"couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])\"","package":"clang-sys","version":"1.9.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"sct","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"sct","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tokio-tungstenite","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tokio-tungstenite","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"rustc-too-old","crate_name":"pest_derive","first_error":{"code":"E0658","file":"src/archive_writer.rs","kind":"lib","message":"`let` expressions in this position are unstable","package":"ar_archive_writer","version":"0.5.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"rustc-too-old","crate_name":"pest_derive","first_error":{"code":"E0658","file":"src/archive_writer.rs","kind":"lib","message":"`let` expressions in this position are unstable","package":"ar_archive_writer","version":"0.5.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"crypto-bigint","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"crypto-bigint","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"rustc-too-old","crate_name":"zip","first_error":{"code":"E0658","file":"src/input_buffer.rs","kind":"lib","message":"use of unstable library feature `unbounded_shifts`","package":"deflate64","version":"0.1.12"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"rustc-too-old","crate_name":"zip","first_error":{"code":"E0658","file":"src/input_buffer.rs","kind":"lib","message":"use of unstable library feature `unbounded_shifts`","package":"deflate64","version":"0.1.12"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"tokio-native-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"tokio-native-tls","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"Could not find openssl via pkg-config:","package":"openssl-sys","version":"0.9.118"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"pyo3-build-config","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"pyo3-build-config","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"aws-lc-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"aws-lc-sys build failed. Please enable the 'bindgen' feature on aws-lc-rs or aws-lc-sys.For more information, see the aws-lc-rs User Guide: https://aws.github.io/aws-lc-rs/index.html","package":"aws-lc-sys","version":"0.47.0"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"aws-lc-sys","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"aws-lc-sys build failed. Please enable the 'bindgen' feature on aws-lc-rs or aws-lc-sys.For more information, see the aws-lc-rs User Guide: https://aws.github.io/aws-lc-rs/index.html","package":"aws-lc-sys","version":"0.47.0"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":"link","crate_name":"aws-lc-rs","first_error":{"code":null,"file":null,"kind":"bin","message":"linking with `qcc` failed: exit code: 1","package":"atlas-probe","version":"0.0.0"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"aws-lc-rs","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script","crate_name":"pyo3","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"error: PYO3_CROSS_PYTHON_VERSION or either an abi3-py3* or abi3t-py3* feature must be specified when cross-compiling and PYO3_CROSS_LIB_DIR is not set.","package":"pyo3-ffi","version":"0.30.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script","crate_name":"pyo3","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"error: PYO3_CROSS_PYTHON_VERSION or either an abi3-py3* or abi3t-py3* feature must be specified when cross-compiling and PYO3_CROSS_LIB_DIR is not set.","package":"pyo3-ffi","version":"0.30.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"twox-hash","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"twox-hash","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"signal-hook","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"signal-hook","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"polling","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"polling","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script","crate_name":"pyo3-ffi","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"error: PYO3_CROSS_PYTHON_VERSION or either an abi3-py3* or abi3t-py3* feature must be specified when cross-compiling and PYO3_CROSS_LIB_DIR is not set.","package":"pyo3-ffi","version":"0.30.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script","crate_name":"pyo3-ffi","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"error: PYO3_CROSS_PYTHON_VERSION or either an abi3-py3* or abi3t-py3* feature must be specified when cross-compiling and PYO3_CROSS_LIB_DIR is not set.","package":"pyo3-ffi","version":"0.30.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"tar","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"tar","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":null,"crate_name":"opentelemetry_sdk","first_error":null,"status":"pass","target":"aarch64-unknown-nto-qnx800"}
+{"class":null,"crate_name":"opentelemetry_sdk","first_error":null,"status":"pass","target":"x86_64-pc-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"wait-timeout","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find value `SA_RESTART` in crate `libc`","package":"wait-timeout","version":"0.2.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"missing-libc-binding","crate_name":"wait-timeout","first_error":{"code":"E0425","file":"src/unix.rs","kind":"lib","message":"cannot find value `SA_RESTART` in crate `libc`","package":"wait-timeout","version":"0.2.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"plotters","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"called `Result::unwrap()` on an `Err` value: \"pkg-config has not been configured to support cross-compilation.\\n\\nInstall a sysroot for the target platform and configure it via\\nPKG_CONFIG_SYSROOT_DIR and PKG_CONFIG_PATH, or install a\\ncros","package":"yeslogic-fontconfig-sys","version":"6.0.1"},"status":"fail","target":"aarch64-unknown-nto-qnx800"}
+{"class":"build-script-system-lib","crate_name":"plotters","first_error":{"code":null,"file":"build.rs","kind":"custom-build","message":"called `Result::unwrap()` on an `Err` value: \"pkg-config has not been configured to support cross-compilation.\\n\\nInstall a sysroot for the target platform and configure it via\\nPKG_CONFIG_SYSROOT_DIR and PKG_CONFIG_PATH, or install a\\ncros","package":"yeslogic-fontconfig-sys","version":"6.0.1"},"status":"fail","target":"x86_64-pc-nto-qnx800"}

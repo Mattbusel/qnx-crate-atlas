@@ -1,0 +1,2 @@
+# Render the codelab with the QNX fork of claat (https://github.com/qnx/googlecodelabs-tools), run inside WSL as root.
+cd /mnt/c/Users/Matthew/hackathons/qnx-2026/site/codelab && rm -rf rust-on-qnx-windows && /root/claat export -f html -o . /mnt/c/Users/Matthew/hackathons/qnx-2026/codelab/rust-on-qnx-windows/rust-on-qnx-windows.md && sed -i '/google-codelab-analytics/d; s#href="//fonts#href="https://fonts#g' rust-on-qnx-windows/index.html

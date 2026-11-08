@@ -1,0 +1,15 @@
+[package]
+name = "rustls-aws-lc"
+version = "0.1.0"
+edition = "2021"
+publish = false
+# rustls with its default aws-lc-rs provider on QNX 8.0. Needs the patched copies (python patches/prepare.py).
+
+[dependencies]
+rustls = "0.23"
+
+[patch.crates-io]
+aws-lc-sys = { path = "../../work/aws-lc-sys-qnx" }
+libc = { path = "../../work/libc-qnx8" }
+
+[workspace]

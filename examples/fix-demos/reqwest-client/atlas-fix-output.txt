@@ -1,0 +1,20 @@
+project      <demos>\reqwest-client
+lockfile     generated
+patch store  <atlas>\work
+before       x86_64-pc-nto-qnx800: FAILS [rustc-too-old] encoding_rs 0.8.44: encoding_rs@0.8.44 requires rustc 1.88
+before       aarch64-unknown-nto-qnx800: FAILS [rustc-too-old] encoding_rs 0.8.44: encoding_rs@0.8.44 requires rustc 1.88
+fix          libc 0.2.191 -> patched 0.2.191: libc 0.2.189+ only knows QNX 8 as target_os="qnx"; the QNX toolchain reports "nto"/"nto80"
+fix          aws-lc-sys 0.47.0 -> patched 0.47.0: qcc rejects --include= and QNX headers need _QNX_SOURCE (aws/aws-lc-rs#1292); the awslc-rs-main copy adds QNX aarch64 CPU detection (aws/aws-lc#3780)
+fix          .cargo/config.toml [resolver] incompatible-rust-versions = "fallback" (pick dependency versions that support the QNX rustc 1.85)
+fix          .cargo/config.toml [build] incremental = false (fewer object files: qcc fails to spawn ld past the Windows command-line limit)
+fix          .cargo/config.toml [profile.dev] codegen-units = 16 (same Windows command-line limit on large dependency graphs)
+changed      <demos>\reqwest-client\.cargo\config.toml
+changed      <demos>\reqwest-client\Cargo.toml: [patch.crates-io] libc = { path = "<atlas>/work/libc-qnx8" }
+changed      <demos>\reqwest-client\Cargo.toml: [patch.crates-io] aws-lc-sys = { path = "<atlas>/work/awslc-rs-main/aws-lc-sys" }
+backup       <demos>\reqwest-client\Cargo.toml.qnx-atlas.bak
+changed      Cargo.lock: libc, aws-lc-sys re-pointed at the patched copies
+verify       x86_64-pc-nto-qnx800: FAILS [rustc-too-old] encoding_rs 0.8.44: encoding_rs@0.8.44 requires rustc 1.88
+verify       aarch64-unknown-nto-qnx800: FAILS [rustc-too-old] encoding_rs 0.8.44: encoding_rs@0.8.44 requires rustc 1.88
+changed      Cargo.lock: re-resolved for rustc 1.85 (a dependency needed a newer rustc)
+verify       x86_64-pc-nto-qnx800: builds (13s)
+verify       aarch64-unknown-nto-qnx800: builds (13s)

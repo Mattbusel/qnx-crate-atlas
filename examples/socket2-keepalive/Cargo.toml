@@ -1,0 +1,15 @@
+[package]
+name = "socket2-keepalive"
+version = "0.1.0"
+edition = "2021"
+publish = false
+# TCP keepalive through socket2 on QNX 8.0. Needs the libc compatibility copy (python patches/prepare.py).
+
+[dependencies]
+socket2 = "0.6"
+libc = "0.2.191"
+
+[patch.crates-io]
+libc = { path = "../../work/libc-qnx8" }
+
+[workspace]

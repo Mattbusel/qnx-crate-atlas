@@ -1,0 +1,15 @@
+[package]
+name = "tokio-net"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+# tokio with every feature (net included) on QNX 8.0. Needs the libc compatibility copy (python patches/prepare.py).
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[patch.crates-io]
+libc = { path = "../../work/libc-qnx8" }
+
+[workspace]

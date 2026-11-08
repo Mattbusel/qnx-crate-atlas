@@ -1,0 +1,53 @@
+From 12b0297916a3e8265cb7351f7bac586e6698be10 Mon Sep 17 00:00:00 2001
+From: Matthew Charles Busel <mattbusel@gmail.com>
+Date: Sat, 7 Nov 2026 18:47:00 -0500
+Subject: [PATCH] cc_builder: build for QNX (nto) targets
+
+qcc, the QNX compiler driver, rejects the GNU long option --include=<file>
+("cc: unknown option"), so every source file compiled by the cc builder
+fails for x86_64-pc-nto-qnx800 and aarch64-unknown-nto-qnx800. Use the
+joined short form -include<file>, which GCC, Clang and qcc all accept.
+
+QNX headers also hide PTHREAD_RWLOCK_INITIALIZER and struct in6_addr
+unless _QNX_SOURCE is defined; define it for target_os nto and qnx.
+---
+ builder/cc_builder.rs | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/builder/cc_builder.rs b/builder/cc_builder.rs
+index e1a128b..8a58ce0 100644
+--- a/builder/cc_builder.rs
++++ b/builder/cc_builder.rs
+@@ -318,6 +318,10 @@ impl CcBuilder {
+             }
+             if target_os() == "linux" || target_os() == "emscripten" {
+                 build_options.push(BuildOption::define("_XOPEN_SOURCE", "700"));
++            } else if target_os() == "nto" || target_os() == "qnx" {
++                // QNX hides POSIX extensions such as PTHREAD_RWLOCK_INITIALIZER and
++                // struct in6_addr unless _QNX_SOURCE is defined.
++                build_options.push(BuildOption::define("_QNX_SOURCE", "1"));
+             } else if target_vendor() != "apple" {
+                 // Needed by illumos
+                 build_options.push(BuildOption::define("__EXTENSIONS__", "1"));
+@@ -490,7 +494,7 @@ impl CcBuilder {
+         let mut je_builder = self.prepare_jitter_entropy_builder(&je_cflags_guards, is_cl_like);
+         je_builder.flag(format!(
+             "{}{}",
+-            if is_cl_like { "/FI" } else { "--include=" },
++            if is_cl_like { "/FI" } else { "-include" },
+             self.manifest_dir
+                 .join("generated-include")
+                 .join("openssl")
+@@ -647,7 +651,8 @@ impl CcBuilder {
+     fn add_all_files(&self, sources: &[&'static str], cc_build: &mut cc::Build) {
+         let is_cl_like = compiler_is_cl_like(&cc_build.get_compiler());
+ 
+-        let force_include_option = if is_cl_like { "/FI" } else { "--include=" };
++        // `-include<file>` (joined) is accepted by GCC, Clang and QNX's qcc driver; qcc rejects `--include=`.
++        let force_include_option = if is_cl_like { "/FI" } else { "-include" };
+         // s2n-bignum is compiled separately due to needing extra flags
+         let mut s2n_bignum_builder = cc_build.clone();
+         s2n_bignum_builder.flag(format!(
+-- 
+2.49.0.windows.1
+

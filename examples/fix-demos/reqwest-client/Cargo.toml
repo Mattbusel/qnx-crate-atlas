@@ -1,0 +1,11 @@
+[package]
+name = "reqwest-client"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+
+[dependencies]
+reqwest = { version = "0.13", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+
+[workspace]

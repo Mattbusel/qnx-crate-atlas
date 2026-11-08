@@ -1,0 +1,8 @@
+{
+  "name": "qnx-crate-atlas-site",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": { "demo": "node scripts/demo/record.mjs" },
+  "devDependencies": { "puppeteer-core": "^24.0.0" }
+}

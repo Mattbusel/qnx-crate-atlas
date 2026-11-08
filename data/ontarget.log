@@ -1,0 +1,69 @@
+built tests  hashbrown 0.17.1 (1 binaries)
+build-failed syn 3.0.9 tokio: E0432 unresolved imports `libc::unpcbid`, `libc::LOCAL_PEEREID`
+built tests  getrandom 0.4.3 (1 binaries)
+built tests  bitflags 2.13.2 (1 binaries)
+built tests  rand_core 0.10.1 (1 binaries)
+built tests  rand 0.10.3 (1 binaries)
+built tests  libc 0.2.186 (1 binaries)
+built tests  quote 1.0.47 (1 binaries)
+built tests  base64 0.23.1 (1 binaries)
+build-failed proc-macro2 1.0.107 filetime: E0425 cannot find function `futimes` in crate `libc`
+built tests  windows-sys 0.61.2 (1 binaries)
+built tests  indexmap 2.14.2 (1 binaries)
+no-tests     thiserror-impl 2.0.21 
+built tests  thiserror 2.0.21 (1 binaries)
+build-failed itertools 0.15.0 getrandom: target is not supported, for more information see: https://docs.rs/getrandom/#unsupported-targets
+build-failed cfg-if 1.0.5 cfg-if: E0658 `cfg(false)` is experimental and subject to change
+built tests  memchr 2.8.3 (1 binaries)
+built tests  regex-syntax 0.8.11 (1 binaries)
+built tests  serde 1.0.229 (1 binaries)
+build-failed unicode-ident 1.0.27 criterion: criterion@0.8.2 requires rustc 1.86
+built tests  rand_chacha 0.10.0 (1 binaries)
+build-failed itoa 1.0.18 criterion: criterion@0.8.2 requires rustc 1.86
+no-tests     serde_derive 1.0.229 
+build-failed serde_json 1.0.154 ar_archive_writer: E0658 `let` expressions in this position are unstable
+built tests  heck 0.5.0 (1 binaries)
+built tests  autocfg 1.5.1 (1 binaries)
+built tests  once_cell 1.21.4 (1 binaries)
+built tests  log 0.4.35 (1 binaries)
+build-failed cc 1.11.1 cc: E0583 file not found for module `apple`
+built tests  regex-automata 0.4.18 (1 binaries)
+built tests  smallvec 1.16.5 (1 binaries)
+built tests  rustix 1.1.6 (1 binaries)
+built tests  regex 1.13.1 (1 binaries)
+built tests  aho-corasick 1.1.5 (1 binaries)
+built tests  digest 0.11.3 (1 binaries)
+build-failed clap 4.6.7 wait-timeout: E0425 cannot find value `SA_RESTART` in crate `libc`
+build-failed ryu 1.0.23 criterion: criterion@0.8.2 requires rustc 1.86
+built tests  block-buffer 0.12.1 (1 binaries)
+built tests  linux-raw-sys 0.12.1 (1 binaries)
+built tests  parking_lot_core 0.9.12 (1 binaries)
+booting QNX 8.0 VM in WSL (Ubuntu-24.04) and running 28 test binaries
+ran on QNX   hashbrown 0.17.1: 105 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   getrandom 0.4.3: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   bitflags 2.13.2: 54 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   rand_core 0.10.1: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   rand 0.10.3: 104 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   libc 0.2.186: 6 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   quote 1.0.47: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   base64 0.23.1: 246 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   windows-sys 0.61.2: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   indexmap 2.14.2: 134 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   thiserror 2.0.21: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   memchr 2.8.3: 142 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   regex-syntax 0.8.11: 147 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   serde 1.0.229: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   rand_chacha 0.10.0: 12 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   heck 0.5.0: 111 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   autocfg 1.5.1: 5 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   once_cell 1.21.4: 5 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   log 0.4.35: 21 passed, 0 failed, 1 ignored, exit ["0"]
+ran on QNX   regex-automata 0.4.18: 204 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   smallvec 1.16.5: 63 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   rustix 1.1.6: 4 passed, 4 failed, 0 ignored, exit ["101"]
+ran on QNX   regex 1.13.1: 7 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   aho-corasick 1.1.5: 163 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   digest 0.11.3: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   block-buffer 0.12.1: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   linux-raw-sys 0.12.1: 0 passed, 0 failed, 0 ignored, exit ["0"]
+ran on QNX   parking_lot_core 0.9.12: 12 passed, 0 failed, 0 ignored, exit ["0"]

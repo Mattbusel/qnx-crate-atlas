@@ -1,0 +1,8 @@
+/target
+/work
+/node_modules
+/demo-out
+*.log
+!data/*.log
+/devpost
+/tests

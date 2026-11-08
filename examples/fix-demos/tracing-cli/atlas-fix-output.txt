@@ -1,0 +1,15 @@
+project      <demos>\tracing-cli
+lockfile     generated
+patch store  <atlas>\work
+before       x86_64-pc-nto-qnx800: FAILS [libc-qnx8-cfg] libc 0.2.191: non-item macro in item position: panic
+before       aarch64-unknown-nto-qnx800: FAILS [libc-qnx8-cfg] libc 0.2.191: non-item macro in item position: panic
+fix          libc 0.2.191 -> patched 0.2.191: libc 0.2.189+ only knows QNX 8 as target_os="qnx"; the QNX toolchain reports "nto"/"nto80"
+fix          .cargo/config.toml [resolver] incompatible-rust-versions = "fallback" (pick dependency versions that support the QNX rustc 1.85)
+fix          .cargo/config.toml [build] incremental = false (fewer object files: qcc fails to spawn ld past the Windows command-line limit)
+fix          .cargo/config.toml [profile.dev] codegen-units = 16 (same Windows command-line limit on large dependency graphs)
+changed      <demos>\tracing-cli\.cargo\config.toml
+changed      <demos>\tracing-cli\Cargo.toml: [patch.crates-io] libc = { path = "<atlas>/work/libc-qnx8" }
+backup       <demos>\tracing-cli\Cargo.toml.qnx-atlas.bak
+changed      Cargo.lock: libc re-pointed at the patched copies
+verify       x86_64-pc-nto-qnx800: builds (1s)
+verify       aarch64-unknown-nto-qnx800: builds (1s)

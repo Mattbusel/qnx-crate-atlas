@@ -1,0 +1,4002 @@
+[
+  {
+    "rank": 1,
+    "name": "hashbrown",
+    "max_version": "0.17.1",
+    "downloads": 3007539375,
+    "description": "A Rust port of Google's SwissTable hash map",
+    "repository": "https://github.com/rust-lang/hashbrown"
+  },
+  {
+    "rank": 2,
+    "name": "syn",
+    "max_version": "3.0.9",
+    "downloads": 2952858630,
+    "description": "Parser for Rust source code",
+    "repository": "https://github.com/dtolnay/syn"
+  },
+  {
+    "rank": 3,
+    "name": "getrandom",
+    "max_version": "0.4.3",
+    "downloads": 2523840901,
+    "description": "A small cross-platform library for retrieving random data from system source",
+    "repository": "https://github.com/rust-random/getrandom"
+  },
+  {
+    "rank": 4,
+    "name": "bitflags",
+    "max_version": "2.13.2",
+    "downloads": 2213206778,
+    "description": "A macro to generate structures which behave like bitflags.",
+    "repository": "https://github.com/bitflags/bitflags"
+  },
+  {
+    "rank": 5,
+    "name": "rand_core",
+    "max_version": "0.10.1",
+    "downloads": 2134342726,
+    "description": "Core random number generator traits and tools for implementation.",
+    "repository": "https://github.com/rust-lang-nursery/rand"
+  },
+  {
+    "rank": 6,
+    "name": "rand",
+    "max_version": "0.10.3",
+    "downloads": 2115174873,
+    "description": "Random number generators and other randomness functionality.",
+    "repository": "https://github.com/rust-random/rand"
+  },
+  {
+    "rank": 7,
+    "name": "libc",
+    "max_version": "0.2.191",
+    "downloads": 1931513150,
+    "description": "Raw FFI bindings to platform libraries like libc.",
+    "repository": "https://github.com/rust-lang/libc"
+  },
+  {
+    "rank": 8,
+    "name": "quote",
+    "max_version": "1.0.47",
+    "downloads": 1917315127,
+    "description": "Quasi-quoting macro quote!(...)",
+    "repository": "https://github.com/dtolnay/quote"
+  },
+  {
+    "rank": 9,
+    "name": "base64",
+    "max_version": "0.23.1",
+    "downloads": 1913553738,
+    "description": "encodes and decodes base64 as bytes or utf8",
+    "repository": "https://github.com/marshallpierce/rust-base64"
+  },
+  {
+    "rank": 10,
+    "name": "proc-macro2",
+    "max_version": "1.0.107",
+    "downloads": 1908039252,
+    "description": "A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.",
+    "repository": "https://github.com/dtolnay/proc-macro2"
+  },
+  {
+    "rank": 11,
+    "name": "windows-sys",
+    "max_version": "0.61.2",
+    "downloads": 1882204959,
+    "description": "Rust for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 12,
+    "name": "indexmap",
+    "max_version": "2.14.2",
+    "downloads": 1841944415,
+    "description": "A hash table with consistent order and fast iteration.",
+    "repository": "https://github.com/indexmap-rs/indexmap"
+  },
+  {
+    "rank": 13,
+    "name": "thiserror-impl",
+    "max_version": "2.0.21",
+    "downloads": 1799198528,
+    "description": "Implementation detail of the `thiserror` crate",
+    "repository": "https://github.com/dtolnay/thiserror"
+  },
+  {
+    "rank": 14,
+    "name": "thiserror",
+    "max_version": "2.0.21",
+    "downloads": 1799033035,
+    "description": "derive(Error)",
+    "repository": "https://github.com/dtolnay/thiserror"
+  },
+  {
+    "rank": 15,
+    "name": "itertools",
+    "max_version": "0.15.0",
+    "downloads": 1797519963,
+    "description": "Extra iterator adaptors, iterator methods, free functions, and macros.",
+    "repository": "https://github.com/rust-itertools/itertools"
+  },
+  {
+    "rank": 16,
+    "name": "cfg-if",
+    "max_version": "1.0.5",
+    "downloads": 1719698986,
+    "description": "A macro to ergonomically define an item depending on a large number of #[cfg] parameters. Structured like an if-else chain, the first matching branch is the item that gets emitted.",
+    "repository": "https://github.com/rust-lang/cfg-if"
+  },
+  {
+    "rank": 17,
+    "name": "memchr",
+    "max_version": "2.8.3",
+    "downloads": 1698301549,
+    "description": "Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for 1, 2 or 3 byte search and single substring search.",
+    "repository": "https://github.com/BurntSushi/memchr"
+  },
+  {
+    "rank": 18,
+    "name": "regex-syntax",
+    "max_version": "0.8.11",
+    "downloads": 1670693794,
+    "description": "A regular expression parser.",
+    "repository": "https://github.com/rust-lang/regex"
+  },
+  {
+    "rank": 19,
+    "name": "serde",
+    "max_version": "1.0.229",
+    "downloads": 1665332828,
+    "description": "A generic serialization/deserialization framework",
+    "repository": "https://github.com/serde-rs/serde"
+  },
+  {
+    "rank": 20,
+    "name": "unicode-ident",
+    "max_version": "1.0.27",
+    "downloads": 1661961510,
+    "description": "Determine whether characters have the XID_Start or XID_Continue properties according to Unicode Standard Annex #31",
+    "repository": "https://github.com/dtolnay/unicode-ident"
+  },
+  {
+    "rank": 21,
+    "name": "rand_chacha",
+    "max_version": "0.10.0",
+    "downloads": 1634648179,
+    "description": "ChaCha random number generator",
+    "repository": "https://github.com/rust-random/rand"
+  },
+  {
+    "rank": 22,
+    "name": "itoa",
+    "max_version": "1.0.18",
+    "downloads": 1603869544,
+    "description": "Fast integer primitive to string conversion",
+    "repository": "https://github.com/dtolnay/itoa"
+  },
+  {
+    "rank": 23,
+    "name": "serde_derive",
+    "max_version": "1.0.229",
+    "downloads": 1581079961,
+    "description": "Macros 1.1 implementation of #[derive(Serialize, Deserialize)]",
+    "repository": "https://github.com/serde-rs/serde"
+  },
+  {
+    "rank": 24,
+    "name": "serde_json",
+    "max_version": "1.0.154",
+    "downloads": 1571089367,
+    "description": "A JSON serialization file format",
+    "repository": "https://github.com/serde-rs/json"
+  },
+  {
+    "rank": 25,
+    "name": "heck",
+    "max_version": "0.5.0",
+    "downloads": 1527050360,
+    "description": "heck is a case conversion library.",
+    "repository": "https://github.com/withoutboats/heck"
+  },
+  {
+    "rank": 26,
+    "name": "autocfg",
+    "max_version": "1.5.1",
+    "downloads": 1524863112,
+    "description": "Automatic cfg for Rust compiler features",
+    "repository": "https://github.com/cuviper/autocfg"
+  },
+  {
+    "rank": 27,
+    "name": "once_cell",
+    "max_version": "1.21.4",
+    "downloads": 1493915920,
+    "description": "Single assignment cells and lazy values.",
+    "repository": "https://github.com/matklad/once_cell"
+  },
+  {
+    "rank": 28,
+    "name": "log",
+    "max_version": "0.4.35",
+    "downloads": 1493858385,
+    "description": "A lightweight logging facade for Rust",
+    "repository": "https://github.com/rust-lang/log"
+  },
+  {
+    "rank": 29,
+    "name": "cc",
+    "max_version": "1.11.1",
+    "downloads": 1478506626,
+    "description": "A build-time dependency for Cargo build scripts to assist in invoking the native C compiler to compile native C code into a static archive to be linked into Rust code.",
+    "repository": "https://github.com/rust-lang/cc-rs"
+  },
+  {
+    "rank": 30,
+    "name": "regex-automata",
+    "max_version": "0.4.18",
+    "downloads": 1472089388,
+    "description": "Automata construction and matching using regular expressions.",
+    "repository": "https://github.com/rust-lang/regex"
+  },
+  {
+    "rank": 31,
+    "name": "socket2",
+    "max_version": "0.6.5",
+    "downloads": 1454132658,
+    "description": "Utilities for handling networking sockets with a maximal amount of configuration possible intended.",
+    "repository": "https://github.com/rust-lang/socket2"
+  },
+  {
+    "rank": 32,
+    "name": "smallvec",
+    "max_version": "1.16.5",
+    "downloads": 1423833455,
+    "description": "'Small vector' optimization: store up to a small number of items on the stack",
+    "repository": "https://github.com/servo/rust-smallvec"
+  },
+  {
+    "rank": 33,
+    "name": "rustix",
+    "max_version": "1.1.6",
+    "downloads": 1368086457,
+    "description": "Safe Rust bindings to POSIX/Unix/Linux/Winsock-like syscalls",
+    "repository": "https://github.com/bytecodealliance/rustix"
+  },
+  {
+    "rank": 34,
+    "name": "regex",
+    "max_version": "1.13.1",
+    "downloads": 1360625077,
+    "description": "An implementation of regular expressions for Rust. This implementation uses finite automata and guarantees linear time matching on all inputs.",
+    "repository": "https://github.com/rust-lang/regex"
+  },
+  {
+    "rank": 35,
+    "name": "aho-corasick",
+    "max_version": "1.1.5",
+    "downloads": 1352717248,
+    "description": "Fast multiple substring searching.",
+    "repository": "https://github.com/BurntSushi/aho-corasick"
+  },
+  {
+    "rank": 36,
+    "name": "digest",
+    "max_version": "0.11.3",
+    "downloads": 1336209244,
+    "description": "Traits for cryptographic hash functions and message authentication codes",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 37,
+    "name": "clap",
+    "max_version": "4.6.7",
+    "downloads": 1313426245,
+    "description": "A simple to use, efficient, and full-featured Command Line Argument Parser",
+    "repository": "https://github.com/clap-rs/clap"
+  },
+  {
+    "rank": 38,
+    "name": "ryu",
+    "max_version": "1.0.23",
+    "downloads": 1312426048,
+    "description": "Fast floating point to string conversion",
+    "repository": "https://github.com/dtolnay/ryu"
+  },
+  {
+    "rank": 39,
+    "name": "block-buffer",
+    "max_version": "0.12.1",
+    "downloads": 1307682960,
+    "description": "Buffer types for block processing of data",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 40,
+    "name": "linux-raw-sys",
+    "max_version": "0.12.1",
+    "downloads": 1290589543,
+    "description": "Generated bindings for Linux's userspace API",
+    "repository": "https://github.com/sunfishcode/linux-raw-sys"
+  },
+  {
+    "rank": 41,
+    "name": "parking_lot_core",
+    "max_version": "0.10.0",
+    "downloads": 1281907440,
+    "description": "An advanced API for creating custom synchronization primitives.",
+    "repository": "https://github.com/Amanieu/parking_lot"
+  },
+  {
+    "rank": 42,
+    "name": "windows_x86_64_msvc",
+    "max_version": "0.53.1",
+    "downloads": 1275085879,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 43,
+    "name": "parking_lot",
+    "max_version": "0.13.0",
+    "downloads": 1250528034,
+    "description": "More compact and efficient implementations of the standard synchronization primitives.",
+    "repository": "https://github.com/Amanieu/parking_lot"
+  },
+  {
+    "rank": 44,
+    "name": "strsim",
+    "max_version": "0.11.1",
+    "downloads": 1250074281,
+    "description": "Implementations of string similarity metrics. Includes Hamming, Levenshtein, OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.",
+    "repository": "https://github.com/rapidfuzz/strsim-rs"
+  },
+  {
+    "rank": 45,
+    "name": "bytes",
+    "max_version": "1.12.1",
+    "downloads": 1245803124,
+    "description": "Types and traits for working with bytes",
+    "repository": "https://github.com/tokio-rs/bytes"
+  },
+  {
+    "rank": 46,
+    "name": "cpufeatures",
+    "max_version": "0.3.1",
+    "downloads": 1241327901,
+    "description": "Lightweight runtime CPU feature detection for aarch64, loongarch64, and x86/x86_64 targets, with no_std support and support for mobile targets including Android and iOS",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 47,
+    "name": "mio",
+    "max_version": "1.2.4",
+    "downloads": 1233904092,
+    "description": "Lightweight non-blocking I/O.",
+    "repository": "https://github.com/tokio-rs/mio"
+  },
+  {
+    "rank": 48,
+    "name": "windows_x86_64_gnu",
+    "max_version": "0.53.1",
+    "downloads": 1228799575,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 49,
+    "name": "pin-project-lite",
+    "max_version": "0.2.17",
+    "downloads": 1226414213,
+    "description": "A lightweight version of pin-project written with declarative macros.",
+    "repository": "https://github.com/taiki-e/pin-project-lite"
+  },
+  {
+    "rank": 50,
+    "name": "http",
+    "max_version": "1.5.0",
+    "downloads": 1222743677,
+    "description": "A set of types for representing HTTP requests and responses.",
+    "repository": "https://github.com/hyperium/http"
+  },
+  {
+    "rank": 51,
+    "name": "windows_aarch64_msvc",
+    "max_version": "0.53.1",
+    "downloads": 1220873227,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 52,
+    "name": "windows-targets",
+    "max_version": "0.53.5",
+    "downloads": 1219040403,
+    "description": "Import libs for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 53,
+    "name": "windows_i686_msvc",
+    "max_version": "0.53.1",
+    "downloads": 1218616644,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 54,
+    "name": "windows_i686_gnu",
+    "max_version": "0.53.1",
+    "downloads": 1216519116,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 55,
+    "name": "version_check",
+    "max_version": "0.9.5",
+    "downloads": 1209480056,
+    "description": "Tiny crate to check the version of the installed/running rustc.",
+    "repository": "https://github.com/SergioBenitez/version_check"
+  },
+  {
+    "rank": 56,
+    "name": "num-traits",
+    "max_version": "0.2.19",
+    "downloads": 1206086552,
+    "description": "Numeric traits for generic mathematics",
+    "repository": "https://github.com/rust-num/num-traits"
+  },
+  {
+    "rank": 57,
+    "name": "either",
+    "max_version": "1.19.0",
+    "downloads": 1199817983,
+    "description": "The enum `Either` with variants `Left` and `Right` is a general purpose sum type with two cases.",
+    "repository": "https://github.com/rayon-rs/either"
+  },
+  {
+    "rank": 58,
+    "name": "sha2",
+    "max_version": "0.11.1",
+    "downloads": 1188594555,
+    "description": "Pure Rust implementation of the SHA-2 hash function family including SHA-224, SHA-256, SHA-384, and SHA-512.",
+    "repository": "https://github.com/RustCrypto/hashes"
+  },
+  {
+    "rank": 59,
+    "name": "semver",
+    "max_version": "1.0.28",
+    "downloads": 1173480043,
+    "description": "Parser and evaluator for Cargo's flavor of Semantic Versioning",
+    "repository": "https://github.com/dtolnay/semver"
+  },
+  {
+    "rank": 60,
+    "name": "windows_aarch64_gnullvm",
+    "max_version": "0.53.1",
+    "downloads": 1166148380,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 61,
+    "name": "windows_x86_64_gnullvm",
+    "max_version": "0.53.1",
+    "downloads": 1166023691,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 62,
+    "name": "tokio",
+    "max_version": "1.54.1",
+    "downloads": 1162432567,
+    "description": "An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.",
+    "repository": "https://github.com/tokio-rs/tokio"
+  },
+  {
+    "rank": 63,
+    "name": "lock_api",
+    "max_version": "0.5.0",
+    "downloads": 1161568614,
+    "description": "Wrappers to create fully-featured Mutex and RwLock types. Compatible with no_std.",
+    "repository": "https://github.com/Amanieu/parking_lot"
+  },
+  {
+    "rank": 64,
+    "name": "lazy_static",
+    "max_version": "1.5.1",
+    "downloads": 1148207821,
+    "description": "A macro for declaring lazily evaluated statics in Rust.",
+    "repository": "https://github.com/rust-lang-nursery/lazy-static.rs"
+  },
+  {
+    "rank": 65,
+    "name": "anyhow",
+    "max_version": "1.0.104",
+    "downloads": 1141472940,
+    "description": "Flexible concrete Error type built on std::error::Error",
+    "repository": "https://github.com/dtolnay/anyhow"
+  },
+  {
+    "rank": 66,
+    "name": "winnow",
+    "max_version": "1.0.5",
+    "downloads": 1137996635,
+    "description": "A byte-oriented, zero-copy, parser combinators library",
+    "repository": "https://github.com/winnow-rs/winnow"
+  },
+  {
+    "rank": 67,
+    "name": "crypto-common",
+    "max_version": "0.2.2",
+    "downloads": 1128944152,
+    "description": "Common traits used by cryptographic algorithms",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 68,
+    "name": "idna",
+    "max_version": "1.1.0",
+    "downloads": 1127004177,
+    "description": "IDNA (Internationalizing Domain Names in Applications) and Punycode.",
+    "repository": "https://github.com/servo/rust-url/"
+  },
+  {
+    "rank": 69,
+    "name": "futures-core",
+    "max_version": "0.3.34",
+    "downloads": 1119527414,
+    "description": "The core traits and types in for the `futures` library.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 70,
+    "name": "zerocopy",
+    "max_version": "0.8.63",
+    "downloads": 1115632625,
+    "description": "Zerocopy makes zero-cost memory manipulation effortless. We write \"unsafe\" so you don't have to.",
+    "repository": "https://github.com/google/zerocopy"
+  },
+  {
+    "rank": 71,
+    "name": "scopeguard",
+    "max_version": "1.2.0",
+    "downloads": 1115447498,
+    "description": "A RAII scope guard that will run a given closure when it goes out of scope, even if the code between panics (assuming unwinding panic). Defines the macros `defer!`, `defer_on_unwind!`, `defer_on_success!` as shorthands for guards with one of the implemented strategies.",
+    "repository": "https://github.com/bluss/scopeguard"
+  },
+  {
+    "rank": 72,
+    "name": "toml",
+    "max_version": "1.2.1+spec-1.1.0",
+    "downloads": 1109395098,
+    "description": "A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for TOML data to facilitate deserializing and serializing Rust structures.",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 73,
+    "name": "slab",
+    "max_version": "0.4.12",
+    "downloads": 1108494661,
+    "description": "Pre-allocated storage for a uniform data type",
+    "repository": "https://github.com/tokio-rs/slab"
+  },
+  {
+    "rank": 74,
+    "name": "futures-util",
+    "max_version": "0.3.34",
+    "downloads": 1105415139,
+    "description": "Common utilities and extension traits for the futures-rs library.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 75,
+    "name": "futures-task",
+    "max_version": "0.3.34",
+    "downloads": 1102887729,
+    "description": "Tools for working with tasks.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 76,
+    "name": "hyper",
+    "max_version": "1.12.0",
+    "downloads": 1099849390,
+    "description": "A protective and efficient HTTP library for all.",
+    "repository": "https://github.com/hyperium/hyper"
+  },
+  {
+    "rank": 77,
+    "name": "rustls",
+    "max_version": "0.23.46",
+    "downloads": 1094331663,
+    "description": "Rustls is a modern TLS library written in Rust.",
+    "repository": "https://github.com/rustls/rustls"
+  },
+  {
+    "rank": 78,
+    "name": "fastrand",
+    "max_version": "2.5.0",
+    "downloads": 1094181101,
+    "description": "A simple and fast random number generator",
+    "repository": "https://github.com/smol-rs/fastrand"
+  },
+  {
+    "rank": 79,
+    "name": "typenum",
+    "max_version": "1.20.1",
+    "downloads": 1089280817,
+    "description": "Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers. It also provides a type-level array of type-level numbers, but its implementation is incomplete.",
+    "repository": "https://github.com/paholg/typenum"
+  },
+  {
+    "rank": 80,
+    "name": "crossbeam-utils",
+    "max_version": "0.8.23",
+    "downloads": 1086454863,
+    "description": "Utilities for concurrent programming",
+    "repository": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "rank": 81,
+    "name": "miniz_oxide",
+    "max_version": "0.9.1",
+    "downloads": 1086101302,
+    "description": "DEFLATE compression and decompression library rewritten in Rust based on miniz",
+    "repository": "https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide"
+  },
+  {
+    "rank": 82,
+    "name": "percent-encoding",
+    "max_version": "2.3.2",
+    "downloads": 1075272285,
+    "description": "Percent encoding and decoding",
+    "repository": "https://github.com/servo/rust-url/"
+  },
+  {
+    "rank": 83,
+    "name": "generic-array",
+    "max_version": "1.4.5",
+    "downloads": 1071222293,
+    "description": "Generic types implementing functionality of arrays",
+    "repository": "https://github.com/fizyk20/generic-array.git"
+  },
+  {
+    "rank": 84,
+    "name": "shlex",
+    "max_version": "2.0.1",
+    "downloads": 1055467988,
+    "description": "Split a string into shell words, like Python's shlex.",
+    "repository": "https://github.com/comex/rust-shlex"
+  },
+  {
+    "rank": 85,
+    "name": "time",
+    "max_version": "0.3.55",
+    "downloads": 1053380814,
+    "description": "Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].",
+    "repository": "https://github.com/time-rs/time"
+  },
+  {
+    "rank": 86,
+    "name": "http-body",
+    "max_version": "1.1.0",
+    "downloads": 1052430587,
+    "description": "Trait representing an asynchronous, streaming, HTTP request or response body.",
+    "repository": "https://github.com/hyperium/http-body"
+  },
+  {
+    "rank": 87,
+    "name": "futures-sink",
+    "max_version": "0.3.34",
+    "downloads": 1049633851,
+    "description": "The asynchronous `Sink` trait for the futures-rs library.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 88,
+    "name": "ppv-lite86",
+    "max_version": "0.2.21",
+    "downloads": 1049201762,
+    "description": "Cross-platform cryptography-oriented low-level SIMD library.",
+    "repository": "https://github.com/cryptocorrosion/cryptocorrosion"
+  },
+  {
+    "rank": 89,
+    "name": "futures-channel",
+    "max_version": "0.3.34",
+    "downloads": 1049150956,
+    "description": "Channels for asynchronous communication using futures-rs.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 90,
+    "name": "url",
+    "max_version": "2.5.8",
+    "downloads": 1040094268,
+    "description": "URL library for Rust, based on the WHATWG URL Standard",
+    "repository": "https://github.com/servo/rust-url"
+  },
+  {
+    "rank": 91,
+    "name": "clap_lex",
+    "max_version": "1.1.1",
+    "downloads": 1034169822,
+    "description": "Minimal, flexible command line parser",
+    "repository": "https://github.com/clap-rs/clap"
+  },
+  {
+    "rank": 92,
+    "name": "tracing-core",
+    "max_version": "0.1.36",
+    "downloads": 1031699748,
+    "description": "Core primitives for application-level tracing.",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 93,
+    "name": "equivalent",
+    "max_version": "1.0.3",
+    "downloads": 1026019405,
+    "description": "Traits for key comparison in maps.",
+    "repository": "https://github.com/indexmap-rs/equivalent"
+  },
+  {
+    "rank": 94,
+    "name": "errno",
+    "max_version": "0.3.14",
+    "downloads": 1024329124,
+    "description": "Cross-platform interface to the `errno` variable.",
+    "repository": "https://github.com/lambda-fairy/rust-errno"
+  },
+  {
+    "rank": 95,
+    "name": "tracing",
+    "max_version": "0.1.44",
+    "downloads": 1021358279,
+    "description": "Application-level tracing for Rust.",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 96,
+    "name": "toml_datetime",
+    "max_version": "1.1.3+spec-1.1.0",
+    "downloads": 1006518144,
+    "description": "A TOML-compatible datetime type",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 97,
+    "name": "toml_edit",
+    "max_version": "0.25.19+spec-1.1.0",
+    "downloads": 999038536,
+    "description": "Yet another format-preserving TOML parser.",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 98,
+    "name": "futures-io",
+    "max_version": "0.3.34",
+    "downloads": 998362504,
+    "description": "The `AsyncRead`, `AsyncWrite`, `AsyncSeek`, and `AsyncBufRead` traits for the futures-rs library.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 99,
+    "name": "rustc-hash",
+    "max_version": "2.1.3",
+    "downloads": 989050664,
+    "description": "A speedy, non-cryptographic hashing algorithm used by rustc",
+    "repository": "https://github.com/rust-lang/rustc-hash"
+  },
+  {
+    "rank": 100,
+    "name": "tempfile",
+    "max_version": "3.27.0",
+    "downloads": 971234750,
+    "description": "A library for managing temporary files and directories.",
+    "repository": "https://github.com/Stebalien/tempfile"
+  },
+  {
+    "rank": 101,
+    "name": "uuid",
+    "max_version": "1.29.1",
+    "downloads": 964977320,
+    "description": "A library to generate and parse UUIDs.",
+    "repository": "https://github.com/uuid-rs/uuid"
+  },
+  {
+    "rank": 102,
+    "name": "form_urlencoded",
+    "max_version": "1.2.2",
+    "downloads": 959667208,
+    "description": "Parser and serializer for the application/x-www-form-urlencoded syntax, as used by HTML forms.",
+    "repository": "https://github.com/servo/rust-url"
+  },
+  {
+    "rank": 103,
+    "name": "chrono",
+    "max_version": "0.4.45",
+    "downloads": 957362131,
+    "description": "Date and time library for Rust",
+    "repository": "https://github.com/chronotope/chrono"
+  },
+  {
+    "rank": 104,
+    "name": "h2",
+    "max_version": "0.4.20",
+    "downloads": 955641010,
+    "description": "An HTTP/2 client and server",
+    "repository": "https://github.com/hyperium/h2"
+  },
+  {
+    "rank": 105,
+    "name": "nix",
+    "max_version": "0.31.3",
+    "downloads": 954876318,
+    "description": "Rust friendly bindings to *nix APIs",
+    "repository": "https://github.com/nix-rust/nix"
+  },
+  {
+    "rank": 106,
+    "name": "tokio-macros",
+    "max_version": "2.7.2",
+    "downloads": 953863245,
+    "description": "Tokio's proc macros.",
+    "repository": "https://github.com/tokio-rs/tokio"
+  },
+  {
+    "rank": 107,
+    "name": "rustls-webpki",
+    "max_version": "0.103.16",
+    "downloads": 951688732,
+    "description": "Web PKI X.509 Certificate Verification.",
+    "repository": "https://github.com/rustls/webpki"
+  },
+  {
+    "rank": 108,
+    "name": "unicode-width",
+    "max_version": "0.2.3",
+    "downloads": 946780361,
+    "description": "Determine displayed width of `char` and `str` types according to Unicode Standard Annex #11 rules.",
+    "repository": "https://github.com/unicode-rs/unicode-width"
+  },
+  {
+    "rank": 109,
+    "name": "fnv",
+    "max_version": "1.0.7",
+    "downloads": 941232981,
+    "description": "Fowler–Noll–Vo hash function",
+    "repository": "https://github.com/servo/rust-fnv"
+  },
+  {
+    "rank": 110,
+    "name": "futures-macro",
+    "max_version": "0.3.34",
+    "downloads": 939732098,
+    "description": "The futures-rs procedural macro implementations.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 111,
+    "name": "rustversion",
+    "max_version": "1.0.23",
+    "downloads": 936701778,
+    "description": "Conditional compilation according to rustc compiler version",
+    "repository": "https://github.com/dtolnay/rustversion"
+  },
+  {
+    "rank": 112,
+    "name": "untrusted",
+    "max_version": "0.9.0",
+    "downloads": 936650731,
+    "description": "Safe, fast, zero-panic, zero-crashing, zero-allocation parsing of untrusted inputs in Rust.",
+    "repository": "https://github.com/briansmith/untrusted"
+  },
+  {
+    "rank": 113,
+    "name": "byteorder",
+    "max_version": "1.5.0",
+    "downloads": 935533331,
+    "description": "Library for reading/writing numbers in big-endian and little-endian.",
+    "repository": "https://github.com/BurntSushi/byteorder"
+  },
+  {
+    "rank": 114,
+    "name": "tokio-util",
+    "max_version": "0.7.20",
+    "downloads": 929947293,
+    "description": "Additional utilities for working with Tokio.",
+    "repository": "https://github.com/tokio-rs/tokio"
+  },
+  {
+    "rank": 115,
+    "name": "futures",
+    "max_version": "0.3.34",
+    "downloads": 921012381,
+    "description": "An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 116,
+    "name": "tokio-rustls",
+    "max_version": "0.26.6",
+    "downloads": 920433732,
+    "description": "Asynchronous TLS/SSL streams for Tokio using Rustls.",
+    "repository": "https://github.com/rustls/tokio-rustls"
+  },
+  {
+    "rank": 117,
+    "name": "pkg-config",
+    "max_version": "0.3.34",
+    "downloads": 917369055,
+    "description": "A library to run the pkg-config system tool at build time in order to be used in Cargo build scripts.",
+    "repository": "https://github.com/rust-lang/pkg-config-rs"
+  },
+  {
+    "rank": 118,
+    "name": "clap_builder",
+    "max_version": "4.6.7",
+    "downloads": 909308465,
+    "description": "A simple to use, efficient, and full-featured Command Line Argument Parser",
+    "repository": "https://github.com/clap-rs/clap"
+  },
+  {
+    "rank": 119,
+    "name": "webpki-roots",
+    "max_version": "1.0.11",
+    "downloads": 903467638,
+    "description": "Mozilla's CA root certificates for use with webpki",
+    "repository": "https://github.com/rustls/webpki-roots"
+  },
+  {
+    "rank": 120,
+    "name": "clap_derive",
+    "max_version": "4.6.7",
+    "downloads": 901714763,
+    "description": "Parse command line argument by defining a struct, derive crate.",
+    "repository": "https://github.com/clap-rs/clap"
+  },
+  {
+    "rank": 121,
+    "name": "darling_core",
+    "max_version": "0.24.1",
+    "downloads": 894625086,
+    "description": "Helper crate for proc-macro library for reading attributes into structs when implementing custom derives. Use https://crates.io/crates/darling in your code.",
+    "repository": "https://github.com/TedDriggs/darling"
+  },
+  {
+    "rank": 122,
+    "name": "tracing-attributes",
+    "max_version": "0.1.31",
+    "downloads": 894482786,
+    "description": "Procedural macro attributes for automatically instrumenting functions.",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 123,
+    "name": "darling_macro",
+    "max_version": "0.24.1",
+    "downloads": 894430910,
+    "description": "Internal support for a proc-macro library for reading attributes into structs when implementing custom derives. Use https://crates.io/crates/darling in your code.",
+    "repository": "https://github.com/TedDriggs/darling"
+  },
+  {
+    "rank": 124,
+    "name": "darling",
+    "max_version": "0.24.1",
+    "downloads": 894416399,
+    "description": "A proc-macro library for reading attributes into structs when implementing custom derives.",
+    "repository": "https://github.com/TedDriggs/darling"
+  },
+  {
+    "rank": 125,
+    "name": "ahash",
+    "max_version": "0.8.12",
+    "downloads": 892717723,
+    "description": "A non-cryptographic hash function using AES-NI for high performance",
+    "repository": "https://github.com/tkaitchuck/ahash"
+  },
+  {
+    "rank": 126,
+    "name": "anstyle",
+    "max_version": "1.0.14",
+    "downloads": 891715829,
+    "description": "ANSI text styling",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 127,
+    "name": "reqwest",
+    "max_version": "0.13.5",
+    "downloads": 886594679,
+    "description": "higher level HTTP client library",
+    "repository": "https://github.com/seanmonstar/reqwest"
+  },
+  {
+    "rank": 128,
+    "name": "futures-executor",
+    "max_version": "0.3.34",
+    "downloads": 886163825,
+    "description": "Executors for asynchronous tasks based on the futures-rs library.",
+    "repository": "https://github.com/rust-lang/futures-rs"
+  },
+  {
+    "rank": 129,
+    "name": "rustc_version",
+    "max_version": "0.4.1",
+    "downloads": 884493770,
+    "description": "A library for querying the version of a installed rustc compiler",
+    "repository": "https://github.com/djc/rustc-version-rs"
+  },
+  {
+    "rank": 130,
+    "name": "ring",
+    "max_version": "0.17.14",
+    "downloads": 881126638,
+    "description": "An experiment.",
+    "repository": "https://github.com/briansmith/ring"
+  },
+  {
+    "rank": 131,
+    "name": "signal-hook-registry",
+    "max_version": "1.4.8",
+    "downloads": 880604867,
+    "description": "Backend crate for signal-hook",
+    "repository": "https://github.com/vorner/signal-hook"
+  },
+  {
+    "rank": 132,
+    "name": "wasi",
+    "max_version": "0.14.7+wasi-0.2.4",
+    "downloads": 878902812,
+    "description": "WASI API bindings for Rust",
+    "repository": "https://github.com/bytecodealliance/wasi-rs"
+  },
+  {
+    "rank": 133,
+    "name": "synstructure",
+    "max_version": "0.14.0",
+    "downloads": 877978505,
+    "description": "Helper methods and macros for custom derives",
+    "repository": "https://github.com/mystor/synstructure"
+  },
+  {
+    "rank": 134,
+    "name": "tinyvec",
+    "max_version": "1.13.3",
+    "downloads": 877444630,
+    "description": "`tinyvec` provides 100% safe vec-like data structures.",
+    "repository": "https://github.com/Lokathor/tinyvec"
+  },
+  {
+    "rank": 135,
+    "name": "nom",
+    "max_version": "8.0.0",
+    "downloads": 870549990,
+    "description": "A byte-oriented, zero-copy, parser combinators library",
+    "repository": "https://github.com/rust-bakery/nom"
+  },
+  {
+    "rank": 136,
+    "name": "httparse",
+    "max_version": "1.10.1",
+    "downloads": 869721570,
+    "description": "A tiny, safe, speedy, zero-copy HTTP/1.x parser.",
+    "repository": "https://github.com/seanmonstar/httparse"
+  },
+  {
+    "rank": 137,
+    "name": "zeroize",
+    "max_version": "1.9.1",
+    "downloads": 855930786,
+    "description": "Securely clear secrets from memory with a simple trait built on stable Rust primitives which guarantee memory is zeroed using an operation will not be 'optimized away' by the compiler. Uses a portable pure Rust implementation that works everywhere, even WASM!",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 138,
+    "name": "subtle",
+    "max_version": "2.6.1",
+    "downloads": 849171642,
+    "description": "Pure-Rust traits and utilities for constant-time cryptographic implementations.",
+    "repository": "https://github.com/dalek-cryptography/subtle"
+  },
+  {
+    "rank": 139,
+    "name": "redox_syscall",
+    "max_version": "0.9.5",
+    "downloads": 847514825,
+    "description": "A Rust library to access raw Redox system calls",
+    "repository": "https://gitlab.redox-os.org/redox-os/kernel"
+  },
+  {
+    "rank": 140,
+    "name": "crc32fast",
+    "max_version": "1.5.4",
+    "downloads": 843151857,
+    "description": "Fast, SIMD-accelerated CRC32 (IEEE) checksum computation",
+    "repository": "https://github.com/srijs/rust-crc32fast"
+  },
+  {
+    "rank": 141,
+    "name": "memoffset",
+    "max_version": "0.9.1",
+    "downloads": 836662075,
+    "description": "offset_of functionality for Rust structs.",
+    "repository": "https://github.com/Gilnaa/memoffset"
+  },
+  {
+    "rank": 142,
+    "name": "flate2",
+    "max_version": "1.1.11",
+    "downloads": 827932830,
+    "description": "DEFLATE compression and decompression exposed as Read/BufRead/Write streams. Supports miniz_oxide and multiple zlib implementations. Supports zlib, gzip, and raw deflate streams.",
+    "repository": "https://github.com/rust-lang/flate2-rs"
+  },
+  {
+    "rank": 143,
+    "name": "time-macros",
+    "max_version": "0.2.32",
+    "downloads": 824405036,
+    "description": "Procedural macros for the time crate. This crate is an implementation detail and should not be relied upon directly.",
+    "repository": "https://github.com/time-rs/time"
+  },
+  {
+    "rank": 144,
+    "name": "num-integer",
+    "max_version": "0.1.47",
+    "downloads": 823261127,
+    "description": "Integer traits and functions",
+    "repository": "https://github.com/rust-num/num-integer"
+  },
+  {
+    "rank": 145,
+    "name": "anstream",
+    "max_version": "1.0.0",
+    "downloads": 822608524,
+    "description": "IO stream adapters for writing colored text that will gracefully degrade according to your terminal's capabilities.",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 146,
+    "name": "thread_local",
+    "max_version": "1.1.10",
+    "downloads": 819846697,
+    "description": "Per-object thread-local storage",
+    "repository": "https://github.com/Amanieu/thread_local-rs"
+  },
+  {
+    "rank": 147,
+    "name": "serde_core",
+    "max_version": "1.0.229",
+    "downloads": 819555444,
+    "description": "Serde traits only, with no support for derive -- use the `serde` crate instead",
+    "repository": "https://github.com/serde-rs/serde"
+  },
+  {
+    "rank": 148,
+    "name": "stable_deref_trait",
+    "max_version": "1.2.1",
+    "downloads": 819260052,
+    "description": "An unsafe marker trait for types like Box and Rc that dereference to a stable address even when moved, and hence can be used with libraries such as owning_ref and rental.",
+    "repository": "https://github.com/storyyeller/stable_deref_trait"
+  },
+  {
+    "rank": 149,
+    "name": "tower",
+    "max_version": "0.5.3",
+    "downloads": 815708189,
+    "description": "Tower is a library of modular and reusable components for building robust clients and servers.",
+    "repository": "https://github.com/tower-rs/tower"
+  },
+  {
+    "rank": 150,
+    "name": "anstyle-parse",
+    "max_version": "1.0.0",
+    "downloads": 807663682,
+    "description": "Parse ANSI Style Escapes",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 151,
+    "name": "iana-time-zone",
+    "max_version": "0.1.65",
+    "downloads": 799845721,
+    "description": "get the IANA time zone for the current system",
+    "repository": "https://github.com/strawlab/iana-time-zone"
+  },
+  {
+    "rank": 152,
+    "name": "crossbeam-epoch",
+    "max_version": "0.9.21",
+    "downloads": 795641860,
+    "description": "Epoch-based garbage collection",
+    "repository": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "rank": 153,
+    "name": "async-trait",
+    "max_version": "0.1.92",
+    "downloads": 793561635,
+    "description": "Type erasure for async trait methods",
+    "repository": "https://github.com/dtolnay/async-trait"
+  },
+  {
+    "rank": 154,
+    "name": "foldhash",
+    "max_version": "0.2.0",
+    "downloads": 791324566,
+    "description": "A fast, non-cryptographic, minimally DoS-resistant hashing algorithm.",
+    "repository": "https://github.com/orlp/foldhash"
+  },
+  {
+    "rank": 155,
+    "name": "time-core",
+    "max_version": "0.1.9",
+    "downloads": 790423194,
+    "description": "This crate is an implementation detail and should not be relied upon directly.",
+    "repository": "https://github.com/time-rs/time"
+  },
+  {
+    "rank": 156,
+    "name": "colorchoice",
+    "max_version": "1.0.5",
+    "downloads": 787855323,
+    "description": "Global override of color control",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 157,
+    "name": "anstyle-query",
+    "max_version": "1.1.5",
+    "downloads": 786149827,
+    "description": "Look up colored console capabilities",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 158,
+    "name": "hyper-rustls",
+    "max_version": "0.27.10",
+    "downloads": 783363678,
+    "description": "Rustls+hyper integration for pure rust HTTPS",
+    "repository": "https://github.com/rustls/hyper-rustls"
+  },
+  {
+    "rank": 159,
+    "name": "spin",
+    "max_version": "0.12.3",
+    "downloads": 783235941,
+    "description": "Spin-based synchronization primitives",
+    "repository": "https://codeberg.org/zesterer/spin"
+  },
+  {
+    "rank": 160,
+    "name": "hex",
+    "max_version": "0.4.3",
+    "downloads": 782337180,
+    "description": "Encoding and decoding data into/from hexadecimal representation.",
+    "repository": "https://github.com/KokaKiwi/rust-hex"
+  },
+  {
+    "rank": 161,
+    "name": "sync_wrapper",
+    "max_version": "1.0.2",
+    "downloads": 782008988,
+    "description": "A tool for enlisting the compiler's help in proving the absence of concurrency",
+    "repository": "https://github.com/Actyx/sync_wrapper"
+  },
+  {
+    "rank": 162,
+    "name": "pin-utils",
+    "max_version": "0.1.1",
+    "downloads": 775141679,
+    "description": "Utilities for pinning",
+    "repository": "https://github.com/rust-lang/pin-utils"
+  },
+  {
+    "rank": 163,
+    "name": "tower-service",
+    "max_version": "0.3.3",
+    "downloads": 772144595,
+    "description": "Trait representing an asynchronous, request / response based, client or server.",
+    "repository": "https://github.com/tower-rs/tower"
+  },
+  {
+    "rank": 164,
+    "name": "want",
+    "max_version": "0.3.2",
+    "downloads": 763092826,
+    "description": "Detect when another Future wants a result.",
+    "repository": "https://github.com/seanmonstar/want"
+  },
+  {
+    "rank": 165,
+    "name": "strum_macros",
+    "max_version": "0.28.0",
+    "downloads": 763065956,
+    "description": "Helpful macros for working with enums and strings",
+    "repository": "https://github.com/Peternator7/strum"
+  },
+  {
+    "rank": 166,
+    "name": "try-lock",
+    "max_version": "0.2.5",
+    "downloads": 759386098,
+    "description": "A lightweight atomic lock.",
+    "repository": "https://github.com/seanmonstar/try-lock"
+  },
+  {
+    "rank": 167,
+    "name": "displaydoc",
+    "max_version": "0.2.7",
+    "downloads": 754847281,
+    "description": "A derive macro for implementing the display Trait via a doc comment and string interpolation",
+    "repository": "https://github.com/yaahc/displaydoc"
+  },
+  {
+    "rank": 168,
+    "name": "strum",
+    "max_version": "0.28.0",
+    "downloads": 754521347,
+    "description": "Helpful macros for working with enums and strings",
+    "repository": "https://github.com/Peternator7/strum"
+  },
+  {
+    "rank": 169,
+    "name": "yoke",
+    "max_version": "0.8.4",
+    "downloads": 753554793,
+    "description": "Abstraction allowing borrowed data to be carried along with the backing data it borrows from",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 170,
+    "name": "tinystr",
+    "max_version": "0.8.5",
+    "downloads": 753417261,
+    "description": "A small ASCII-only bounded length string representation.",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 171,
+    "name": "walkdir",
+    "max_version": "2.5.0",
+    "downloads": 753351893,
+    "description": "Recursively walk a directory.",
+    "repository": "https://github.com/BurntSushi/walkdir"
+  },
+  {
+    "rank": 172,
+    "name": "crossbeam-deque",
+    "max_version": "0.8.8",
+    "downloads": 752307316,
+    "description": "Concurrent work-stealing deque",
+    "repository": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "rank": 173,
+    "name": "tinyvec_macros",
+    "max_version": "0.1.1",
+    "downloads": 751854097,
+    "description": "Some macros for tiny containers",
+    "repository": "https://github.com/Soveu/tinyvec_macros"
+  },
+  {
+    "rank": 174,
+    "name": "utf8parse",
+    "max_version": "0.2.2",
+    "downloads": 749722429,
+    "description": "Table-driven UTF-8 parser",
+    "repository": "https://github.com/alacritty/vte"
+  },
+  {
+    "rank": 175,
+    "name": "zerocopy-derive",
+    "max_version": "0.8.63",
+    "downloads": 746936738,
+    "description": "Custom derive for traits from the zerocopy crate",
+    "repository": "https://github.com/google/zerocopy"
+  },
+  {
+    "rank": 176,
+    "name": "phf_shared",
+    "max_version": "0.14.0",
+    "downloads": 745238010,
+    "description": "Support code shared by PHF libraries",
+    "repository": "https://github.com/rust-phf/rust-phf"
+  },
+  {
+    "rank": 177,
+    "name": "litemap",
+    "max_version": "0.8.3",
+    "downloads": 744441357,
+    "description": "A key-value Map implementation based on a flat, sorted Vec.",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 178,
+    "name": "yoke-derive",
+    "max_version": "0.8.4",
+    "downloads": 743820286,
+    "description": "Custom derive for the yoke crate",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 179,
+    "name": "zerovec",
+    "max_version": "0.11.9",
+    "downloads": 741600800,
+    "description": "Zero-copy vector backed by a byte array",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 180,
+    "name": "icu_properties_data",
+    "max_version": "2.4.0",
+    "downloads": 740410071,
+    "description": "Data for the icu_properties crate",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 181,
+    "name": "icu_provider",
+    "max_version": "2.4.0",
+    "downloads": 738446265,
+    "description": "Trait and struct definitions for the ICU data provider",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 182,
+    "name": "deranged",
+    "max_version": "0.5.9",
+    "downloads": 737799140,
+    "description": "Ranged integers",
+    "repository": "https://github.com/jhpratt/deranged"
+  },
+  {
+    "rank": 183,
+    "name": "mime",
+    "max_version": "0.3.18",
+    "downloads": 737407459,
+    "description": "Strongly Typed Mimes",
+    "repository": "https://github.com/hyperium/mime"
+  },
+  {
+    "rank": 184,
+    "name": "icu_properties",
+    "max_version": "2.4.0",
+    "downloads": 736839233,
+    "description": "Definitions for Unicode properties",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 185,
+    "name": "zerovec-derive",
+    "max_version": "0.11.7",
+    "downloads": 735425683,
+    "description": "Custom derive for the zerovec crate",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 186,
+    "name": "icu_collections",
+    "max_version": "2.4.0",
+    "downloads": 735016647,
+    "description": "Collection of API for use in ICU libraries.",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 187,
+    "name": "writeable",
+    "max_version": "0.6.4",
+    "downloads": 734504411,
+    "description": "A more efficient alternative to fmt::Display",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 188,
+    "name": "same-file",
+    "max_version": "1.0.6",
+    "downloads": 732162382,
+    "description": "A simple crate for determining whether two file paths point to the same file.",
+    "repository": "https://github.com/BurntSushi/same-file"
+  },
+  {
+    "rank": 189,
+    "name": "hmac",
+    "max_version": "0.13.0",
+    "downloads": 731186893,
+    "description": "Generic implementation of Hash-based Message Authentication Code (HMAC)",
+    "repository": "https://github.com/RustCrypto/MACs"
+  },
+  {
+    "rank": 190,
+    "name": "serde_spanned",
+    "max_version": "1.1.3",
+    "downloads": 729817947,
+    "description": "Serde-compatible spanned Value",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 191,
+    "name": "tracing-subscriber",
+    "max_version": "0.3.23",
+    "downloads": 728865051,
+    "description": "Utilities for implementing and composing `tracing` subscribers.",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 192,
+    "name": "icu_normalizer_data",
+    "max_version": "2.4.0",
+    "downloads": 728427982,
+    "description": "Data for the icu_normalizer crate",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 193,
+    "name": "num-bigint",
+    "max_version": "0.5.1",
+    "downloads": 725853163,
+    "description": "Big integer implementation for Rust",
+    "repository": "https://github.com/rust-num/num-bigint"
+  },
+  {
+    "rank": 194,
+    "name": "openssl-probe",
+    "max_version": "0.2.2",
+    "downloads": 725302129,
+    "description": "A library for helping to find system-wide trust anchor (\"root\") certificate locations based on paths typically used by `openssl`.",
+    "repository": "https://github.com/rustls/openssl-probe"
+  },
+  {
+    "rank": 195,
+    "name": "icu_normalizer",
+    "max_version": "2.4.0",
+    "downloads": 724852534,
+    "description": "API for normalizing text into Unicode Normalization Forms",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 196,
+    "name": "zerofrom",
+    "max_version": "0.1.8",
+    "downloads": 723660097,
+    "description": "ZeroFrom trait for constructing",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 197,
+    "name": "zerofrom-derive",
+    "max_version": "0.1.8",
+    "downloads": 716801451,
+    "description": "Custom derive for the zerofrom crate",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 198,
+    "name": "ipnet",
+    "max_version": "2.12.2",
+    "downloads": 714883526,
+    "description": "Provides types and useful methods for working with IPv4 and IPv6 network addresses, commonly called IP prefixes. The new `IpNet`, `Ipv4Net`, and `Ipv6Net` types build on the existing `IpAddr`, `Ipv4Addr`, and `Ipv6Addr` types already provided in Rust's standard library and align to their design to stay consistent. The module also provides useful traits that extend `Ipv4Addr` and `Ipv6Addr` with methods for `Add`, `Sub`, `BitAnd`, and `BitOr` operations. The module only uses stable feature so it is guaranteed to compile using the stable toolchain.",
+    "repository": "https://github.com/krisprice/ipnet"
+  },
+  {
+    "rank": 199,
+    "name": "glob",
+    "max_version": "0.3.4",
+    "downloads": 713103483,
+    "description": "Support for matching file paths against Unix shell style patterns.",
+    "repository": "https://github.com/rust-lang/glob"
+  },
+  {
+    "rank": 200,
+    "name": "httpdate",
+    "max_version": "1.0.3",
+    "downloads": 710174643,
+    "description": "HTTP date parsing and formatting",
+    "repository": "https://github.com/pyfisch/httpdate"
+  },
+  {
+    "rank": 201,
+    "name": "bumpalo",
+    "max_version": "3.20.3",
+    "downloads": 708047482,
+    "description": "A fast bump allocation arena for Rust.",
+    "repository": "https://github.com/fitzgen/bumpalo"
+  },
+  {
+    "rank": 202,
+    "name": "object",
+    "max_version": "0.40.0",
+    "downloads": 701922138,
+    "description": "A unified interface for reading and writing object file formats.",
+    "repository": "https://github.com/gimli-rs/object"
+  },
+  {
+    "rank": 203,
+    "name": "idna_adapter",
+    "max_version": "1.2.2",
+    "downloads": 696231398,
+    "description": "Back end adapter for idna",
+    "repository": "https://github.com/hsivonen/idna_adapter"
+  },
+  {
+    "rank": 204,
+    "name": "prost",
+    "max_version": "0.14.4",
+    "downloads": 694965506,
+    "description": "A Protocol Buffers implementation for the Rust Language.",
+    "repository": "https://github.com/tokio-rs/prost"
+  },
+  {
+    "rank": 205,
+    "name": "phf",
+    "max_version": "0.14.0",
+    "downloads": 694114324,
+    "description": "Runtime support for perfect hash function data structures",
+    "repository": "https://github.com/rust-phf/rust-phf"
+  },
+  {
+    "rank": 206,
+    "name": "unicode-xid",
+    "max_version": "0.2.6",
+    "downloads": 693785635,
+    "description": "Determine whether characters have the XID_Start or XID_Continue properties according to Unicode Standard Annex #31.",
+    "repository": "https://github.com/unicode-rs/unicode-xid"
+  },
+  {
+    "rank": 207,
+    "name": "crossbeam-channel",
+    "max_version": "0.5.17",
+    "downloads": 691857311,
+    "description": "Multi-producer multi-consumer channels for message passing",
+    "repository": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "rank": 208,
+    "name": "num-conv",
+    "max_version": "0.2.2",
+    "downloads": 690220156,
+    "description": "`num_conv` is a crate to convert between integer types without using `as` casts. This provides better certainty when refactoring, makes the exact behavior of code more explicit, and allows using turbofish syntax.",
+    "repository": "https://github.com/jhpratt/num-conv"
+  },
+  {
+    "rank": 209,
+    "name": "prost-derive",
+    "max_version": "0.14.4",
+    "downloads": 682121527,
+    "description": "Generate encoding and decoding implementations for Prost annotated types.",
+    "repository": "https://github.com/tokio-rs/prost"
+  },
+  {
+    "rank": 210,
+    "name": "windows_i686_gnullvm",
+    "max_version": "0.53.1",
+    "downloads": 680312008,
+    "description": "Import lib for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 211,
+    "name": "serde_urlencoded",
+    "max_version": "0.7.1",
+    "downloads": 678691642,
+    "description": "`x-www-form-urlencoded` meets Serde",
+    "repository": "https://github.com/nox/serde_urlencoded"
+  },
+  {
+    "rank": 212,
+    "name": "siphasher",
+    "max_version": "1.0.4",
+    "downloads": 677639277,
+    "description": "SipHash-2-4 and SipHash-1-3 keyed hash functions in pure Rust, with 64-bit and 128-bit output and no_std support",
+    "repository": "https://github.com/jedisct1/rust-siphash"
+  },
+  {
+    "rank": 213,
+    "name": "arrayvec",
+    "max_version": "0.7.8",
+    "downloads": 677292908,
+    "description": "A vector with fixed capacity, backed by an array (it can be stored on the stack too). Implements fixed capacity ArrayVec and ArrayString.",
+    "repository": "https://github.com/bluss/arrayvec"
+  },
+  {
+    "rank": 214,
+    "name": "powerfmt",
+    "max_version": "0.2.1",
+    "downloads": 673515729,
+    "description": "`powerfmt` is a library that provides utilities for formatting values. This crate makes it significantly easier to support filling to a minimum width with alignment, avoid heap allocation, and avoid repetitive calculations.",
+    "repository": "https://github.com/jhpratt/powerfmt"
+  },
+  {
+    "rank": 215,
+    "name": "pin-project-internal",
+    "max_version": "1.1.13",
+    "downloads": 672515808,
+    "description": "Implementation detail of the `pin-project` crate.",
+    "repository": "https://github.com/taiki-e/pin-project"
+  },
+  {
+    "rank": 216,
+    "name": "pin-project",
+    "max_version": "1.1.13",
+    "downloads": 672306784,
+    "description": "A crate for safe and ergonomic pin-projection.",
+    "repository": "https://github.com/taiki-e/pin-project"
+  },
+  {
+    "rank": 217,
+    "name": "jobserver",
+    "max_version": "0.1.35",
+    "downloads": 671238811,
+    "description": "An implementation of the GNU Make jobserver for Rust.",
+    "repository": "https://github.com/rust-lang/jobserver-rs"
+  },
+  {
+    "rank": 218,
+    "name": "rustls-native-certs",
+    "max_version": "0.8.5",
+    "downloads": 666718286,
+    "description": "rustls-native-certs allows rustls to use the platform native certificate store",
+    "repository": "https://github.com/rustls/rustls-native-certs"
+  },
+  {
+    "rank": 219,
+    "name": "unicode-segmentation",
+    "max_version": "1.13.3",
+    "downloads": 666505336,
+    "description": "This crate provides Grapheme Cluster, Word and Sentence boundaries according to Unicode Standard Annex #29 rules.",
+    "repository": "https://github.com/unicode-rs/unicode-segmentation"
+  },
+  {
+    "rank": 220,
+    "name": "unicode-normalization",
+    "max_version": "0.1.26",
+    "downloads": 666118216,
+    "description": "This crate provides functions for normalization of Unicode strings, including Canonical and Compatible Decomposition and Recomposition, as described in Unicode Standard Annex #15.",
+    "repository": "https://github.com/unicode-rs/unicode-normalization"
+  },
+  {
+    "rank": 221,
+    "name": "num_cpus",
+    "max_version": "1.17.0",
+    "downloads": 662172012,
+    "description": "Get the number of CPUs on a machine.",
+    "repository": "https://github.com/seanmonstar/num_cpus"
+  },
+  {
+    "rank": 222,
+    "name": "sha1",
+    "max_version": "0.11.0",
+    "downloads": 659913732,
+    "description": "SHA-1 hash function",
+    "repository": "https://github.com/RustCrypto/hashes"
+  },
+  {
+    "rank": 223,
+    "name": "find-msvc-tools",
+    "max_version": "0.1.15",
+    "downloads": 658296926,
+    "description": "Find windows-specific tools, read MSVC versions from the registry and from COM interfaces",
+    "repository": "https://github.com/rust-lang/cc-rs"
+  },
+  {
+    "rank": 224,
+    "name": "rustls-pki-types",
+    "max_version": "1.15.1",
+    "downloads": 657560400,
+    "description": "Shared types for the rustls PKI ecosystem",
+    "repository": "https://github.com/rustls/pki-types"
+  },
+  {
+    "rank": 225,
+    "name": "sharded-slab",
+    "max_version": "0.1.7",
+    "downloads": 656663320,
+    "description": "A lock-free concurrent slab.",
+    "repository": "https://github.com/hawkw/sharded-slab"
+  },
+  {
+    "rank": 226,
+    "name": "is_terminal_polyfill",
+    "max_version": "1.70.2",
+    "downloads": 656623016,
+    "description": "Polyfill for `is_terminal` stdlib feature for use with older MSRVs",
+    "repository": "https://github.com/polyfill-rs/is_terminal_polyfill"
+  },
+  {
+    "rank": 227,
+    "name": "adler2",
+    "max_version": "2.0.1",
+    "downloads": 655792583,
+    "description": "A simple clean-room implementation of the Adler-32 checksum",
+    "repository": "https://github.com/oyvindln/adler2"
+  },
+  {
+    "rank": 228,
+    "name": "utf8_iter",
+    "max_version": "1.1.0",
+    "downloads": 655784070,
+    "description": "Iterator by char over potentially-invalid UTF-8 in &[u8]",
+    "repository": "https://github.com/hsivonen/utf8_iter"
+  },
+  {
+    "rank": 229,
+    "name": "cfg_aliases",
+    "max_version": "0.2.2",
+    "downloads": 652685126,
+    "description": "A tiny utility to help save you a lot of effort with long winded `#[cfg()]` checks.",
+    "repository": "https://github.com/katharostech/cfg_aliases"
+  },
+  {
+    "rank": 230,
+    "name": "zmij",
+    "max_version": "1.0.23",
+    "downloads": 652472774,
+    "description": "A double-to-string conversion algorithm based on Schubfach and xjb",
+    "repository": "https://github.com/dtolnay/zmij"
+  },
+  {
+    "rank": 231,
+    "name": "tracing-log",
+    "max_version": "0.2.0",
+    "downloads": 652408204,
+    "description": "Provides compatibility between `tracing` and the `log` crate.",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 232,
+    "name": "rayon",
+    "max_version": "1.12.0",
+    "downloads": 651704628,
+    "description": "Simple work-stealing parallelism for Rust",
+    "repository": "https://github.com/rayon-rs/rayon"
+  },
+  {
+    "rank": 233,
+    "name": "proc-macro-crate",
+    "max_version": "3.5.0",
+    "downloads": 643066920,
+    "description": "Replacement for crate (macro_rules keyword) in proc-macros",
+    "repository": "https://github.com/bkchr/proc-macro-crate"
+  },
+  {
+    "rank": 234,
+    "name": "tower-layer",
+    "max_version": "0.3.3",
+    "downloads": 641573401,
+    "description": "Decorates a `Service` to allow easy composition between `Service`s.",
+    "repository": "https://github.com/tower-rs/tower"
+  },
+  {
+    "rank": 235,
+    "name": "wasm-bindgen",
+    "max_version": "0.2.130",
+    "downloads": 641511482,
+    "description": "Easy support for interacting between JS and Rust.",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen"
+  },
+  {
+    "rank": 236,
+    "name": "wasm-bindgen-macro-support",
+    "max_version": "0.2.130",
+    "downloads": 640731417,
+    "description": "Implementation APIs for the `#[wasm_bindgen]` attribute",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/main/crates/macro-support"
+  },
+  {
+    "rank": 237,
+    "name": "wasm-bindgen-macro",
+    "max_version": "0.2.130",
+    "downloads": 640677584,
+    "description": "Definition of the `#[wasm_bindgen]` attribute, an internal dependency",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro"
+  },
+  {
+    "rank": 238,
+    "name": "wasm-bindgen-shared",
+    "max_version": "0.2.130",
+    "downloads": 640112065,
+    "description": "Shared support between wasm-bindgen and wasm-bindgen cli, an internal dependency.",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared"
+  },
+  {
+    "rank": 239,
+    "name": "rayon-core",
+    "max_version": "1.13.0",
+    "downloads": 639674880,
+    "description": "Core APIs for Rayon",
+    "repository": "https://github.com/rayon-rs/rayon"
+  },
+  {
+    "rank": 240,
+    "name": "nu-ansi-term",
+    "max_version": "0.50.3",
+    "downloads": 635340156,
+    "description": "Library for ANSI terminal colors and styles (bold, underline)",
+    "repository": "https://github.com/nushell/nu-ansi-term"
+  },
+  {
+    "rank": 241,
+    "name": "convert_case",
+    "max_version": "0.12.0",
+    "downloads": 632683540,
+    "description": "Convert strings into any case",
+    "repository": "https://github.com/rutrum/convert-case"
+  },
+  {
+    "rank": 242,
+    "name": "gimli",
+    "max_version": "0.34.0",
+    "downloads": 632611638,
+    "description": "A library for reading and writing the DWARF debugging format.",
+    "repository": "https://github.com/gimli-rs/gimli"
+  },
+  {
+    "rank": 243,
+    "name": "rustc-demangle",
+    "max_version": "0.1.28",
+    "downloads": 631032816,
+    "description": "Rust compiler symbol demangling.",
+    "repository": "https://github.com/rust-lang/rustc-demangle"
+  },
+  {
+    "rank": 244,
+    "name": "event-listener",
+    "max_version": "5.4.2",
+    "downloads": 629947920,
+    "description": "Notify async tasks or threads",
+    "repository": "https://github.com/smol-rs/event-listener"
+  },
+  {
+    "rank": 245,
+    "name": "encoding_rs",
+    "max_version": "0.8.44",
+    "downloads": 625925236,
+    "description": "A Gecko-oriented implementation of the Encoding Standard",
+    "repository": "https://github.com/hsivonen/encoding_rs"
+  },
+  {
+    "rank": 246,
+    "name": "schemars",
+    "max_version": "1.2.3",
+    "downloads": 625707921,
+    "description": "Generate JSON Schemas from Rust code",
+    "repository": "https://github.com/GREsau/schemars"
+  },
+  {
+    "rank": 247,
+    "name": "minimal-lexical",
+    "max_version": "0.2.1",
+    "downloads": 624180742,
+    "description": "Fast float parsing conversion routines.",
+    "repository": "https://github.com/Alexhuszagh/minimal-lexical"
+  },
+  {
+    "rank": 248,
+    "name": "libloading",
+    "max_version": "0.9.0",
+    "downloads": 622932472,
+    "description": "Bindings around the platform's dynamic library loading primitives with greatly improved memory safety.",
+    "repository": "https://github.com/nagisa/rust_libloading/"
+  },
+  {
+    "rank": 249,
+    "name": "env_logger",
+    "max_version": "0.11.11",
+    "downloads": 619341344,
+    "description": "A logging implementation for `log` which is configured via an environment variable.",
+    "repository": "https://github.com/rust-cli/env_logger"
+  },
+  {
+    "rank": 250,
+    "name": "hyper-util",
+    "max_version": "0.1.21",
+    "downloads": 613503837,
+    "description": "hyper utilities",
+    "repository": "https://github.com/hyperium/hyper-util"
+  },
+  {
+    "rank": 251,
+    "name": "const-oid",
+    "max_version": "0.10.2",
+    "downloads": 612991118,
+    "description": "Const-friendly implementation of the ISO/IEC Object Identifier (OID) standard as defined in ITU X.660, with support for BER/DER encoding/decoding as well as heapless no_std (i.e. embedded) support",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 252,
+    "name": "hermit-abi",
+    "max_version": "0.5.3",
+    "downloads": 612829087,
+    "description": "Hermit system calls definitions.",
+    "repository": "https://github.com/hermit-os/hermit-rs"
+  },
+  {
+    "rank": 253,
+    "name": "atomic-waker",
+    "max_version": "1.1.2",
+    "downloads": 607491917,
+    "description": "A synchronization primitive for task wakeup",
+    "repository": "https://github.com/smol-rs/atomic-waker"
+  },
+  {
+    "rank": 254,
+    "name": "petgraph",
+    "max_version": "0.8.3",
+    "downloads": 600726681,
+    "description": "Graph data structure library. Provides graph types and graph algorithms.",
+    "repository": "https://github.com/petgraph/petgraph"
+  },
+  {
+    "rank": 255,
+    "name": "paste",
+    "max_version": "1.0.15",
+    "downloads": 599807317,
+    "description": "Macros for all your token pasting needs",
+    "repository": "https://github.com/dtolnay/paste"
+  },
+  {
+    "rank": 256,
+    "name": "http-body-util",
+    "max_version": "0.1.5",
+    "downloads": 597466339,
+    "description": "Combinators and adapters for HTTP request or response bodies.",
+    "repository": "https://github.com/hyperium/http-body"
+  },
+  {
+    "rank": 257,
+    "name": "tower-http",
+    "max_version": "0.7.1",
+    "downloads": 597339970,
+    "description": "Tower middleware and utilities for HTTP clients and servers",
+    "repository": "https://github.com/tower-rs/tower-http"
+  },
+  {
+    "rank": 258,
+    "name": "js-sys",
+    "max_version": "0.3.107",
+    "downloads": 597034961,
+    "description": "Bindings for all JS global objects and functions in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the `wasm-bindgen` crate.",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys"
+  },
+  {
+    "rank": 259,
+    "name": "prettyplease",
+    "max_version": "0.3.0",
+    "downloads": 593145529,
+    "description": "A minimal `syn` syntax tree pretty-printer",
+    "repository": "https://github.com/dtolnay/prettyplease"
+  },
+  {
+    "rank": 260,
+    "name": "static_assertions",
+    "max_version": "1.1.0",
+    "downloads": 593021587,
+    "description": "Compile-time assertions to ensure that invariants are met.",
+    "repository": "https://github.com/nvzqz/static-assertions-rs"
+  },
+  {
+    "rank": 261,
+    "name": "allocator-api2",
+    "max_version": "0.4.0",
+    "downloads": 592173687,
+    "description": "Mirror of Rust's allocator API",
+    "repository": "https://github.com/zakarumych/allocator-api2"
+  },
+  {
+    "rank": 262,
+    "name": "fixedbitset",
+    "max_version": "0.5.7",
+    "downloads": 590980995,
+    "description": "FixedBitSet is a simple bitset collection",
+    "repository": "https://github.com/petgraph/fixedbitset"
+  },
+  {
+    "rank": 263,
+    "name": "rustls-pemfile",
+    "max_version": "2.2.0",
+    "downloads": 585370462,
+    "description": "Basic .pem file parser for keys and certificates",
+    "repository": "https://github.com/rustls/pemfile"
+  },
+  {
+    "rank": 264,
+    "name": "matchers",
+    "max_version": "0.2.0",
+    "downloads": 584550962,
+    "description": "Regex matching on character and byte streams.",
+    "repository": "https://github.com/hawkw/matchers"
+  },
+  {
+    "rank": 265,
+    "name": "derive_more",
+    "max_version": "2.1.1",
+    "downloads": 581032161,
+    "description": "Adds #[derive(x)] macros for more traits",
+    "repository": "https://github.com/JelteF/derive_more"
+  },
+  {
+    "rank": 266,
+    "name": "libm",
+    "max_version": "0.2.16",
+    "downloads": 575117938,
+    "description": "libm in pure Rust",
+    "repository": "https://github.com/rust-lang/compiler-builtins"
+  },
+  {
+    "rank": 267,
+    "name": "addr2line",
+    "max_version": "0.27.1",
+    "downloads": 574920879,
+    "description": "A cross-platform symbolication library written in Rust, using `gimli`",
+    "repository": "https://github.com/gimli-rs/addr2line"
+  },
+  {
+    "rank": 268,
+    "name": "axum",
+    "max_version": "0.8.9",
+    "downloads": 574807057,
+    "description": "HTTP routing and request handling library that focuses on ergonomics and modularity",
+    "repository": "https://github.com/tokio-rs/axum"
+  },
+  {
+    "rank": 269,
+    "name": "vcpkg",
+    "max_version": "0.2.15",
+    "downloads": 574157914,
+    "description": "A library to find native dependencies in a vcpkg tree at build time in order to be used in Cargo build scripts.",
+    "repository": "https://github.com/mcgoo/vcpkg-rs"
+  },
+  {
+    "rank": 270,
+    "name": "termcolor",
+    "max_version": "1.4.1",
+    "downloads": 573713641,
+    "description": "A simple cross platform library for writing colored text to a terminal.",
+    "repository": "https://github.com/BurntSushi/termcolor"
+  },
+  {
+    "rank": 271,
+    "name": "unicode-bidi",
+    "max_version": "0.3.18",
+    "downloads": 572437806,
+    "description": "Implementation of the Unicode Bidirectional Algorithm",
+    "repository": "https://github.com/servo/unicode-bidi"
+  },
+  {
+    "rank": 272,
+    "name": "portable-atomic",
+    "max_version": "1.15.0",
+    "downloads": 571276189,
+    "description": "Portable atomic types including support for 128-bit atomics, atomic float, etc.",
+    "repository": "https://github.com/taiki-e/portable-atomic"
+  },
+  {
+    "rank": 273,
+    "name": "axum-core",
+    "max_version": "0.5.6",
+    "downloads": 569354017,
+    "description": "Core types and traits for axum",
+    "repository": "https://github.com/tokio-rs/axum"
+  },
+  {
+    "rank": 274,
+    "name": "tokio-stream",
+    "max_version": "0.1.19",
+    "downloads": 568487431,
+    "description": "Utilities to work with `Stream` and `tokio`.",
+    "repository": "https://github.com/tokio-rs/tokio"
+  },
+  {
+    "rank": 275,
+    "name": "winapi",
+    "max_version": "0.3.9",
+    "downloads": 568074701,
+    "description": "Raw FFI bindings for all of Windows API.",
+    "repository": "https://github.com/retep998/winapi-rs"
+  },
+  {
+    "rank": 276,
+    "name": "ident_case",
+    "max_version": "1.0.1",
+    "downloads": 565024721,
+    "description": "Utility for applying case rules to Rust identifiers.",
+    "repository": "https://github.com/TedDriggs/ident_case"
+  },
+  {
+    "rank": 277,
+    "name": "der",
+    "max_version": "0.8.3",
+    "downloads": 563119272,
+    "description": "Pure Rust embedded-friendly implementation of the Distinguished Encoding Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless `no_std`/`no_alloc` targets",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 278,
+    "name": "bit-vec",
+    "max_version": "0.10.1",
+    "downloads": 555641498,
+    "description": "A vector of bits",
+    "repository": "https://github.com/contain-rs/bit-vec"
+  },
+  {
+    "rank": 279,
+    "name": "zerotrie",
+    "max_version": "0.2.5",
+    "downloads": 555352670,
+    "description": "A data structure that efficiently maps strings to integers",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 280,
+    "name": "half",
+    "max_version": "2.7.1",
+    "downloads": 554958546,
+    "description": "Half-precision floating point f16 and bf16 types for Rust implementing the IEEE 754-2008 standard binary16 and bfloat16 types.",
+    "repository": "https://github.com/VoidStarKat/half-rs"
+  },
+  {
+    "rank": 281,
+    "name": "phf_generator",
+    "max_version": "0.14.0",
+    "downloads": 552741810,
+    "description": "PHF generation logic",
+    "repository": "https://github.com/rust-phf/rust-phf"
+  },
+  {
+    "rank": 282,
+    "name": "icu_locale_core",
+    "max_version": "2.4.0",
+    "downloads": 551554945,
+    "description": "API for managing Unicode Language and Locale Identifiers",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 283,
+    "name": "potential_utf",
+    "max_version": "0.1.6",
+    "downloads": 551395160,
+    "description": "Unvalidated string and character types",
+    "repository": "https://github.com/unicode-org/icu4x"
+  },
+  {
+    "rank": 284,
+    "name": "windows-link",
+    "max_version": "0.100.0",
+    "downloads": 548042707,
+    "description": "Linking for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 285,
+    "name": "matchit",
+    "max_version": "0.9.2",
+    "downloads": 546351705,
+    "description": "A high performance, zero-copy URL router.",
+    "repository": "https://github.com/ibraheemdev/matchit"
+  },
+  {
+    "rank": 286,
+    "name": "backtrace",
+    "max_version": "0.3.77",
+    "downloads": 544633349,
+    "description": "A library to acquire a stack trace (backtrace) at runtime in a Rust program.",
+    "repository": "https://github.com/rust-lang/backtrace-rs"
+  },
+  {
+    "rank": 287,
+    "name": "core-foundation",
+    "max_version": "0.10.1",
+    "downloads": 541675282,
+    "description": "Bindings to Core Foundation for macOS",
+    "repository": "https://github.com/servo/core-foundation-rs"
+  },
+  {
+    "rank": 288,
+    "name": "prost-types",
+    "max_version": "0.14.4",
+    "downloads": 539625563,
+    "description": "Prost definitions of Protocol Buffers well known types.",
+    "repository": "https://github.com/tokio-rs/prost"
+  },
+  {
+    "rank": 289,
+    "name": "signature",
+    "max_version": "3.0.0",
+    "downloads": 534164774,
+    "description": "Traits for cryptographic signature algorithms (e.g. ECDSA, Ed25519)",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 290,
+    "name": "ordered-float",
+    "max_version": "5.5.1",
+    "downloads": 532683728,
+    "description": "Wrappers for total ordering on floats",
+    "repository": "https://github.com/reem/rust-ordered-float"
+  },
+  {
+    "rank": 291,
+    "name": "quick-xml",
+    "max_version": "0.42.0",
+    "downloads": 530341533,
+    "description": "High performance xml reader and writer",
+    "repository": "https://github.com/tafia/quick-xml"
+  },
+  {
+    "rank": 292,
+    "name": "windows-core",
+    "max_version": "0.100.0",
+    "downloads": 528649707,
+    "description": "Core type support for COM and Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 293,
+    "name": "simd-adler32",
+    "max_version": "0.3.10",
+    "downloads": 517898186,
+    "description": "A SIMD-accelerated Adler-32 hash algorithm implementation.",
+    "repository": "https://github.com/mcountryman/simd-adler32"
+  },
+  {
+    "rank": 294,
+    "name": "spki",
+    "max_version": "0.8.1",
+    "downloads": 513626774,
+    "description": "X.509 Subject Public Key Info (RFC5280) describing public keys as well as their associated AlgorithmIdentifiers (i.e. OIDs)",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 295,
+    "name": "data-encoding",
+    "max_version": "2.11.1",
+    "downloads": 512577525,
+    "description": "Efficient and customizable data-encoding functions like base64, base32, and hex",
+    "repository": "https://github.com/ia0/data-encoding"
+  },
+  {
+    "rank": 296,
+    "name": "openssl-sys",
+    "max_version": "0.9.118",
+    "downloads": 506079980,
+    "description": "FFI bindings to OpenSSL",
+    "repository": "https://github.com/rust-openssl/rust-openssl"
+  },
+  {
+    "rank": 297,
+    "name": "bit-set",
+    "max_version": "0.11.1",
+    "downloads": 503833501,
+    "description": "A set of bits",
+    "repository": "https://github.com/contain-rs/bit-vec"
+  },
+  {
+    "rank": 298,
+    "name": "foreign-types",
+    "max_version": "0.5.0",
+    "downloads": 499088673,
+    "description": "A framework for Rust wrappers over C APIs",
+    "repository": "https://github.com/sfackler/foreign-types"
+  },
+  {
+    "rank": 299,
+    "name": "foreign-types-shared",
+    "max_version": "0.3.1",
+    "downloads": 498426862,
+    "description": "An internal crate used by foreign-types",
+    "repository": "https://github.com/sfackler/foreign-types"
+  },
+  {
+    "rank": 300,
+    "name": "bstr",
+    "max_version": "1.13.1",
+    "downloads": 497020677,
+    "description": "A string type that is not required to be valid UTF-8.",
+    "repository": "https://github.com/BurntSushi/bstr"
+  },
+  {
+    "rank": 301,
+    "name": "core-foundation-sys",
+    "max_version": "0.8.7",
+    "downloads": 493246837,
+    "description": "Bindings to Core Foundation for macOS",
+    "repository": "https://github.com/servo/core-foundation-rs"
+  },
+  {
+    "rank": 302,
+    "name": "pkcs8",
+    "max_version": "0.11.0",
+    "downloads": 490375997,
+    "description": "Pure Rust implementation of Public-Key Cryptography Standards (PKCS) #8: Private-Key Information Syntax Specification (RFC 5208), with additional support for PKCS#8v2 asymmetric key packages (RFC 5958)",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 303,
+    "name": "base64ct",
+    "max_version": "1.8.3",
+    "downloads": 489757456,
+    "description": "Pure Rust implementation of Base64 (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides portable \"best effort\" constant-time operation and embedded-friendly no_std support",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 304,
+    "name": "home",
+    "max_version": "0.5.12",
+    "downloads": 489509845,
+    "description": "Shared definitions of home directories.",
+    "repository": "https://github.com/rust-lang/cargo"
+  },
+  {
+    "rank": 305,
+    "name": "humantime",
+    "max_version": "2.4.0",
+    "downloads": 486553869,
+    "description": "A parser and formatter for std::time::{Duration, SystemTime}",
+    "repository": "https://github.com/chronotope/humantime"
+  },
+  {
+    "rank": 306,
+    "name": "r-efi",
+    "max_version": "7.1.0",
+    "downloads": 485476720,
+    "description": "UEFI Reference Specification Protocol Constants and Definitions",
+    "repository": "https://github.com/r-efi/r-efi"
+  },
+  {
+    "rank": 307,
+    "name": "winapi-util",
+    "max_version": "0.1.11",
+    "downloads": 479180801,
+    "description": "A dumping ground for high level safe wrappers over windows-sys.",
+    "repository": "https://github.com/BurntSushi/winapi-util"
+  },
+  {
+    "rank": 308,
+    "name": "zstd-safe",
+    "max_version": "8.2.0",
+    "downloads": 477961967,
+    "description": "Safe low-level bindings for the zstd compression library.",
+    "repository": "https://github.com/gyscos/zstd-rs"
+  },
+  {
+    "rank": 309,
+    "name": "unicase",
+    "max_version": "2.10.0",
+    "downloads": 477509399,
+    "description": "A case-insensitive wrapper around strings.",
+    "repository": "https://github.com/seanmonstar/unicase"
+  },
+  {
+    "rank": 310,
+    "name": "which",
+    "max_version": "8.0.6",
+    "downloads": 472313387,
+    "description": "A Rust equivalent of Unix command \"which\". Locate installed executable in cross platforms.",
+    "repository": "https://github.com/harryfei/which-rs.git"
+  },
+  {
+    "rank": 311,
+    "name": "winapi-x86_64-pc-windows-gnu",
+    "max_version": "0.4.0",
+    "downloads": 471476083,
+    "description": "Import libraries for the x86_64-pc-windows-gnu target. Please don't use this crate directly, depend on winapi instead.",
+    "repository": "https://github.com/retep998/winapi-rs"
+  },
+  {
+    "rank": 312,
+    "name": "winapi-i686-pc-windows-gnu",
+    "max_version": "0.4.0",
+    "downloads": 468941987,
+    "description": "Import libraries for the i686-pc-windows-gnu target. Please don't use this crate directly, depend on winapi instead.",
+    "repository": "https://github.com/retep998/winapi-rs"
+  },
+  {
+    "rank": 313,
+    "name": "textwrap",
+    "max_version": "0.16.4",
+    "downloads": 468188721,
+    "description": "Library for word wrapping, indenting, and dedenting strings. Has optional support for Unicode and emojis as well as machine hyphenation.",
+    "repository": "https://github.com/mgeisler/textwrap"
+  },
+  {
+    "rank": 314,
+    "name": "zstd",
+    "max_version": "0.14.3",
+    "downloads": 467329026,
+    "description": "Binding for the zstd compression library.",
+    "repository": "https://github.com/gyscos/zstd-rs"
+  },
+  {
+    "rank": 315,
+    "name": "serde_yaml",
+    "max_version": "0.9.34+deprecated",
+    "downloads": 463547581,
+    "description": "YAML data format for Serde",
+    "repository": "https://github.com/dtolnay/serde-yaml"
+  },
+  {
+    "rank": 316,
+    "name": "tonic",
+    "max_version": "0.14.9",
+    "downloads": 463447551,
+    "description": "A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.",
+    "repository": "https://github.com/grpc/grpc-rust"
+  },
+  {
+    "rank": 317,
+    "name": "bytemuck",
+    "max_version": "1.25.2",
+    "downloads": 461664910,
+    "description": "A crate for mucking around with piles of bytes.",
+    "repository": "https://github.com/Lokathor/bytemuck"
+  },
+  {
+    "rank": 318,
+    "name": "web-sys",
+    "max_version": "0.3.107",
+    "downloads": 459935897,
+    "description": "Bindings for all Web APIs, a procedurally generated crate from WebIDL",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/web-sys"
+  },
+  {
+    "rank": 319,
+    "name": "num-complex",
+    "max_version": "0.4.6",
+    "downloads": 459137144,
+    "description": "Complex numbers implementation for Rust",
+    "repository": "https://github.com/rust-num/num-complex"
+  },
+  {
+    "rank": 320,
+    "name": "num-rational",
+    "max_version": "0.4.2",
+    "downloads": 456399673,
+    "description": "Rational numbers implementation for Rust",
+    "repository": "https://github.com/rust-num/num-rational"
+  },
+  {
+    "rank": 321,
+    "name": "windows-result",
+    "max_version": "0.100.0",
+    "downloads": 456281063,
+    "description": "Windows error handling",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 322,
+    "name": "cipher",
+    "max_version": "0.5.2",
+    "downloads": 455195897,
+    "description": "Traits for describing block ciphers and stream ciphers",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 323,
+    "name": "bindgen",
+    "max_version": "0.73.2",
+    "downloads": 454285481,
+    "description": "Automatically generates Rust FFI bindings to C and C++ libraries.",
+    "repository": "https://github.com/rust-lang/rust-bindgen"
+  },
+  {
+    "rank": 324,
+    "name": "openssl",
+    "max_version": "0.10.82",
+    "downloads": 451409139,
+    "description": "OpenSSL bindings",
+    "repository": "https://github.com/rust-openssl/rust-openssl"
+  },
+  {
+    "rank": 325,
+    "name": "num-iter",
+    "max_version": "0.1.46",
+    "downloads": 450609389,
+    "description": "External iterators for generic mathematics",
+    "repository": "https://github.com/rust-num/num-iter"
+  },
+  {
+    "rank": 326,
+    "name": "quick-error",
+    "max_version": "2.0.1",
+    "downloads": 450101801,
+    "description": "A macro which makes error types pleasant to write.",
+    "repository": "http://github.com/tailhook/quick-error"
+  },
+  {
+    "rank": 327,
+    "name": "filetime",
+    "max_version": "0.2.29",
+    "downloads": 449871269,
+    "description": "Platform-agnostic accessors of timestamps in File metadata",
+    "repository": "https://github.com/alexcrichton/filetime"
+  },
+  {
+    "rank": 328,
+    "name": "md-5",
+    "max_version": "0.11.0",
+    "downloads": 448253082,
+    "description": "MD5 hash function",
+    "repository": "https://github.com/RustCrypto/hashes"
+  },
+  {
+    "rank": 329,
+    "name": "target-lexicon",
+    "max_version": "0.13.5",
+    "downloads": 446050227,
+    "description": "LLVM target triple types",
+    "repository": "https://github.com/bytecodealliance/target-lexicon"
+  },
+  {
+    "rank": 330,
+    "name": "dashmap",
+    "max_version": "6.2.1",
+    "downloads": 444540780,
+    "description": "Blazing fast concurrent HashMap for Rust.",
+    "repository": "https://github.com/xacrimon/dashmap"
+  },
+  {
+    "rank": 331,
+    "name": "crunchy",
+    "max_version": "0.2.4",
+    "downloads": 443130002,
+    "description": "Crunchy unroller: deterministically unroll constant loops",
+    "repository": "https://github.com/eira-fransham/crunchy"
+  },
+  {
+    "rank": 332,
+    "name": "security-framework",
+    "max_version": "3.7.0",
+    "downloads": 439604671,
+    "description": "Security.framework bindings for macOS and iOS",
+    "repository": "https://github.com/kornelski/rust-security-framework"
+  },
+  {
+    "rank": 333,
+    "name": "serde_with",
+    "max_version": "3.24.0",
+    "downloads": 434384318,
+    "description": "Custom de/serialization functions for Rust's serde",
+    "repository": "https://github.com/jonasbb/serde_with/"
+  },
+  {
+    "rank": 334,
+    "name": "dyn-clone",
+    "max_version": "1.0.20",
+    "downloads": 430999971,
+    "description": "Clone trait that is dyn-compatible",
+    "repository": "https://github.com/dtolnay/dyn-clone"
+  },
+  {
+    "rank": 335,
+    "name": "lru",
+    "max_version": "0.19.0",
+    "downloads": 430096231,
+    "description": "A LRU cache implementation",
+    "repository": "https://github.com/jeromefroe/lru-rs.git"
+  },
+  {
+    "rank": 336,
+    "name": "zstd-sys",
+    "max_version": "2.1.2+zstd.1.5.7",
+    "downloads": 429354440,
+    "description": "Low-level bindings for the zstd compression library.",
+    "repository": "https://github.com/gyscos/zstd-rs"
+  },
+  {
+    "rank": 337,
+    "name": "hashlink",
+    "max_version": "0.12.2",
+    "downloads": 427171181,
+    "description": "HashMap-like containers that hold their key-value pairs in a user controllable order",
+    "repository": "https://github.com/djc/hashlink"
+  },
+  {
+    "rank": 338,
+    "name": "serde_with_macros",
+    "max_version": "3.24.0",
+    "downloads": 426991857,
+    "description": "proc-macro library for serde_with",
+    "repository": "https://github.com/jonasbb/serde_with/"
+  },
+  {
+    "rank": 339,
+    "name": "prost-build",
+    "max_version": "0.14.4",
+    "downloads": 422990576,
+    "description": "Generate Prost annotated Rust types from Protocol Buffers files.",
+    "repository": "https://github.com/tokio-rs/prost"
+  },
+  {
+    "rank": 340,
+    "name": "crossbeam-queue",
+    "max_version": "0.3.14",
+    "downloads": 422979143,
+    "description": "Concurrent queues",
+    "repository": "https://github.com/crossbeam-rs/crossbeam"
+  },
+  {
+    "rank": 341,
+    "name": "parking",
+    "max_version": "2.2.1",
+    "downloads": 418085836,
+    "description": "Thread parking and unparking",
+    "repository": "https://github.com/smol-rs/parking"
+  },
+  {
+    "rank": 342,
+    "name": "memmap2",
+    "max_version": "0.9.12",
+    "downloads": 415945221,
+    "description": "Cross-platform Rust API for memory-mapped file IO",
+    "repository": "https://github.com/RazrFalcon/memmap2-rs"
+  },
+  {
+    "rank": 343,
+    "name": "quinn-proto",
+    "max_version": "0.11.19",
+    "downloads": 414536583,
+    "description": "State machine for the QUIC transport protocol",
+    "repository": "https://github.com/quinn-rs/quinn"
+  },
+  {
+    "rank": 344,
+    "name": "windows-strings",
+    "max_version": "0.100.0",
+    "downloads": 413315051,
+    "description": "Windows string types",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 345,
+    "name": "toml_parser",
+    "max_version": "1.1.5+spec-1.1.0",
+    "downloads": 412074884,
+    "description": "Yet another format-preserving TOML parser.",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 346,
+    "name": "console",
+    "max_version": "0.16.6",
+    "downloads": 411644669,
+    "description": "A terminal and console abstraction for Rust",
+    "repository": "https://github.com/console-rs/console"
+  },
+  {
+    "rank": 347,
+    "name": "dirs-sys",
+    "max_version": "0.5.0",
+    "downloads": 411084031,
+    "description": "System-level helper functions for the dirs and directories crates.",
+    "repository": "https://github.com/dirs-dev/dirs-sys-rs"
+  },
+  {
+    "rank": 348,
+    "name": "quinn-udp",
+    "max_version": "0.6.3",
+    "downloads": 409052719,
+    "description": "UDP sockets with ECN information for the QUIC transport protocol",
+    "repository": "https://github.com/quinn-rs/quinn"
+  },
+  {
+    "rank": 349,
+    "name": "quinn",
+    "max_version": "0.11.12",
+    "downloads": 404754444,
+    "description": "Versatile QUIC transport protocol implementation",
+    "repository": "https://github.com/quinn-rs/quinn"
+  },
+  {
+    "rank": 350,
+    "name": "concurrent-queue",
+    "max_version": "2.5.0",
+    "downloads": 400283251,
+    "description": "Concurrent multi-producer multi-consumer queue",
+    "repository": "https://github.com/smol-rs/concurrent-queue"
+  },
+  {
+    "rank": 351,
+    "name": "dirs",
+    "max_version": "7.0.0",
+    "downloads": 399042466,
+    "description": "A tiny low-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.",
+    "repository": "https://codeberg.org/dirs/dirs-rs"
+  },
+  {
+    "rank": 352,
+    "name": "aes",
+    "max_version": "0.9.4",
+    "downloads": 398453423,
+    "description": "Pure Rust implementation of the Advanced Encryption Standard (a.k.a. Rijndael)",
+    "repository": "https://github.com/RustCrypto/block-ciphers"
+  },
+  {
+    "rank": 353,
+    "name": "wasm-bindgen-futures",
+    "max_version": "0.4.80",
+    "downloads": 398082490,
+    "description": "Bridging the gap between Rust Futures and JavaScript Promises",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/futures"
+  },
+  {
+    "rank": 354,
+    "name": "windows",
+    "max_version": "0.62.2",
+    "downloads": 397575884,
+    "description": "Rust for Windows",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 355,
+    "name": "arc-swap",
+    "max_version": "1.9.4",
+    "downloads": 397445813,
+    "description": "Atomically swappable Arc",
+    "repository": "https://github.com/vorner/arc-swap"
+  },
+  {
+    "rank": 356,
+    "name": "pem-rfc7468",
+    "max_version": "1.0.0",
+    "downloads": 395409621,
+    "description": "PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended specifically for use with cryptographic keys, certificates, and other messages. Provides a no_std-friendly, constant-time implementation suitable for use with cryptographic private keys.",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 357,
+    "name": "anstyle-wincon",
+    "max_version": "3.0.11",
+    "downloads": 394819325,
+    "description": "Styling legacy Windows terminals",
+    "repository": "https://github.com/rust-cli/anstyle.git"
+  },
+  {
+    "rank": 358,
+    "name": "dunce",
+    "max_version": "1.0.5",
+    "downloads": 392707323,
+    "description": "Normalize Windows paths to the most compatible format, avoiding UNC where possible",
+    "repository": "https://gitlab.com/kornelski/dunce"
+  },
+  {
+    "rank": 359,
+    "name": "cmake",
+    "max_version": "0.1.58",
+    "downloads": 390455949,
+    "description": "A build dependency for running `cmake` to build a native library",
+    "repository": "https://github.com/rust-lang/cmake-rs"
+  },
+  {
+    "rank": 360,
+    "name": "async-channel",
+    "max_version": "2.5.0",
+    "downloads": 389658101,
+    "description": "Async multi-producer multi-consumer channel",
+    "repository": "https://github.com/smol-rs/async-channel"
+  },
+  {
+    "rank": 361,
+    "name": "tungstenite",
+    "max_version": "0.30.0",
+    "downloads": 389434772,
+    "description": "Lightweight stream-based WebSocket implementation",
+    "repository": "https://github.com/snapview/tungstenite-rs"
+  },
+  {
+    "rank": 362,
+    "name": "hyper-timeout",
+    "max_version": "0.5.2",
+    "downloads": 385760650,
+    "description": "A connect, read and write timeout aware connector to be used with hyper Client.",
+    "repository": "https://github.com/hjr3/hyper-timeout"
+  },
+  {
+    "rank": 363,
+    "name": "pest",
+    "max_version": "2.9.5",
+    "downloads": 384477515,
+    "description": "The Elegant Parser",
+    "repository": "https://github.com/pest-parser/pest"
+  },
+  {
+    "rank": 364,
+    "name": "hyper-tls",
+    "max_version": "0.6.0",
+    "downloads": 384350448,
+    "description": "Default TLS implementation for use with hyper",
+    "repository": "https://github.com/hyperium/hyper-tls"
+  },
+  {
+    "rank": 365,
+    "name": "pem",
+    "max_version": "4.0.0",
+    "downloads": 384018695,
+    "description": "Parse and encode PEM-encoded data.",
+    "repository": "https://github.com/jcreekmore/pem-rs.git"
+  },
+  {
+    "rank": 366,
+    "name": "is-terminal",
+    "max_version": "0.4.17",
+    "downloads": 382319583,
+    "description": "Test whether a given stream is a terminal",
+    "repository": "https://github.com/sunfishcode/is-terminal"
+  },
+  {
+    "rank": 367,
+    "name": "opaque-debug",
+    "max_version": "0.4.0",
+    "downloads": 381629517,
+    "description": "This crate is deprecated. Use explicit impl of `fmt::Debug` instead.",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 368,
+    "name": "native-tls",
+    "max_version": "0.2.18",
+    "downloads": 379677365,
+    "description": "A wrapper over a platform's native TLS implementation",
+    "repository": "https://github.com/rust-native-tls/rust-native-tls"
+  },
+  {
+    "rank": 369,
+    "name": "async-stream",
+    "max_version": "0.3.6",
+    "downloads": 379263527,
+    "description": "Asynchronous streams using async & await notation",
+    "repository": "https://github.com/tokio-rs/async-stream"
+  },
+  {
+    "rank": 370,
+    "name": "async-stream-impl",
+    "max_version": "0.3.6",
+    "downloads": 378992343,
+    "description": "proc macros for async-stream crate",
+    "repository": "https://github.com/tokio-rs/async-stream"
+  },
+  {
+    "rank": 371,
+    "name": "inout",
+    "max_version": "0.2.6",
+    "downloads": 377035333,
+    "description": "Custom reference types for code generic over in-place and buffer-to-buffer modes of operation.",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 372,
+    "name": "constant_time_eq",
+    "max_version": "0.6.1",
+    "downloads": 375346654,
+    "description": "Compares two equal-sized byte strings in constant time.",
+    "repository": "https://codeberg.org/cesarb/constant_time_eq"
+  },
+  {
+    "rank": 373,
+    "name": "phf_codegen",
+    "max_version": "0.14.0",
+    "downloads": 375146566,
+    "description": "Codegen library for PHF types",
+    "repository": "https://github.com/rust-phf/rust-phf"
+  },
+  {
+    "rank": 374,
+    "name": "windows-implement",
+    "max_version": "0.100.0",
+    "downloads": 373183525,
+    "description": "The implement macro for the Windows crates",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 375,
+    "name": "openssl-macros",
+    "max_version": "0.1.1",
+    "downloads": 370863805,
+    "description": "Internal macros used by the openssl crate.",
+    "repository": null
+  },
+  {
+    "rank": 376,
+    "name": "bincode",
+    "max_version": "3.0.0",
+    "downloads": 369643132,
+    "description": "A binary serialization / deserialization strategy for transforming structs into bytes and vice versa!",
+    "repository": "https://github.com/bincode-org/bincode"
+  },
+  {
+    "rank": 377,
+    "name": "atty",
+    "max_version": "0.2.14",
+    "downloads": 368802886,
+    "description": "A simple interface for querying atty",
+    "repository": "https://github.com/softprops/atty"
+  },
+  {
+    "rank": 378,
+    "name": "proc-macro-error",
+    "max_version": "1.0.4",
+    "downloads": 367529386,
+    "description": "Almost drop-in replacement to panics in proc-macros",
+    "repository": "https://gitlab.com/CreepySkeleton/proc-macro-error"
+  },
+  {
+    "rank": 379,
+    "name": "indoc",
+    "max_version": "2.0.8",
+    "downloads": 366824420,
+    "description": "Indented document literals",
+    "repository": "https://github.com/dtolnay/indoc"
+  },
+  {
+    "rank": 380,
+    "name": "proc-macro-error-attr",
+    "max_version": "1.0.4",
+    "downloads": 365996465,
+    "description": "Attribute macro for proc-macro-error crate",
+    "repository": "https://gitlab.com/CreepySkeleton/proc-macro-error"
+  },
+  {
+    "rank": 381,
+    "name": "windows-interface",
+    "max_version": "0.100.0",
+    "downloads": 365948571,
+    "description": "The interface macro for the Windows crates",
+    "repository": "https://github.com/microsoft/windows-rs"
+  },
+  {
+    "rank": 382,
+    "name": "security-framework-sys",
+    "max_version": "2.17.0",
+    "downloads": 364797870,
+    "description": "Apple `Security.framework` low-level FFI bindings",
+    "repository": "https://github.com/kornelski/rust-security-framework"
+  },
+  {
+    "rank": 383,
+    "name": "android_system_properties",
+    "max_version": "0.1.6",
+    "downloads": 362620953,
+    "description": "Minimal Android system properties wrapper",
+    "repository": "https://github.com/nical/android_system_properties"
+  },
+  {
+    "rank": 384,
+    "name": "multimap",
+    "max_version": "0.10.1",
+    "downloads": 360410622,
+    "description": "A multimap implementation.",
+    "repository": "https://github.com/havarnov/multimap"
+  },
+  {
+    "rank": 385,
+    "name": "ucd-trie",
+    "max_version": "0.1.7",
+    "downloads": 360058538,
+    "description": "A trie for storing Unicode codepoint sets and maps.",
+    "repository": "https://github.com/BurntSushi/ucd-generate"
+  },
+  {
+    "rank": 386,
+    "name": "schannel",
+    "max_version": "0.1.30",
+    "downloads": 358664899,
+    "description": "Schannel bindings for rust, allowing SSL/TLS (e.g. https) without openssl",
+    "repository": "https://github.com/steffengy/schannel-rs"
+  },
+  {
+    "rank": 387,
+    "name": "serde_path_to_error",
+    "max_version": "0.1.20",
+    "downloads": 358480350,
+    "description": "Path to the element that failed to deserialize",
+    "repository": "https://github.com/dtolnay/path-to-error"
+  },
+  {
+    "rank": 388,
+    "name": "clang-sys",
+    "max_version": "1.9.1",
+    "downloads": 354515732,
+    "description": "Rust bindings for libclang.",
+    "repository": "https://github.com/KyleMayes/clang-sys"
+  },
+  {
+    "rank": 389,
+    "name": "futures-lite",
+    "max_version": "2.6.1",
+    "downloads": 353990239,
+    "description": "Futures, streams, and async I/O combinators",
+    "repository": "https://github.com/smol-rs/futures-lite"
+  },
+  {
+    "rank": 390,
+    "name": "fs_extra",
+    "max_version": "1.3.0",
+    "downloads": 353268368,
+    "description": "Expanding std::fs and std::io. Recursively copy folders with information about process and much more.",
+    "repository": "https://github.com/webdesus/fs_extra"
+  },
+  {
+    "rank": 391,
+    "name": "sct",
+    "max_version": "0.7.1",
+    "downloads": 352638601,
+    "description": "Certificate transparency SCT verification library",
+    "repository": "https://github.com/rustls/sct.rs"
+  },
+  {
+    "rank": 392,
+    "name": "chacha20",
+    "max_version": "0.10.2",
+    "downloads": 352478224,
+    "description": "The ChaCha20 stream cipher (RFC 8439) implemented in pure Rust using traits from the RustCrypto `cipher` crate, with optional architecture-specific hardware acceleration (AVX2, SSE2). Additionally provides the ChaCha8, ChaCha12, XChaCha20, XChaCha12 and XChaCha8 stream ciphers, and also optional rand_core-compatible RNGs based on those ciphers.",
+    "repository": "https://github.com/RustCrypto/stream-ciphers"
+  },
+  {
+    "rank": 393,
+    "name": "instant",
+    "max_version": "0.1.13",
+    "downloads": 351062534,
+    "description": "Unmaintained, consider using web-time instead - A partial replacement for std::time::Instant that works on WASM to.",
+    "repository": "https://github.com/sebcrozet/instant"
+  },
+  {
+    "rank": 394,
+    "name": "tokio-tungstenite",
+    "max_version": "0.30.0",
+    "downloads": 349485053,
+    "description": "Tokio binding for Tungstenite, the Lightweight stream-based WebSocket implementation",
+    "repository": "https://github.com/snapview/tokio-tungstenite"
+  },
+  {
+    "rank": 395,
+    "name": "unsafe-libyaml",
+    "max_version": "0.2.11",
+    "downloads": 345848585,
+    "description": "libyaml transpiled to rust by c2rust",
+    "repository": "https://github.com/dtolnay/unsafe-libyaml"
+  },
+  {
+    "rank": 396,
+    "name": "iana-time-zone-haiku",
+    "max_version": "0.1.2",
+    "downloads": 345744902,
+    "description": "iana-time-zone support crate for Haiku OS",
+    "repository": "https://github.com/strawlab/iana-time-zone"
+  },
+  {
+    "rank": 397,
+    "name": "async-lock",
+    "max_version": "3.5.0",
+    "downloads": 345466252,
+    "description": "Async synchronization primitives",
+    "repository": "https://github.com/smol-rs/async-lock"
+  },
+  {
+    "rank": 398,
+    "name": "derive_more-impl",
+    "max_version": "2.1.1",
+    "downloads": 345185096,
+    "description": "Internal implementation of `derive_more` crate",
+    "repository": "https://github.com/JelteF/derive_more"
+  },
+  {
+    "rank": 399,
+    "name": "cexpr",
+    "max_version": "0.6.0",
+    "downloads": 343344932,
+    "description": "A C expression parser and evaluator",
+    "repository": "https://github.com/jethrogb/rust-cexpr"
+  },
+  {
+    "rank": 400,
+    "name": "phf_macros",
+    "max_version": "0.14.0",
+    "downloads": 340885752,
+    "description": "Macros to generate types in the phf crate",
+    "repository": "https://github.com/rust-phf/rust-phf"
+  },
+  {
+    "rank": 401,
+    "name": "ref-cast",
+    "max_version": "1.0.27",
+    "downloads": 339529663,
+    "description": "Safely cast &T to &U where the struct U contains a single field of type T.",
+    "repository": "https://github.com/dtolnay/ref-cast"
+  },
+  {
+    "rank": 402,
+    "name": "ref-cast-impl",
+    "max_version": "1.0.27",
+    "downloads": 339513246,
+    "description": "Derive implementation for ref_cast::RefCast.",
+    "repository": "https://github.com/dtolnay/ref-cast"
+  },
+  {
+    "rank": 403,
+    "name": "crc",
+    "max_version": "3.4.0",
+    "downloads": 338491608,
+    "description": "Rust implementation of CRC with support of various standards",
+    "repository": "https://github.com/mrhooray/crc-rs.git"
+  },
+  {
+    "rank": 404,
+    "name": "mime_guess",
+    "max_version": "2.0.5",
+    "downloads": 338193140,
+    "description": "A simple crate for detection of a file's MIME type by its extension.",
+    "repository": "https://github.com/abonander/mime_guess"
+  },
+  {
+    "rank": 405,
+    "name": "hkdf",
+    "max_version": "0.13.0",
+    "downloads": 338088713,
+    "description": "HMAC-based Extract-and-Expand Key Derivation Function (HKDF)",
+    "repository": "https://github.com/RustCrypto/KDFs/"
+  },
+  {
+    "rank": 406,
+    "name": "valuable",
+    "max_version": "0.1.1",
+    "downloads": 337685672,
+    "description": "Object-safe value inspection, used to pass un-typed structured data across trait-object boundaries.",
+    "repository": "https://github.com/tokio-rs/valuable"
+  },
+  {
+    "rank": 407,
+    "name": "num",
+    "max_version": "0.4.3",
+    "downloads": 337422167,
+    "description": "A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more!",
+    "repository": "https://github.com/rust-num/num"
+  },
+  {
+    "rank": 408,
+    "name": "linked-hash-map",
+    "max_version": "0.5.6",
+    "downloads": 337331617,
+    "description": "A HashMap wrapper that holds key-value pairs in insertion order",
+    "repository": "https://github.com/contain-rs/linked-hash-map"
+  },
+  {
+    "rank": 409,
+    "name": "pest_derive",
+    "max_version": "2.9.5",
+    "downloads": 337295600,
+    "description": "pest's derive macro",
+    "repository": "https://github.com/pest-parser/pest"
+  },
+  {
+    "rank": 410,
+    "name": "crypto-bigint",
+    "max_version": "0.7.10",
+    "downloads": 337065346,
+    "description": "Pure Rust implementation of a big integer library which has been designed from the ground-up for use in cryptographic applications. Provides constant-time, `no_std`/`no_alloc`-friendly implementations of modern formulas using const generics. Also includes optional support for heap-backed integers.",
+    "repository": "https://github.com/RustCrypto/crypto-bigint"
+  },
+  {
+    "rank": 411,
+    "name": "serde_repr",
+    "max_version": "0.1.21",
+    "downloads": 336831888,
+    "description": "Derive Serialize and Deserialize that delegates to the underlying repr of a C-like enum.",
+    "repository": "https://github.com/dtolnay/serde-repr"
+  },
+  {
+    "rank": 412,
+    "name": "zip",
+    "max_version": "9.4.2",
+    "downloads": 335459397,
+    "description": "Library to support the reading and writing of zip files.",
+    "repository": "https://github.com/zip-rs/zip2"
+  },
+  {
+    "rank": 413,
+    "name": "pest_meta",
+    "max_version": "2.9.5",
+    "downloads": 335430510,
+    "description": "pest meta language parser and validator",
+    "repository": "https://github.com/pest-parser/pest"
+  },
+  {
+    "rank": 414,
+    "name": "pest_generator",
+    "max_version": "2.9.5",
+    "downloads": 335215918,
+    "description": "pest code generator",
+    "repository": "https://github.com/pest-parser/pest"
+  },
+  {
+    "rank": 415,
+    "name": "fallible-iterator",
+    "max_version": "0.3.0",
+    "downloads": 334978280,
+    "description": "Fallible iterator traits",
+    "repository": "https://github.com/sfackler/rust-fallible-iterator"
+  },
+  {
+    "rank": 416,
+    "name": "wit-bindgen",
+    "max_version": "0.63.0",
+    "downloads": 334247926,
+    "description": "Rust bindings generator and runtime support for WIT and the component model. Used when compiling Rust programs to the component model.",
+    "repository": "https://github.com/bytecodealliance/wit-bindgen"
+  },
+  {
+    "rank": 417,
+    "name": "criterion",
+    "max_version": "0.8.2",
+    "downloads": 332349998,
+    "description": "Statistics-driven micro-benchmarking library",
+    "repository": "https://github.com/criterion-rs/criterion.rs"
+  },
+  {
+    "rank": 418,
+    "name": "tracing-serde",
+    "max_version": "0.2.0",
+    "downloads": 328145291,
+    "description": "A compatibility layer for serializing trace data with `serde`",
+    "repository": "https://github.com/tokio-rs/tracing"
+  },
+  {
+    "rank": 419,
+    "name": "rand_xorshift",
+    "max_version": "0.5.0",
+    "downloads": 327145080,
+    "description": "Xorshift random number generator",
+    "repository": "https://github.com/rust-random/rngs"
+  },
+  {
+    "rank": 420,
+    "name": "brotli-decompressor",
+    "max_version": "6.3.0",
+    "downloads": 326371306,
+    "description": "A brotli decompressor that with an interface avoiding the rust stdlib. This makes it suitable for embedded devices and kernels. It is designed with a pluggable allocator so that the standard lib's allocator may be employed. The default build also includes a stdlib allocator and stream interface. Disable this with --features=no-stdlib. Alternatively, --features=unsafe turns off array bounds checks and memory initialization but provides a safe interface for the caller. Without adding the --features=unsafe argument, all included code is safe. For compression in addition to this library, download https://github.com/dropbox/rust-brotli",
+    "repository": "https://github.com/dropbox/rust-brotli-decompressor"
+  },
+  {
+    "rank": 421,
+    "name": "zeroize_derive",
+    "max_version": "1.5.0",
+    "downloads": 326162778,
+    "description": "Custom derive support for zeroize",
+    "repository": "https://github.com/RustCrypto/utils"
+  },
+  {
+    "rank": 422,
+    "name": "bitvec",
+    "max_version": "1.1.1",
+    "downloads": 324271284,
+    "description": "Addresses memory by bits, for packed collections and bitfields",
+    "repository": "https://github.com/bitvecto-rs/bitvec"
+  },
+  {
+    "rank": 423,
+    "name": "combine",
+    "max_version": "4.6.9",
+    "downloads": 323716531,
+    "description": "Fast parser combinators on arbitrary streams with zero-copy support.",
+    "repository": "https://github.com/Marwes/combine"
+  },
+  {
+    "rank": 424,
+    "name": "web-time",
+    "max_version": "1.1.0",
+    "downloads": 323541075,
+    "description": "Drop-in replacement for std::time for Wasm in browsers",
+    "repository": "https://github.com/daxpedda/web-time"
+  },
+  {
+    "rank": 425,
+    "name": "tokio-native-tls",
+    "max_version": "0.3.1",
+    "downloads": 322287984,
+    "description": "An implementation of TLS/SSL streams for Tokio using native-tls giving an implementation of TLS for nonblocking I/O streams.",
+    "repository": "https://github.com/tokio-rs/tls"
+  },
+  {
+    "rank": 426,
+    "name": "opentelemetry",
+    "max_version": "0.33.1",
+    "downloads": 322031964,
+    "description": "OpenTelemetry API for Rust",
+    "repository": "https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry"
+  },
+  {
+    "rank": 427,
+    "name": "brotli",
+    "max_version": "9.1.1",
+    "downloads": 322003990,
+    "description": "A brotli compressor and decompressor that with an interface avoiding the rust stdlib. This makes it suitable for embedded devices and kernels. It is designed with a pluggable allocator so that the standard lib's allocator may be employed. The default build also includes a stdlib allocator and stream interface. Disable this with --features=no-stdlib. All included code is safe.",
+    "repository": "https://github.com/dropbox/rust-brotli"
+  },
+  {
+    "rank": 428,
+    "name": "curve25519-dalek",
+    "max_version": "5.0.0",
+    "downloads": 321018433,
+    "description": "A pure-Rust implementation of group operations on ristretto255 and Curve25519",
+    "repository": "https://github.com/dalek-cryptography/curve25519-dalek/tree/main/curve25519-dalek"
+  },
+  {
+    "rank": 429,
+    "name": "wasm-bindgen-backend",
+    "max_version": "0.2.104",
+    "downloads": 320549447,
+    "description": "Backend code generation of the wasm-bindgen tool",
+    "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/backend"
+  },
+  {
+    "rank": 430,
+    "name": "event-listener-strategy",
+    "max_version": "0.5.4",
+    "downloads": 318280466,
+    "description": "Block or poll on event_listener easily",
+    "repository": "https://github.com/smol-rs/event-listener-strategy"
+  },
+  {
+    "rank": 431,
+    "name": "radium",
+    "max_version": "1.1.1",
+    "downloads": 318180493,
+    "description": "Portable interfaces for maybe-atomic types",
+    "repository": "https://github.com/ferrilab/ferrilab"
+  },
+  {
+    "rank": 432,
+    "name": "criterion-plot",
+    "max_version": "0.8.2",
+    "downloads": 317846412,
+    "description": "Criterion's plotting library",
+    "repository": "https://github.com/criterion-rs/criterion.rs"
+  },
+  {
+    "rank": 433,
+    "name": "camino",
+    "max_version": "1.2.6",
+    "downloads": 317260212,
+    "description": "UTF-8 paths",
+    "repository": "https://github.com/camino-rs/camino"
+  },
+  {
+    "rank": 434,
+    "name": "num_enum",
+    "max_version": "0.7.6",
+    "downloads": 316824082,
+    "description": "Procedural macros to make inter-operation between primitives and enums easier.",
+    "repository": "https://github.com/illicitonion/num_enum"
+  },
+  {
+    "rank": 435,
+    "name": "tap",
+    "max_version": "1.0.1",
+    "downloads": 316818960,
+    "description": "Generic extensions for tapping values in Rust",
+    "repository": "https://github.com/myrrlyn/tap"
+  },
+  {
+    "rank": 436,
+    "name": "num_enum_derive",
+    "max_version": "0.7.6",
+    "downloads": 316687239,
+    "description": "Internal implementation details for ::num_enum (Procedural macros to make inter-operation between primitives and enums easier)",
+    "repository": "https://github.com/illicitonion/num_enum"
+  },
+  {
+    "rank": 437,
+    "name": "urlencoding",
+    "max_version": "2.1.3",
+    "downloads": 316620027,
+    "description": "A Rust library for doing URL percentage encoding.",
+    "repository": "https://github.com/kornelski/rust_urlencoding"
+  },
+  {
+    "rank": 438,
+    "name": "lru-slab",
+    "max_version": "0.1.3",
+    "downloads": 315844274,
+    "description": "Pre-allocated storage with constant-time LRU tracking",
+    "repository": "https://github.com/Ralith/lru-slab"
+  },
+  {
+    "rank": 439,
+    "name": "utf-8",
+    "max_version": "0.7.6",
+    "downloads": 313881744,
+    "description": "Incremental, zero-copy UTF-8 decoding with error handling",
+    "repository": "https://github.com/SimonSapin/rust-utf8"
+  },
+  {
+    "rank": 440,
+    "name": "crc-catalog",
+    "max_version": "2.5.0",
+    "downloads": 313025268,
+    "description": "Catalog of CRC algorithms (generated from http://reveng.sourceforge.net/crc-catalogue) expressed as simple Rust structs.",
+    "repository": "https://github.com/akhilles/crc-catalog.git"
+  },
+  {
+    "rank": 441,
+    "name": "cast",
+    "max_version": "0.3.0",
+    "downloads": 312110362,
+    "description": "Ergonomic, checked cast functions for primitive types",
+    "repository": "https://github.com/japaric/cast.rs"
+  },
+  {
+    "rank": 442,
+    "name": "funty",
+    "max_version": "2.0.0",
+    "downloads": 311685066,
+    "description": "Trait generalization over the primitive types",
+    "repository": "https://github.com/ferrilab/ferrilab"
+  },
+  {
+    "rank": 443,
+    "name": "wyz",
+    "max_version": "0.6.1",
+    "downloads": 311658990,
+    "description": "myrrlyn’s utility collection",
+    "repository": "https://github.com/myrrlyn/wyz"
+  },
+  {
+    "rank": 444,
+    "name": "xattr",
+    "max_version": "1.7.0",
+    "downloads": 309085774,
+    "description": "unix extended filesystem attributes",
+    "repository": "https://github.com/Stebalien/xattr"
+  },
+  {
+    "rank": 445,
+    "name": "pyo3-build-config",
+    "max_version": "0.30.1",
+    "downloads": 308283071,
+    "description": "Build configuration for the PyO3 ecosystem",
+    "repository": "https://github.com/pyo3/pyo3"
+  },
+  {
+    "rank": 446,
+    "name": "arrayref",
+    "max_version": "0.3.9",
+    "downloads": 305829138,
+    "description": "Macros to take array references of slices",
+    "repository": "https://github.com/droundy/arrayref"
+  },
+  {
+    "rank": 447,
+    "name": "libsqlite3-sys",
+    "max_version": "0.39.1",
+    "downloads": 305751973,
+    "description": "Native bindings to the libsqlite3 library",
+    "repository": "https://github.com/rusqlite/rusqlite"
+  },
+  {
+    "rank": 448,
+    "name": "aws-lc-sys",
+    "max_version": "0.47.0",
+    "downloads": 304194330,
+    "description": "AWS-LC is a general-purpose cryptographic library maintained by the AWS Cryptography team for AWS and their customers. It іs based on code from the Google BoringSSL project and the OpenSSL project.",
+    "repository": "https://github.com/aws/aws-lc-rs"
+  },
+  {
+    "rank": 449,
+    "name": "oorandom",
+    "max_version": "11.1.5",
+    "downloads": 304095010,
+    "description": "A tiny, robust PRNG implementation.",
+    "repository": "https://hg.sr.ht/~icefox/oorandom"
+  },
+  {
+    "rank": 450,
+    "name": "aws-lc-rs",
+    "max_version": "1.19.0",
+    "downloads": 301556811,
+    "description": "aws-lc-rs is a cryptographic library using AWS-LC for its cryptographic operations. This library strives to be API-compatible with the popular Rust library named ring.",
+    "repository": "https://github.com/aws/aws-lc-rs"
+  },
+  {
+    "rank": 451,
+    "name": "png",
+    "max_version": "0.18.1",
+    "downloads": 301061055,
+    "description": "PNG decoding and encoding library in pure Rust",
+    "repository": "https://github.com/image-rs/image-png"
+  },
+  {
+    "rank": 452,
+    "name": "yansi",
+    "max_version": "1.0.1",
+    "downloads": 300490757,
+    "description": "A dead simple ANSI terminal color painting library.",
+    "repository": "https://github.com/SergioBenitez/yansi"
+  },
+  {
+    "rank": 453,
+    "name": "pyo3",
+    "max_version": "0.30.1",
+    "downloads": 298171387,
+    "description": "Bindings to Python interpreter",
+    "repository": "https://github.com/pyo3/pyo3"
+  },
+  {
+    "rank": 454,
+    "name": "base16ct",
+    "max_version": "1.0.0",
+    "downloads": 297836023,
+    "description": "Pure Rust implementation of Base16 a.k.a hexadecimal (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides portable \"best effort\" constant-time operation and embedded-friendly no_std support",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 455,
+    "name": "pyo3-macros",
+    "max_version": "0.30.1",
+    "downloads": 295151734,
+    "description": "Proc macros for PyO3 package",
+    "repository": "https://github.com/pyo3/pyo3"
+  },
+  {
+    "rank": 456,
+    "name": "pyo3-macros-backend",
+    "max_version": "0.30.1",
+    "downloads": 295040829,
+    "description": "Code generation for PyO3 package",
+    "repository": "https://github.com/pyo3/pyo3"
+  },
+  {
+    "rank": 457,
+    "name": "fancy-regex",
+    "max_version": "0.20.0",
+    "downloads": 294629167,
+    "description": "An implementation of regexes, supporting a relatively rich set of features, including backreferences and look-around. Aims to be compatible with Oniguruma syntax when the relevant flag is set.",
+    "repository": "https://github.com/fancy-regex/fancy-regex"
+  },
+  {
+    "rank": 458,
+    "name": "ff",
+    "max_version": "0.14.0",
+    "downloads": 293693312,
+    "description": "Library for building and interfacing with finite fields",
+    "repository": "https://github.com/zkcrypto/ff"
+  },
+  {
+    "rank": 459,
+    "name": "tinytemplate",
+    "max_version": "1.2.1",
+    "downloads": 293566381,
+    "description": "Simple, lightweight template engine",
+    "repository": "https://github.com/bheisler/TinyTemplate"
+  },
+  {
+    "rank": 460,
+    "name": "wasmparser",
+    "max_version": "0.263.0",
+    "downloads": 293069255,
+    "description": "A simple event-driven library for parsing WebAssembly binary files.",
+    "repository": "https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasmparser"
+  },
+  {
+    "rank": 461,
+    "name": "twox-hash",
+    "max_version": "2.1.5",
+    "downloads": 292161304,
+    "description": "A Rust implementation of the XXHash and XXH3 algorithms",
+    "repository": "https://github.com/shepmaster/twox-hash"
+  },
+  {
+    "rank": 462,
+    "name": "cargo_metadata",
+    "max_version": "0.23.1",
+    "downloads": 291050822,
+    "description": "structured access to the output of `cargo metadata`",
+    "repository": "https://github.com/oli-obk/cargo_metadata"
+  },
+  {
+    "rank": 463,
+    "name": "ciborium-io",
+    "max_version": "0.2.2",
+    "downloads": 290927621,
+    "description": "Simplified Read/Write traits for no_std usage",
+    "repository": "https://github.com/enarx/ciborium"
+  },
+  {
+    "rank": 464,
+    "name": "ciborium",
+    "max_version": "0.2.2",
+    "downloads": 290869237,
+    "description": "serde implementation of CBOR using ciborium-basic",
+    "repository": "https://github.com/enarx/ciborium"
+  },
+  {
+    "rank": 465,
+    "name": "ciborium-ll",
+    "max_version": "0.2.2",
+    "downloads": 290819924,
+    "description": "Low-level CBOR codec primitives",
+    "repository": "https://github.com/enarx/ciborium"
+  },
+  {
+    "rank": 466,
+    "name": "simdutf8",
+    "max_version": "0.1.5",
+    "downloads": 290661034,
+    "description": "SIMD-accelerated UTF-8 validation.",
+    "repository": "https://github.com/rusticstuff/simdutf8"
+  },
+  {
+    "rank": 467,
+    "name": "group",
+    "max_version": "0.14.0",
+    "downloads": 289650003,
+    "description": "Elliptic curve group traits and utilities",
+    "repository": "https://github.com/zkcrypto/group"
+  },
+  {
+    "rank": 468,
+    "name": "adler",
+    "max_version": "1.0.2",
+    "downloads": 289206861,
+    "description": "A simple clean-room implementation of the Adler-32 checksum",
+    "repository": "https://github.com/jonas-schievink/adler.git"
+  },
+  {
+    "rank": 469,
+    "name": "signal-hook",
+    "max_version": "0.4.6",
+    "downloads": 288222801,
+    "description": "Unix signal handling",
+    "repository": "https://github.com/vorner/signal-hook"
+  },
+  {
+    "rank": 470,
+    "name": "serde_derive_internals",
+    "max_version": "0.30.0",
+    "downloads": 288075946,
+    "description": "AST representation used by Serde derive macros. Unstable.",
+    "repository": "https://github.com/serde-rs/serde"
+  },
+  {
+    "rank": 471,
+    "name": "pbkdf2",
+    "max_version": "0.13.0",
+    "downloads": 287507301,
+    "description": "Generic implementation of PBKDF2",
+    "repository": "https://github.com/RustCrypto/password-hashes"
+  },
+  {
+    "rank": 472,
+    "name": "alloc-stdlib",
+    "max_version": "0.3.0",
+    "downloads": 287036047,
+    "description": "A dynamic allocator example that may be used with the stdlib",
+    "repository": "https://github.com/dropbox/rust-alloc-no-stdlib"
+  },
+  {
+    "rank": 473,
+    "name": "schemars_derive",
+    "max_version": "1.2.3",
+    "downloads": 286807658,
+    "description": "Macros for #[derive(JsonSchema)], for use with schemars",
+    "repository": "https://github.com/GREsau/schemars"
+  },
+  {
+    "rank": 474,
+    "name": "elliptic-curve",
+    "max_version": "0.14.3",
+    "downloads": 286805737,
+    "description": "General purpose Elliptic Curve Cryptography (ECC) support, including traits and generic types for representing various elliptic curve forms, scalars, points, and public/secret keys composed thereof.",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 475,
+    "name": "csv",
+    "max_version": "1.4.0",
+    "downloads": 286349476,
+    "description": "Fast CSV parsing with support for serde.",
+    "repository": "https://github.com/BurntSushi/rust-csv"
+  },
+  {
+    "rank": 476,
+    "name": "tonic-build",
+    "max_version": "0.14.9",
+    "downloads": 285751232,
+    "description": "Codegen module of `tonic` gRPC implementation.",
+    "repository": "https://github.com/grpc/grpc-rust"
+  },
+  {
+    "rank": 477,
+    "name": "globset",
+    "max_version": "0.4.21",
+    "downloads": 285575882,
+    "description": "Cross platform single glob and glob set matching. Glob set matching is the process of matching one or more glob patterns against a single candidate path simultaneously, and returning all of the globs that matched.",
+    "repository": "https://github.com/BurntSushi/ripgrep/tree/master/crates/globset"
+  },
+  {
+    "rank": 478,
+    "name": "alloc-no-stdlib",
+    "max_version": "3.0.0",
+    "downloads": 285281114,
+    "description": "A dynamic allocator that may be used with or without the stdlib. This allows a package with nostd to allocate memory dynamically and be used either with a custom allocator, items on the stack, or by a package that wishes to simply use Box<>. It also provides options to use calloc or a mutable global variable for pre-zeroed memory",
+    "repository": "https://github.com/dropbox/rust-alloc-no-stdlib"
+  },
+  {
+    "rank": 479,
+    "name": "csv-core",
+    "max_version": "0.1.13",
+    "downloads": 285220191,
+    "description": "Bare bones CSV parsing with no_std support.",
+    "repository": "https://github.com/BurntSushi/rust-csv"
+  },
+  {
+    "rank": 480,
+    "name": "polling",
+    "max_version": "3.11.0",
+    "downloads": 285110051,
+    "description": "Portable interface to epoll, kqueue, event ports, and IOCP",
+    "repository": "https://github.com/smol-rs/polling"
+  },
+  {
+    "rank": 481,
+    "name": "pyo3-ffi",
+    "max_version": "0.30.1",
+    "downloads": 283987843,
+    "description": "Python-API bindings for the PyO3 ecosystem",
+    "repository": "https://github.com/pyo3/pyo3"
+  },
+  {
+    "rank": 482,
+    "name": "flume",
+    "max_version": "0.12.0",
+    "downloads": 283544597,
+    "description": "A blazingly fast multi-producer channel",
+    "repository": "https://github.com/zesterer/flume"
+  },
+  {
+    "rank": 483,
+    "name": "sec1",
+    "max_version": "0.8.1",
+    "downloads": 282538145,
+    "description": "Pure Rust implementation of SEC1: Elliptic Curve Cryptography encoding formats including ASN.1 DER encoded private keys as well as the Elliptic-Curve-Point-to-Octet-String encoding",
+    "repository": "https://github.com/RustCrypto/formats"
+  },
+  {
+    "rank": 484,
+    "name": "ecdsa",
+    "max_version": "0.17.0",
+    "downloads": 281600751,
+    "description": "Pure Rust implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) as specified in FIPS 186-4 (Digital Signature Standard), implemented generically over elliptic curves, providing RFC6979 deterministic signing support as well as randomized signatures and signature verification",
+    "repository": "https://github.com/RustCrypto/signatures"
+  },
+  {
+    "rank": 485,
+    "name": "tar",
+    "max_version": "0.4.46",
+    "downloads": 281598052,
+    "description": "A Rust implementation of a TAR file reader and writer. This library does not currently handle compression, but it is abstract over all I/O readers and writers. Additionally, great lengths are taken to ensure that the entire contents are never required to be entirely resident in memory all at once.",
+    "repository": "https://github.com/composefs/tar-rs"
+  },
+  {
+    "rank": 486,
+    "name": "toml_writer",
+    "max_version": "1.2.0+spec-1.1.0",
+    "downloads": 278641742,
+    "description": "A low-level interface for writing out TOML",
+    "repository": "https://github.com/toml-rs/toml"
+  },
+  {
+    "rank": 487,
+    "name": "tiny-keccak",
+    "max_version": "2.0.2",
+    "downloads": 278219821,
+    "description": "An implementation of Keccak derived functions.",
+    "repository": null
+  },
+  {
+    "rank": 488,
+    "name": "num-derive",
+    "max_version": "0.5.1",
+    "downloads": 278101685,
+    "description": "Numeric syntax extensions",
+    "repository": "https://github.com/rust-num/num-derive"
+  },
+  {
+    "rank": 489,
+    "name": "ed25519",
+    "max_version": "3.0.0",
+    "downloads": 277606819,
+    "description": "Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032) support library providing signature type definitions and PKCS#8 private key decoding/encoding support",
+    "repository": "https://github.com/RustCrypto/signatures"
+  },
+  {
+    "rank": 490,
+    "name": "cookie",
+    "max_version": "0.18.2",
+    "downloads": 277370999,
+    "description": "HTTP cookie parsing and cookie jar management. Supports signed and private (encrypted, authenticated) jars.",
+    "repository": "https://github.com/SergioBenitez/cookie-rs"
+  },
+  {
+    "rank": 491,
+    "name": "num_threads",
+    "max_version": "0.1.8",
+    "downloads": 276804910,
+    "description": "A minimal library that determines the number of running threads for the current process.",
+    "repository": "https://github.com/jhpratt/num_threads"
+  },
+  {
+    "rank": 492,
+    "name": "erased-serde",
+    "max_version": "0.4.11",
+    "downloads": 276603854,
+    "description": "Type-erased Serialize and Serializer traits",
+    "repository": "https://github.com/dtolnay/erased-serde"
+  },
+  {
+    "rank": 493,
+    "name": "rfc6979",
+    "max_version": "0.6.0",
+    "downloads": 273892324,
+    "description": "Pure Rust implementation of RFC6979: Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA)",
+    "repository": "https://github.com/RustCrypto/signatures"
+  },
+  {
+    "rank": 494,
+    "name": "opentelemetry_sdk",
+    "max_version": "0.33.1",
+    "downloads": 273273253,
+    "description": "The SDK for the OpenTelemetry metrics collection and distributed tracing framework",
+    "repository": "https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-sdk"
+  },
+  {
+    "rank": 495,
+    "name": "cargo-platform",
+    "max_version": "0.3.3",
+    "downloads": 272746668,
+    "description": "Cargo's representation of a target platform.",
+    "repository": "https://github.com/rust-lang/cargo"
+  },
+  {
+    "rank": 496,
+    "name": "aead",
+    "max_version": "0.6.1",
+    "downloads": 271404900,
+    "description": "Traits for Authenticated Encryption with Associated Data (AEAD) algorithms, such as AES-GCM as ChaCha20Poly1305, which provide a high-level API",
+    "repository": "https://github.com/RustCrypto/traits"
+  },
+  {
+    "rank": 497,
+    "name": "wait-timeout",
+    "max_version": "0.2.1",
+    "downloads": 269175958,
+    "description": "A crate to wait on a child process with a timeout specified across Unix and Windows platforms.",
+    "repository": "https://github.com/alexcrichton/wait-timeout"
+  },
+  {
+    "rank": 498,
+    "name": "whoami",
+    "max_version": "2.1.3",
+    "downloads": 268979627,
+    "description": "Rust library for getting information about the current user and environment",
+    "repository": "https://github.com/ardaku/whoami"
+  },
+  {
+    "rank": 499,
+    "name": "plotters",
+    "max_version": "0.3.7",
+    "downloads": 268189591,
+    "description": "A Rust drawing library focus on data plotting for both WASM and native applications",
+    "repository": "https://github.com/plotters-rs/plotters"
+  },
+  {
+    "rank": 500,
+    "name": "async-compression",
+    "max_version": "0.4.52",
+    "downloads": 266770073,
+    "description": "Adaptors between compression crates and Rust's modern asynchronous IO types.",
+    "repository": "https://github.com/Nullus157/async-compression"
+  }
+]
