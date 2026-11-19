@@ -18,7 +18,11 @@ use std::process::{Command, Stdio};
 /// (crate, directory under the patch store, why)
 pub const KNOWN: [(&str, &str, &str); 3] = [
     ("libc", "libc-qnx8", "libc 0.2.189+ only knows QNX 8 as target_os=\"qnx\"; the QNX toolchain reports \"nto\"/\"nto80\""),
-    ("aws-lc-sys", "awslc-rs-main/aws-lc-sys|aws-lc-sys-qnx", "qcc rejects --include= and QNX headers need _QNX_SOURCE (aws/aws-lc-rs#1292); the awslc-rs-main copy adds QNX aarch64 CPU detection (aws/aws-lc#3780)"),
+    (
+        "aws-lc-sys",
+        "awslc-rs-main/aws-lc-sys|aws-lc-sys-qnx",
+        "qcc rejects --include= and QNX headers need _QNX_SOURCE (aws/aws-lc-rs#1292); the awslc-rs-main copy adds QNX aarch64 CPU detection (aws/aws-lc#3780)",
+    ),
     ("target-lexicon", "target-lexicon-qnx", "cannot parse QNX triples, build scripts panic (bytecodealliance/target-lexicon#138)"),
 ];
 
@@ -287,7 +291,7 @@ pub fn fix(env: &QnxEnv, o: &Opts) -> Result<bool> {
         return Ok(true);
     }
     let v = verify(env, &root, o, "verify")?;
-    if v.iter().any(|c| *c == Some(classify::Class::RustcTooOld)) {
+    if v.contains(&Some(classify::Class::RustcTooOld)) {
         // the lockfile predates the resolver setting; re-resolve for rustc 1.85, keeping the patches
         let mut c = env.cargo();
         c.current_dir(&root).arg("update");
@@ -306,7 +310,7 @@ fn verify(env: &QnxEnv, root: &Path, o: &Opts, label: &str) -> Result<Vec<Option
     let mut all = vec![];
     for t in o.targets {
         let mut c = env.cargo();
-        c.current_dir(&root)
+        c.current_dir(root)
             .args(["build", "--message-format=json", "--target", t])
             .env("CARGO_BUILD_JOBS", o.jobs.to_string())
             .env("CARGO_PROFILE_DEV_DEBUG", "0")

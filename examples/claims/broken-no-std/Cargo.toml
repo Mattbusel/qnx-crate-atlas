@@ -1,0 +1,14 @@
+[package]
+name = "broken-no-std"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Says no_std; one dependency line says otherwise"
+keywords = ["no_std", "parser"]
+categories = ["no-std", "embedded"]
+
+[dependencies]
+# the bug this example exists to show: memchr's default `std` feature stays on
+memchr = "2"
+
+[workspace]

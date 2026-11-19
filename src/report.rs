@@ -52,11 +52,14 @@ struct Tally {
     compat_by_class: BTreeMap<String, usize>,
 }
 
+/// crates blocked, failure classes, targets
+type Blocker = (std::collections::BTreeSet<String>, BTreeMap<String, usize>, std::collections::BTreeSet<String>);
+
 pub fn build(list: &[CrateInfo], results: Vec<Outcome>, compat: &HashMap<(String, String), Value>, targets: &[String], meta: Value, ontarget: Option<Value>) -> Value {
     let latest = latest(results);
     let mut tallies: BTreeMap<String, Tally> = targets.iter().map(|t| (t.clone(), Tally::default())).collect();
     // blocker -> (crates blocked, class counts, targets)
-    let mut blockers: HashMap<String, (std::collections::BTreeSet<String>, BTreeMap<String, usize>, std::collections::BTreeSet<String>)> = HashMap::new();
+    let mut blockers: HashMap<String, Blocker> = HashMap::new();
     let mut rows = Vec::new();
 
     for c in list {

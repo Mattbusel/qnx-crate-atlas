@@ -1,0 +1,12 @@
+[package]
+name = "honest-no-std"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Says no_std and means it"
+categories = ["no-std"]
+
+[dependencies]
+memchr = { version = "2", default-features = false }
+
+[workspace]

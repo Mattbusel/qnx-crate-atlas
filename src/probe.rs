@@ -72,51 +72,16 @@ impl<'a> Runner<'a> {
         std::fs::write(dir.join("Cargo.toml"), manifest)?;
         std::fs::write(
             dir.join("src").join("main.rs"),
-            format!("// QNX Crate Atlas probe for `{name}`: link the crate into a QNX binary.\nextern crate probe_dep;\n\nfn main() {{\n    println!(\"{} linked for QNX\");\n}}\n", ident(name)),
+            format!(
+                "// QNX Crate Atlas probe for `{name}`: link the crate into a QNX binary.\nextern crate probe_dep;\n\nfn main() {{\n    println!(\"{} linked for QNX\");\n}}\n",
+                ident(name)
+            ),
         )?;
         Ok(())
     }
 
-    /// Run a command with a time limit, capturing stdout and stderr. Returns (success, stdout, stderr, timed_out).
-    fn run(&self, mut cmd: Command) -> Result<(bool, String, String, bool)> {
-        cmd.stdout(Stdio::piped()).stderr(Stdio::piped()).stdin(Stdio::null());
-        #[cfg(windows)]
-        {
-            use std::os::windows::process::CommandExt;
-            // IDLE_PRIORITY_CLASS: children (rustc, qcc) inherit it, so the PC stays responsive
-            cmd.creation_flags(0x0000_0040);
-        }
-        let mut child = cmd.spawn().context("spawning cargo")?;
-        let mut so = child.stdout.take().unwrap();
-        let mut se = child.stderr.take().unwrap();
-        let t1 = std::thread::spawn(move || {
-            let mut s = String::new();
-            let _ = so.read_to_string(&mut s);
-            s
-        });
-        let t2 = std::thread::spawn(move || {
-            let mut s = String::new();
-            let _ = se.read_to_string(&mut s);
-            s
-        });
-        let start = Instant::now();
-        let mut timed_out = false;
-        let status = loop {
-            if let Some(st) = child.try_wait()? {
-                break Some(st);
-            }
-            if start.elapsed() > self.timeout {
-                timed_out = true;
-                kill_tree(child.id());
-                let _ = child.kill();
-                let _ = child.wait();
-                break None;
-            }
-            std::thread::sleep(Duration::from_millis(200));
-        };
-        let out = t1.join().unwrap_or_default();
-        let err = t2.join().unwrap_or_default();
-        Ok((status.map(|s| s.success()).unwrap_or(false), out, err, timed_out))
+    fn run(&self, cmd: Command) -> Result<(bool, String, String, bool)> {
+        run_cmd(cmd, self.timeout)
     }
 
     /// (version of the probed crate, newest libc in the graph, number of packages excluding the probe)
@@ -182,7 +147,15 @@ impl<'a> Runner<'a> {
         let (ok, err) = self.generate_lock(&p1)?;
         if !ok {
             let v = classify::classify(false, "", &err);
-            let mut fe = v.first_error.unwrap_or(FirstError { package: name.into(), version: String::new(), code: None, message: "resolve failed".into(), file: None, kind: None });
+            let mut fe = v.first_error.unwrap_or(FirstError {
+                package: name.into(),
+                version: String::new(),
+                code: None,
+                message: "resolve failed".into(),
+                file: None,
+                kind: None,
+                line: None,
+            });
             if fe.package.is_empty() {
                 fe.package = name.into();
             }
@@ -253,6 +226,7 @@ impl<'a> Runner<'a> {
                         message: e.lines().map(str::trim).find(|l| l.starts_with("error")).unwrap_or("libc pin failed").chars().take(240).collect(),
                         file: None,
                         kind: None,
+                        line: None,
                     });
                     o.seconds = start.elapsed().as_secs_f64();
                     return Ok(o);
@@ -321,7 +295,11 @@ impl<'a> Runner<'a> {
                 if !ok2 {
                     let _ = std::fs::remove_file(p3.join("Cargo.lock"));
                     let msg: String = format!("{e}{e2}").lines().map(str::trim).find(|l| l.starts_with("error")).unwrap_or("compat resolve failed").chars().take(240).collect();
-                    return Ok(("fail".into(), Some(Class::Resolve), Some(FirstError { package: "libc".into(), version: String::new(), code: None, message: msg, file: None, kind: None })));
+                    return Ok((
+                        "fail".into(),
+                        Some(Class::Resolve),
+                        Some(FirstError { package: "libc".into(), version: String::new(), code: None, message: msg, file: None, kind: None, line: None }),
+                    ));
                 }
             }
         }
@@ -336,6 +314,48 @@ impl<'a> Runner<'a> {
         }
         Ok(("fail".into(), v.class, v.first_error))
     }
+}
+
+/// Run a command with a time limit, capturing stdout and stderr. Returns (success, stdout, stderr, timed_out).
+pub fn run_cmd(mut cmd: Command, timeout: Duration) -> Result<(bool, String, String, bool)> {
+    cmd.stdout(Stdio::piped()).stderr(Stdio::piped()).stdin(Stdio::null());
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        // IDLE_PRIORITY_CLASS: children (rustc, qcc) inherit it, so the PC stays responsive
+        cmd.creation_flags(0x0000_0040);
+    }
+    let mut child = cmd.spawn().context("spawning cargo")?;
+    let mut so = child.stdout.take().unwrap();
+    let mut se = child.stderr.take().unwrap();
+    let t1 = std::thread::spawn(move || {
+        let mut s = String::new();
+        let _ = so.read_to_string(&mut s);
+        s
+    });
+    let t2 = std::thread::spawn(move || {
+        let mut s = String::new();
+        let _ = se.read_to_string(&mut s);
+        s
+    });
+    let start = Instant::now();
+    let mut timed_out = false;
+    let status = loop {
+        if let Some(st) = child.try_wait()? {
+            break Some(st);
+        }
+        if start.elapsed() > timeout {
+            timed_out = true;
+            kill_tree(child.id());
+            let _ = child.kill();
+            let _ = child.wait();
+            break None;
+        }
+        std::thread::sleep(Duration::from_millis(200));
+    };
+    let out = t1.join().unwrap_or_default();
+    let err = t2.join().unwrap_or_default();
+    Ok((status.map(|s| s.success()).unwrap_or(false), out, err, timed_out))
 }
 
 fn kill_tree(pid: u32) {

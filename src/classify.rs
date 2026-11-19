@@ -17,6 +17,9 @@ pub struct FirstError {
     pub file: Option<String>,
     /// lib, proc-macro, custom-build, bin
     pub kind: Option<String>,
+    /// line of the primary span in `file`
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub line: Option<u32>,
 }
 
 #[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -79,8 +82,22 @@ impl Class {
     pub fn all() -> &'static [Class] {
         use Class::*;
         &[
-            LibcQnx8Cfg, MissingLibcBinding, NoQnxCfgArm, ExplicitlyUnsupported, BuildScriptCc, BuildScriptSystemLib,
-            BuildScript, RustcTooOld, Link, Resolve, LibcPinConflict, CompilerCrash, NoLibrary, NeedsFeature, Timeout, Other,
+            LibcQnx8Cfg,
+            MissingLibcBinding,
+            NoQnxCfgArm,
+            ExplicitlyUnsupported,
+            BuildScriptCc,
+            BuildScriptSystemLib,
+            BuildScript,
+            RustcTooOld,
+            Link,
+            Resolve,
+            LibcPinConflict,
+            CompilerCrash,
+            NoLibrary,
+            NeedsFeature,
+            Timeout,
+            Other,
         ]
     }
 
@@ -177,7 +194,15 @@ fn class_for_compiler_error(fe: &FirstError, rendered: &str) -> Class {
         return Class::RustcTooOld;
     }
     let lower = msg.to_ascii_lowercase();
-    if fe.code.is_none() && (lower.contains("you need to specify at least one") || lower.contains("feature")) && (lower.contains("need to specify") || lower.contains("must be enabled") || lower.contains("at least one") || lower.contains("please enable") || lower.contains("must enable") || lower.contains("need to specify")) {
+    if fe.code.is_none()
+        && (lower.contains("you need to specify at least one") || lower.contains("feature"))
+        && (lower.contains("need to specify")
+            || lower.contains("must be enabled")
+            || lower.contains("at least one")
+            || lower.contains("please enable")
+            || lower.contains("must enable")
+            || lower.contains("need to specify"))
+    {
         return Class::NeedsFeature;
     }
     if fe.code.is_none() && (r.contains("compile_error!") || msg.contains("not supported") || msg.contains("unsupported") || msg.contains("Unsupported")) {
@@ -200,7 +225,12 @@ fn class_for_compiler_error(fe: &FirstError, rendered: &str) -> Class {
 fn build_script_class(text: &str) -> Class {
     let t = text;
     let cc = t.contains("cc-rs") || t.contains("ToolExecError") || t.contains("failed to find tool") || t.contains("qcc") && t.contains("error:");
-    let sys = t.contains("pkg-config") || t.contains("PKG_CONFIG") || t.contains("cmake") || t.contains("CMake") || t.contains("Could not find directory of OpenSSL") || t.contains("vcpkg");
+    let sys = t.contains("pkg-config")
+        || t.contains("PKG_CONFIG")
+        || t.contains("cmake")
+        || t.contains("CMake")
+        || t.contains("Could not find directory of OpenSSL")
+        || t.contains("vcpkg");
     if sys {
         Class::BuildScriptSystemLib
     } else if cc {
@@ -242,13 +272,21 @@ pub fn classify(success: bool, stdout: &str, stderr: &str) -> Verdict {
             let next = lines.get(i + 1).map(|x| x.trim()).unwrap_or("");
             let pkg = next.split_whitespace().next().unwrap_or("");
             let (name, version) = pkg.split_once('@').unwrap_or((pkg, ""));
-            let fe = FirstError { package: name.into(), version: version.into(), code: None, message: first_line(next), file: None, kind: None };
+            let fe = FirstError { package: name.into(), version: version.into(), code: None, message: first_line(next), file: None, kind: None, line: None };
             return Verdict { ok: false, class: Some(Class::RustcTooOld), first_error: Some(fe) };
         }
         if l.contains("the compiler unexpectedly panicked") {
             let pkg = stderr.lines().rev().find_map(|x| x.trim().strip_prefix("Compiling ")).unwrap_or("");
             let mut it = pkg.split_whitespace();
-            let fe = FirstError { package: it.next().unwrap_or("").into(), version: it.next().unwrap_or("").trim_start_matches('v').into(), code: None, message: "internal compiler error".into(), file: None, kind: None };
+            let fe = FirstError {
+                package: it.next().unwrap_or("").into(),
+                version: it.next().unwrap_or("").trim_start_matches('v').into(),
+                code: None,
+                message: "internal compiler error".into(),
+                file: None,
+                kind: None,
+                line: None,
+            };
             return Verdict { ok: false, class: Some(Class::CompilerCrash), first_error: Some(fe) };
         }
     }
@@ -260,16 +298,21 @@ pub fn classify(success: bool, stdout: &str, stderr: &str) -> Verdict {
                 let mut it = pkg.split_whitespace();
                 let name = it.next().unwrap_or("").to_string();
                 let version = it.next().unwrap_or("").trim_start_matches('v').to_string();
-                let fe = FirstError { package: name, version, code: None, message: first_line(l.trim_start_matches("error: ")), file: None, kind: None };
+                let fe = FirstError { package: name, version, code: None, message: first_line(l.trim_start_matches("error: ")), file: None, kind: None, line: None };
                 return Verdict { ok: false, class: Some(Class::RustcTooOld), first_error: Some(fe) };
             }
         }
         if l.contains("which is missing a lib target") {
-            let fe = FirstError { package: String::new(), version: String::new(), code: None, message: first_line(l), file: None, kind: None };
+            let fe = FirstError { package: String::new(), version: String::new(), code: None, message: first_line(l), file: None, kind: None, line: None };
             return Verdict { ok: false, class: Some(Class::NoLibrary), first_error: Some(fe) };
         }
-        if l.starts_with("error: failed to select a version") || l.starts_with("error: failed to download") || l.starts_with("error: no matching package") || l.starts_with("error: failed to get") {
-            let fe = FirstError { package: String::new(), version: String::new(), code: None, message: first_line(l.trim_start_matches("error: ")), file: None, kind: None };
+        if l.starts_with("error: failed to select a version")
+            || l.starts_with("error: failed to download")
+            || l.starts_with("error: no matching package")
+            || l.starts_with("error: failed to get")
+        {
+            let fe =
+                FirstError { package: String::new(), version: String::new(), code: None, message: first_line(l.trim_start_matches("error: ")), file: None, kind: None, line: None };
             return Verdict { ok: false, class: Some(Class::Resolve), first_error: Some(fe) };
         }
     }
@@ -289,20 +332,11 @@ pub fn classify(success: bool, stdout: &str, stderr: &str) -> Verdict {
             continue;
         }
         let (package, version) = parse_package_id(v["package_id"].as_str().unwrap_or(""));
-        let file = m["spans"]
-            .as_array()
-            .and_then(|s| s.iter().find(|x| x["is_primary"] == true).or(s.first()))
-            .and_then(|s| s["file_name"].as_str())
-            .map(trim_file);
+        let span = m["spans"].as_array().and_then(|s| s.iter().find(|x| x["is_primary"] == true).or(s.first()));
+        let file = span.and_then(|s| s["file_name"].as_str()).map(trim_file);
+        let line = span.and_then(|s| s["line_start"].as_u64()).map(|l| l as u32);
         let kind = v["target"]["kind"].as_array().and_then(|k| k.first()).and_then(|k| k.as_str()).map(str::to_string);
-        let fe = FirstError {
-            package,
-            version,
-            code: m["code"]["code"].as_str().map(str::to_string),
-            message: first_line(text),
-            file,
-            kind,
-        };
+        let fe = FirstError { package, version, code: m["code"]["code"].as_str().map(str::to_string), message: first_line(text), file, kind, line };
         let rendered = m["rendered"].as_str().unwrap_or("");
         let class = class_for_compiler_error(&fe, rendered);
         return Verdict { ok: false, class: Some(class), first_error: Some(fe) };
@@ -317,7 +351,7 @@ pub fn classify(success: bool, stdout: &str, stderr: &str) -> Verdict {
         let version = it.next().unwrap_or("").trim_start_matches('v').to_string();
         let tail = &stderr[i..];
         let msg = build_script_message(tail);
-        let fe = FirstError { package: name, version, code: None, message: msg, file: Some("build.rs".into()), kind: Some("custom-build".into()) };
+        let fe = FirstError { package: name, version, code: None, message: msg, file: Some("build.rs".into()), kind: Some("custom-build".into()), line: None };
         return Verdict { ok: false, class: Some(build_script_class(tail)), first_error: Some(fe) };
     }
 
@@ -333,7 +367,7 @@ pub fn classify(success: bool, stdout: &str, stderr: &str) -> Verdict {
         }
     }
     let class = if msg.contains("linker") || msg.contains("linking") { Class::Link } else { Class::Other };
-    Verdict { ok: false, class: Some(class), first_error: Some(FirstError { package, version, code: None, message: msg, file: None, kind: None }) }
+    Verdict { ok: false, class: Some(class), first_error: Some(FirstError { package, version, code: None, message: msg, file: None, kind: None, line: None }) }
 }
 
 #[cfg(test)]
@@ -386,7 +420,8 @@ mod tests {
 
     #[test]
     fn missing_libc_binding() {
-        let out = msg("registry+https://github.com/rust-lang/crates.io-index#nix@0.29.0", Some("E0425"), "cannot find value `SO_PEERCRED` in crate `libc`", "src/sys/socket.rs", "lib");
+        let out =
+            msg("registry+https://github.com/rust-lang/crates.io-index#nix@0.29.0", Some("E0425"), "cannot find value `SO_PEERCRED` in crate `libc`", "src/sys/socket.rs", "lib");
         assert_eq!(classify(false, &out, "").class, Some(Class::MissingLibcBinding));
     }
 
@@ -406,7 +441,13 @@ mod tests {
 
     #[test]
     fn compile_error_is_explicit() {
-        let out = msg("registry+https://github.com/rust-lang/crates.io-index#getrandom@0.2.15", None, "target is not supported, for more information see: https://docs.rs/getrandom", "src/lib.rs", "lib");
+        let out = msg(
+            "registry+https://github.com/rust-lang/crates.io-index#getrandom@0.2.15",
+            None,
+            "target is not supported, for more information see: https://docs.rs/getrandom",
+            "src/lib.rs",
+            "lib",
+        );
         assert_eq!(classify(false, &out, "").class, Some(Class::ExplicitlyUnsupported));
     }
 

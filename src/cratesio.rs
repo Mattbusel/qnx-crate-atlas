@@ -5,7 +5,7 @@ use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
 use std::time::Duration;
 
-pub const USER_AGENT: &str = "qnx-crate-atlas/0.1 (https://github.com/Mattbusel/qnx-crate-atlas; mattbusel@tensorust.com)";
+pub const USER_AGENT: &str = "qnx-crate-atlas/0.2 (https://github.com/Mattbusel/qnx-crate-atlas; mattbusel@tensorust.com)";
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CrateInfo {
@@ -43,13 +43,8 @@ pub fn top_crates(count: usize) -> Result<Vec<CrateInfo>> {
     let pages = count.div_ceil(per);
     for page in 1..=pages {
         let url = format!("https://crates.io/api/v1/crates?page={page}&per_page={per}&sort=downloads");
-        let body: Page = ureq::get(&url)
-            .header("User-Agent", USER_AGENT)
-            .call()
-            .with_context(|| format!("GET {url}"))?
-            .body_mut()
-            .read_json()
-            .context("parsing crates.io response")?;
+        let body: Page =
+            ureq::get(&url).header("User-Agent", USER_AGENT).call().with_context(|| format!("GET {url}"))?.body_mut().read_json().context("parsing crates.io response")?;
         for c in body.crates {
             if out.len() >= count {
                 break;
@@ -68,4 +63,32 @@ pub fn top_crates(count: usize) -> Result<Vec<CrateInfo>> {
         }
     }
     Ok(out)
+}
+
+/// Newest stable version of a crate on crates.io.
+pub fn latest_version(name: &str) -> Result<String> {
+    let url = format!("https://crates.io/api/v1/crates/{name}");
+    let v: serde_json::Value = ureq::get(&url).header("User-Agent", USER_AGENT).call().with_context(|| format!("GET {url}"))?.body_mut().read_json()?;
+    let c = &v["crate"];
+    c["max_stable_version"].as_str().or(c["max_version"].as_str()).map(str::to_string).with_context(|| format!("no version for {name}"))
+}
+
+/// Download `name-version.crate` from static.crates.io and unpack it under `into`; returns the
+/// package directory. Reuses an earlier download.
+pub fn fetch_source(name: &str, version: &str, into: &std::path::Path) -> Result<std::path::PathBuf> {
+    let dir = into.join(format!("{name}-{version}"));
+    if dir.join("Cargo.toml").is_file() {
+        return Ok(dir);
+    }
+    std::fs::create_dir_all(into)?;
+    let url = format!("https://static.crates.io/crates/{name}/{name}-{version}.crate");
+    let mut buf = Vec::new();
+    use std::io::Read;
+    ureq::get(&url).header("User-Agent", USER_AGENT).call().with_context(|| format!("GET {url}"))?.into_body().into_reader().take(200 << 20).read_to_end(&mut buf)?;
+    // tar's unpack refuses entries that escape the destination
+    tar::Archive::new(flate2::read::GzDecoder::new(&buf[..])).unpack(into).with_context(|| format!("unpacking {name}-{version}.crate"))?;
+    if !dir.join("Cargo.toml").is_file() {
+        anyhow::bail!("{name}-{version}.crate has no Cargo.toml at its root");
+    }
+    Ok(dir)
 }

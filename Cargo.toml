@@ -1,14 +1,15 @@
 [package]
 name = "qnx-crate-atlas"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.80"
 license = "MIT"
-description = "Cross-compiles the most downloaded crates.io crates for QNX 8.0, classifies the first error, and publishes the compatibility matrix."
+description = "Fails CI when a crate claims no_std, embedded, QNX or portable support that does not build, with the exact error. Plus the QNX 8.0 atlas of the top 500 crates."
 repository = "https://github.com/Mattbusel/qnx-crate-atlas"
 readme = "README.md"
-keywords = ["qnx", "cross-compile", "embedded", "compatibility", "rtos"]
-categories = ["development-tools", "embedded", "command-line-utilities"]
+include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/README.md", "/CHANGELOG.md", "/LICENSE", "/action.yml", "/rustfmt.toml"]
+keywords = ["qnx", "portability", "no-std-check", "cross-compile", "ci"]
+categories = ["development-tools", "development-tools::build-utils", "command-line-utilities"]
 
 [[bin]]
 name = "atlas"
@@ -22,6 +23,8 @@ serde_json = "1"
 toml = "0.8"
 toml_edit = "0.22"
 ureq = { version = "3", features = ["json"] }
+flate2 = "1"
+tar = "0.4"
 
 [profile.release]
 opt-level = 2

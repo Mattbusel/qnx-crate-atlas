@@ -6,5 +6,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets --locked -- -D warnings
       - run: cargo test --locked
       - run: cargo build --release --locked
+  claims:
+    # the tool holds itself to its own rule: an honest no_std crate passes, a false claim fails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rust-src
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: thumbv7em-none-eabihf
+      - run: cargo build --release --locked
+      - name: honest no_std crate passes (bare metal and upstream QNX)
+        run: target/release/atlas claims examples/claims/honest-no-std --also qnx --format github --work "$RUNNER_TEMP/atlas"
+      - name: false no_std claim fails with the exact error
+        run: |
+          if target/release/atlas claims examples/claims/broken-no-std --qnx off --work "$RUNNER_TEMP/atlas" > out.txt; then
+            cat out.txt; echo "a false no_std claim passed"; exit 1
+          fi
+          cat out.txt
+          grep -q "can't find crate for \`std\`" out.txt
+          grep -q 'memchr feature "std"' out.txt
+      - name: a published crate's claims
+        run: target/release/atlas claims --crate getrandom@0.4.3 --format github --work "$RUNNER_TEMP/atlas" || true

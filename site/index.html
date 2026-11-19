@@ -4,25 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QNX Crate Atlas</title>
-<meta name="description" content="Which of the 500 most downloaded Rust crates build for QNX 8.0, the first error for every one that does not, and the fixes.">
+<meta name="description" content="Your crate claims no_std, embedded or portable. The top 500 crates held to their own claims, with the exact error for every claim that does not build, plus the QNX 8.0 atlas and fixes.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M8 10h16M8 16h10M8 22h13' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="wrap top">
   <div class="brand"><span class="logo" aria-hidden="true"></span>QNX Crate Atlas</div>
-  <nav><a href="#breaks">What breaks</a><a href="#fixes">Fixes</a><a href="#ontarget">On QNX</a><a href="#matrix">All crates</a><a href="codelab/">Codelab</a><a href="https://youtu.be/KDCN-wQVtu4">Video</a><a href="https://github.com/Mattbusel/qnx-crate-atlas">Code</a></nav>
+  <nav><a href="#claims">Claims</a><a href="#breaks">What breaks</a><a href="#fixes">Fixes</a><a href="#ontarget">On QNX</a><a href="#matrix">All crates</a><a href="codelab/">Codelab</a><a href="https://youtu.be/KDCN-wQVtu4">Video</a><a href="https://github.com/Mattbusel/qnx-crate-atlas">Code</a></nav>
 </header>
 
 <main class="wrap">
+  <section class="hero" id="claims">
+    <h1>Your crate says it is portable. The compiler says it is not.</h1>
+    <p class="lede">crates.io lets any crate put <code>no-std</code> in its categories, <code>embedded</code> in its keywords and "cross-platform" in its README. Nothing checks. We read those claims for the top 500 crates (categories, keywords, description, <code>#![no_std]</code>, README, each with its file and line) and built every claim for a target that tests it: no_std and embedded on <code>thumbv7em-none-eabihf</code>, QNX and "portable" on upstream Rust's <code>x86_64-pc-qnx</code>.</p>
+    <p class="meta" id="claims-meta"></p>
+  </section>
+  <section class="tiles claims-tiles" id="claims-tiles" aria-label="Claims results"></section>
+  <section>
+    <h2>Every claim that does not build</h2>
+    <p class="sub">A no_std claim gets the most generous no_std setup the crate offers (<code>default-features = false</code>, then its own <code>alloc</code>/<code>no_std</code>/<code>libm</code> features, then default features); it fails only if none of them builds. Shaded rows stop the build on purpose with <code>compile_error!</code>; the rest just do not compile.</p>
+    <div id="claims-table" class="table-wrap"></div>
+    <p class="sub" id="claims-count"></p>
+    <h3>Where the builds stop</h3>
+    <div id="claims-blockers" class="table-wrap"></div>
+    <h3>Put it in CI</h3>
+    <p>The same check, on your own crate, fails the job and puts the error on the line that makes the claim:</p>
+    <pre class="cmd">cargo install qnx-crate-atlas
+atlas claims .                      # exit 1 if a claim does not build
+
+# .github/workflows/claims.yml
+- uses: Mattbusel/qnx-crate-atlas@v0.2.0</pre>
+    <p><a class="dl" href="data/claims.json" download>Download claims.json</a></p>
+  </section>
+
   <section class="hero">
-    <h1>Which Rust crates build for QNX&nbsp;8.0?</h1>
+    <h2 class="h1like">Which Rust crates build for QNX&nbsp;8.0?</h2>
     <p class="lede">We cross-compiled the <b id="n-crates">500</b> most downloaded crates on crates.io for both QNX&nbsp;8.0 targets with the Rust toolchain QNX ships, linked each one into a real QNX binary with <code>qcc</code>, and recorded the first error for every crate that failed. Then we fixed the biggest causes and ran crate test suites on a QNX&nbsp;8.0 kernel.</p>
     <p class="meta" id="meta"></p>
   </section>
 
   <section class="tiles" id="tiles" aria-label="Headline results"></section>
-  <p class="sub caveat">A pass means the crate compiles for the target and links into a QNX executable that depends on it but does not call it. In one known case real use goes further: on aarch64, <code>rustls</code>, <code>tokio-rustls</code>, <code>hyper-rustls</code> and <code>reqwest</code> pass, but a program that actually uses rustls fails to link there. Counting those 4 as failures, aarch64 with our patches is 467 of 498 (93.8%).</p>
+  <p class="sub caveat">A pass means the crate compiles for the target and links into a QNX executable that depends on it but does not call it. In one known case real use goes further: on aarch64, <code>rustls</code>, <code>tokio-rustls</code>, <code>hyper-rustls</code> and <code>reqwest</code> pass, but a program that actually uses rustls fails to link there. Counting those 4 as failures, aarch64 with our patches is 468 of 498 (94.0%).</p>
 
   <section id="breaks">
     <h2>What breaks</h2>
@@ -123,5 +146,6 @@ atlas report</pre>
 </footer>
 <div id="tip" role="tooltip" hidden></div>
 <script src="app.js"></script>
+<script src="claims.js"></script>
 </body>
 </html>

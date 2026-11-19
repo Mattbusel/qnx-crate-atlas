@@ -145,3 +145,13 @@ pre.cmd { background: var(--code-bg); border: 1px solid var(--line); border-radi
   th, td { padding: 6px 8px; }
 }
 .more { font: inherit; font-size: 14px; margin-left: 8px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--accent); cursor: pointer; }
+
+/* claims section */
+.claims-tiles { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.claims-tiles .big { font-size: 30px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.claims-tiles .big.bad { color: var(--bad-text); }
+.claims-tiles .big.warn { color: var(--warn-text); }
+.claims-tiles p { margin: 6px 0 0; color: var(--text-2); }
+tr.refuse td { background: var(--surface-2); }
+#claims-table code { white-space: normal; word-break: break-word; }
+.h1like { font-size: clamp(26px, 4vw, 36px); }

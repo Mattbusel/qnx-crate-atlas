@@ -1,0 +1,46 @@
+name: Portability claims check
+description: Fails the job when a crate claims no_std, embedded, QNX or portable support that does not build, with the exact first error.
+author: Tensorust
+branding:
+  icon: x-octagon
+  color: red
+inputs:
+  path:
+    description: Package directory (the one holding Cargo.toml)
+    default: "."
+  qnx:
+    description: How to test QNX and portable claims, nightly (upstream x86_64-pc-qnx with -Zbuild-std) or off
+    default: nightly
+  strict:
+    description: Also fail on checks that cannot be decided on the runner (no C cross compiler, a feature choice needed)
+    default: "false"
+  also:
+    description: Run these checks even without a claim, comma separated (bare-metal, qnx)
+    default: ""
+  version:
+    description: qnx-crate-atlas version to install
+    default: "0.2.0"
+runs:
+  using: composite
+  steps:
+    - name: Install toolchains
+      shell: bash
+      run: |
+        rustup toolchain install stable --profile minimal --target thumbv7em-none-eabihf
+        if [ "$ATLAS_QNX" = "nightly" ]; then rustup toolchain install nightly --profile minimal --component rust-src; fi
+        cargo install qnx-crate-atlas --version "$ATLAS_VERSION" --locked
+      env:
+        ATLAS_QNX: ${{ inputs.qnx }}
+        ATLAS_VERSION: ${{ inputs.version }}
+    - name: Check portability claims
+      shell: bash
+      run: |
+        args=(claims "$ATLAS_PATH" --format github --qnx "$ATLAS_QNX" --work "$RUNNER_TEMP/atlas-claims")
+        if [ "$ATLAS_STRICT" = "true" ]; then args+=(--strict); fi
+        if [ -n "$ATLAS_ALSO" ]; then args+=(--also "$ATLAS_ALSO"); fi
+        atlas "${args[@]}"
+      env:
+        ATLAS_PATH: ${{ inputs.path }}
+        ATLAS_QNX: ${{ inputs.qnx }}
+        ATLAS_STRICT: ${{ inputs.strict }}
+        ATLAS_ALSO: ${{ inputs.also }}

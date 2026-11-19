@@ -53,7 +53,7 @@ pub fn load(path: &Path) -> Option<Value> {
     }
     let mut v: Vec<TestRun> = latest.into_values().collect();
     v.sort_by_key(|t| t.rank);
-    Some(serde_json::to_value(v).ok()?)
+    serde_json::to_value(v).ok()
 }
 
 fn registry_src(name: &str, version: &str) -> Option<PathBuf> {
@@ -271,11 +271,8 @@ pub fn run(env: &QnxEnv, cfg: &Config, crates: &[CrateInfo], res: &HashMap<(Stri
         std::fs::write(&manifest, m)?;
         let script = std::path::absolute("scripts/ontarget_session.sh")?;
         println!("booting QNX 8.0 VM in WSL ({}) and running {} test binaries", cfg.distro, runs.iter().map(|r| r.1.len()).sum::<usize>());
-        let out = Command::new("wsl")
-            .args(["-d", &cfg.distro, "-u", "root", "--", "bash", &to_wsl(&script), &to_wsl(&manifest)])
-            .stdin(Stdio::null())
-            .output()
-            .context("running wsl")?;
+        let out =
+            Command::new("wsl").args(["-d", &cfg.distro, "-u", "root", "--", "bash", &to_wsl(&script), &to_wsl(&manifest)]).stdin(Stdio::null()).output().context("running wsl")?;
         let text = String::from_utf8_lossy(&out.stdout).into_owned();
         std::fs::write(cfg.work.join("ontarget-session.log"), &text)?;
         let uname = text.lines().find_map(|l| l.strip_prefix("@@VM ")).map(str::to_string);

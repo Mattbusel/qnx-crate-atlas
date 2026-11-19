@@ -53,10 +53,7 @@ impl QnxEnv {
         let target = base.join("target").join("qnx");
         let rustc = rustc.unwrap_or_else(|| host.join("usr").join("bin").join(exe("rustc")));
         if !rustc.is_file() {
-            bail!(
-                "QNX rustc not found at {}. Install the QNX Rust toolchain package from QNX Software Center",
-                rustc.display()
-            );
+            bail!("QNX rustc not found at {}. Install the QNX Rust toolchain package from QNX Software Center", rustc.display());
         }
         Ok(Self { base, host, target, rustc, cargo_toolchain: cargo_toolchain.to_string() })
     }
